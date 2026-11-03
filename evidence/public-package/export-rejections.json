@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "changed-proof-input",
+      "rejected": true,
+      "diagnostic": "ValueError: Final package differs from the clean build: formal/Heraclitus/OriginalProblem.lean",
+      "no_output_created": true
+    },
+    {
+      "case": "stale-pdf-review",
+      "rejected": true,
+      "diagnostic": "ValueError: PDF visual review is stale",
+      "no_output_created": true
+    }
+  ],
+  "scope": "Packaging gates reject a changed proof-source hash and a stale PDF review. Originals were not modified."
+}

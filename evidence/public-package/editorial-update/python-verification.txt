@@ -1,0 +1,6 @@
+Step 1/4 passed (3.33 s).
+Step 2/4 passed (0.11 s).
+Step 3/4 passed (0.23 s).
+Step 4/4 passed (2.49 s).
+Certificate checks passed. Reports: /Users/rogerg/ai/math/heraclitus-base7/build/reference-review/check-candidate/build/verification
+The infinite reduction remains a mathematical proof draft; see docs/verification.md.

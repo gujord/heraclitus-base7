@@ -1,0 +1,598 @@
+% Authoritative editable manuscript. Generated reading text and PDF use scripts/build_paper.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs,longtable,array}
+\usepackage{xurl}
+\usepackage{listings}
+\lstset{literate={→}{{$\to$}}1 {∀}{{$\forall$}}1 {∃}{{$\exists$}}1 {∧}{{$\land$}}1 {¬}{{$\neg$}}1 {≤}{{$\le$}}1,basicstyle=\ttfamily\footnotesize,columns=fullflexible,keepspaces=true,breaklines=true,frame=single,framerule=0.2pt}
+\usepackage[hidelinks,pdfauthor={Roger Gujord},pdftitle={The base-seven Heraclitus transform: computer-assisted coverage}]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small The base-seven Heraclitus transform}
+\fancyhead[R]{\small Version 1.0.0}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\emergencystretch=1em
+\title{The base-seven Heraclitus transform\\[5pt]\large Computer-assisted coverage}
+\author{Roger Gujord\\\small ORCID: \href{https://orcid.org/0009-0006-5227-980X}{0009-0006-5227-980X}}
+\date{3 November 2026\\\small Version 1.0.0}
+\begin{document}
+\maketitle
+\begin{abstract}
+Starting at zero, the base-seven Heraclitus transform repeatedly chooses an
+unused integer at a power-of-seven distance from its current position,
+minimizing absolute value and preferring the positive integer in a tie.
+We present a proposed computer-assisted proof that this walk visits every
+integer exactly once. The argument reduces the infinite walk to a closed
+catalogue of normalized boundary states with period 36 across scales.
+An exact finite base and a uniform scale transition yield coverage of
+$[-C_k+37,C_k-37]$ by index $7^k$, where $C_k=(7^k-1)/2$ and $k\ge6$.
+The accompanying certificates have a separate Python checker; a Lean
+companion formalizes the exact rule, base, transitions and coverage.
+Conditional on the uniform transition, a first-crossing argument gives
+$\limsup_{n\to\infty}\bigl||a(n)|-n/2\bigr|/n\ge3/8$.
+That complete deviation corollary is not formalized in Lean, and equality
+remains open. This AI-assisted manuscript awaits independent human
+mathematical review.
+\end{abstract}
+
+\section*{Introduction}
+Greedy walks with restricted jump lengths combine a local choice rule with
+a global coverage problem: can a rule that always chooses the unused
+integer closest to zero eventually visit every integer? Here the allowed
+jump lengths are $1,7,49,\ldots$. The challenge is to control the complete
+visited set at arbitrarily large scales, including isolated points marked
+by earlier long jumps.
+
+Coverage for powers of two already has a public block description \cite{ref1}.
+For powers of seven, the reachable boundary states involve 74- and 130-step
+local cycles and a 36-phase description across scales. This makes the base
+a concrete setting in which to study a finite-state approach to coverage.
+The finite closure established here is specific to seven; no result for
+another odd base is assumed.
+
+The central mechanism is a uniform marked-endpoint transfer. Translation
+cycles describe long stretches of the walk; a finite repair handles the
+next previsited endpoint. Six such transfers form each ladder layer.
+Closing both the entire endpoint state and its spacing residue gives an
+induction over arbitrarily many layers, and then over successive scales.
+A repeating pattern in sampled prefixes alone would not supply this step.
+
+Section 1 states the exact rule and proposed theorem. Sections 2--7 give
+the certificate representation and universal reduction, and Section 8
+derives the conditional deviation bound. Sections 9 and 10 separate
+executed checks from proof obligations and give reproduction commands.
+Sections 11--12 discuss generalization, related work and limitations.
+The exact formal rule and coverage statement are reproduced in Section 10.
+
+
+\section{Statement and precise rule}
+\label{sec:1}
+
+Set $a(0)=0$. Having chosen distinct integers $a(0),\ldots,a(n)$, choose $a(n+1)$ among the unused integers $v$ for which $|v-a(n)|$ is a nonnegative integral power of 7. Minimize $|v|$, giving positive $v$ priority in a tie.
+
+There is always an available move: a sufficiently large power reaches outside the finite used set. Thus the definition gives an infinite sequence without repetitions.
+
+\noindent\textbf{Theorem 1 (coverage).} Every integer occurs in $a$. More precisely, put $C_k=(7^k-1)/2$. For every $k\ge6$,
+
+\begin{equation*}
+[-C_k+37,C_k-37]\subseteq\{a(0),\ldots,a(7^k)\}. \tag{1}\label{eq:coverage}
+\end{equation*}
+
+The complete state at $n=7^k$, translated by $C_k$ separately on each side of zero, has period 36 in $k$ for $k\ge6$. The direct initial check also gives the same phase table at $k=4,5$.
+
+For a fixed integer $z$ choose $k$ large enough that $|z|\le C_k-37$. Then (1) gives an occurrence of $z$. Uniqueness follows from the rule. This last implication is elementary. The substantive work is proving the finite state transition uniformly for arbitrarily large $k$.
+
+\section{States and certificates}
+\label{sec:2}
+
+A normalized half-line state is $(c,B)$. All coordinates below 0 are used or forbidden, 0 is unused, $B$ is a finite set of positive used coordinates, and the current coordinate is $c$. Thus $c<0$ or $c$ belongs to $B$. After a greedy choice $v$, adjoin $v$, let $d$ be the least missing nonnegative coordinate, and subtract $d$ from all coordinates. The new state is
+
+\begin{equation*}
+\bigl(v-d,\{x-d:x\in B\cup\{v\},\ x\ge d\}\bigr). \tag{2}\label{eq:normalize}
+\end{equation*}
+
+and the front advances by $d$. Greedy here means the \emph{least} unused half-line neighbor, not least absolute value on the signed line.
+
+The checker verifies a transition by scanning candidate integers $0,1,\ldots,v$ and testing whether the absolute distance is a power of 7 by repeated integer division. Consequently every smaller possible candidate is excluded, including candidates using larger powers. It does not import the generator's neighbor-selection function.
+
+In a signed state at scale $m=7^k$, write $C=(m-1)/2$. A point on side $s\in\{+1,-1\}$ has the form $s(C+x)$. A side record $(f,B)$ means that every positive magnitude below $C+f$ is used, $C+f$ is unused, and the additional used magnitudes are $C+x$ for $x$ in $B$. $B$ contains only values greater than $f$. The current record is $(s,x)$. Zero is always used. These records specify the entire visited set, not just a bounded sample of it.
+
+The accompanying JSON files contain every finite transition needed below, including complete transient and cycle words. They are part of the computer-assisted proof. A separate, self-contained verifier checks the stated identities and greedy choices.
+
+\section{Translation cycles and a uniform marked-point lemma}
+\label{sec:3}
+
+\noindent\textbf{Lemma 2 (translation cycle).} Suppose an exact normalized
+half-line greedy trajectory returns to its entire state $(c,B)$ after
+$P>0$ choices, with total front shift $P$. Let $D_i$ be the front shift
+before choice $i$, $v_i$ the chosen coordinate in the then-current
+normalization, and $W_i=D_i+v_i$, for $0\le i<P$. Suppose the $W_i$ give
+distinct residues modulo $P$. Then successive cycles choose $W_i+qP$,
+$q\ge0$, relative to the front at cycle entry. The certificates check all
+these finite hypotheses for the cycles used below.
+
+\emph{Proof.} After the first block the prefix below the new front is filled, the finite pattern $B$ is the same, and the current point has the same relative coordinate. Distances and order of candidates are translation invariant. Backward jumps below the front land in the filled prefix. Induction therefore repeats the identical normalized block. This is an infinite statement derived from the finite transition checks.
+
+\noindent\textbf{Lemma 3 (uniform marked-endpoint transfer).} Work relative
+to a completed marked endpoint at coordinate 0. Let $(f,c,B)$, with $f>0$,
+describe a valid half-line state: every coordinate below $f$ is used,
+$f$ is unused, the remaining used points are $f+B$, and the current point
+$f+c$ is used. Add a next previsited endpoint $h\ge2401$ and any finite set
+of later previsited endpoints, all at least $2h$. Assume that the walk
+without these additional endpoints has a checked finite transient followed
+by a cycle satisfying Lemma 2. Assume also that the marker insertion and
+finite repair described below are checked exact half-line transitions and
+satisfy the five bounds below. Then the returned finite endpoint record,
+measured relative to $h$, depends only on the initial state and $h$ modulo
+$P$. The complete used set consists of that record and its filled prefix,
+together with the untouched later endpoints. Those later endpoints do not
+affect the transfer choices or its finite output record.
+
+\emph{Proof and finite hypotheses.} Temporarily ignore the additional
+endpoints and follow the unmarked half-line walk. Let $f_*$ be the front at
+entry to its translation cycle of length $P$.
+
+There is exactly one cycle phase $i$ with
+
+\begin{equation*}
+h-f_*-W_i\equiv0\pmod P.
+\end{equation*}
+
+If $q=(h-f_*-W_i)/P\ge0$, the unmarked process first selects $h$ at that phase of cycle $q$. Declaring $h$ used from the beginning changes none of the preceding choices: until a removed candidate would have won, removing it does not change the minimum. At this instant insert the marker, without moving the current point or counting a new choice, normalize by (2), and continue until the front is strictly beyond $h$. This defines the next endpoint state.
+
+At a fixed phase $i$, the unmarked normalized state is the same in every
+cycle, and the inserted marker has normalized coordinate $v_i$. Thus its
+normalized insertion state and finite repair word are independent of $q$;
+the repair can be checked once for each input state and spacing residue.
+
+The finite endpoint record depends only on the input state and $h$ modulo
+$P$, provided the transient and repair cannot encounter a different future
+endpoint. The following bounds are checked for each certificate. They
+refer to the auxiliary walk with future markers omitted, inserting $h$
+only at the specified phase:
+
+\begin{itemize}
+\item all initially used points and transient choices are below 2000 relative to the preceding endpoint;
+\item $f_*+W_i<2000$, guaranteeing $q\ge0$ for $h\ge2401$;
+\item $\max(W)-\min(W)<2000$;
+\item immediately after inserting $h$, all used points above $h$ are less than $h$+2000;
+\item every repair choice, and every used point in the resulting endpoint state, is less than $h$+2000.
+\end{itemize}
+
+For $h\ge2401$ the initial region is before $h$. Before the marked phase, any cycle choice is at most $h+\max(W)-\min(W)<2h$. The repair also stays below $2h$. Thus no later premarked endpoint can affect any of these choices. This proves the transfer rule for \emph{every} $h\ge2401$ in its residue class, not just the large $h$ used during discovery. Choices below $h$ are unrestricted by these upper bounds and are checked by the exact half-line rule.
+
+There are 119 distinct transfer certificates in the proof. Their cycle lengths belong to $\{1,4,8,74,130\}$. The generator obtains a largest individual threshold of 376; the separate certificate audit uses the more conservative common bounds 2000 and 2401 above.
+
+The last checkpoint need not be the \emph{first} instant all numbers through $h$ are used. It is the instant specified by the marked-phase construction followed by the finite repair. This distinction is necessary because a marker can allow the actual filled front to pass $h$ before the unmarked walk would have selected $h$.
+
+\section{Arbitrarily many levels of a descending ladder}
+\label{sec:4}
+
+The local configurations needed for the signed proof have all coordinates below -100 filled and a finite used set in $[-100,100)$. An offset $A$ with $-100\le A<100$ is already used. Start at $A+7^K$, where $K\ge4$, with no other used points above the finite old region.
+
+Above level 4 the greedy descent is forced. From $A+7^{j+1}$ it visits
+
+\begin{equation*}
+A+6\cdot7^j,\ A+5\cdot7^j,\ \ldots,\ A+7^j.
+\end{equation*}
+
+A jump $7^{j+1}$ would return to the already-used $A$; at intermediate points it goes below the filled prefix. Smaller backward jumps leave a larger candidate than subtraction of $7^j$. The indicated points are unused. Forward jumps are larger. Since $|A|<100$ and $7^j\ge2401$, no ordering ambiguity arises.
+
+Consequently the high descent premarks the ladder endpoints. At the bottom, start at $A+2401$ with the old finite used set. For each of 18 explicit old configurations the checker follows the full greedy word until every coordinate through $A+2401$ is used. It checks that the largest choice is less than $A+2401+2000$. The next higher premarked endpoint is $A+2\cdot2401$, so it could not have affected this finite bottom computation.
+
+Once the endpoint $A+h$ has been completed, with $h=7^j$, six marked points remain in the next layer:
+
+\begin{equation*}
+A+2h,\ A+3h,\ \ldots,\ A+7h.
+\end{equation*}
+
+Apply the marked-point lemma six times with spacing $h$. This completes the next layer and returns another finite endpoint state. Increase $h$ to $7h$ and repeat. The certificate records this map.
+
+Let $L=\operatorname{lcm}(1,4,8,74,130)=19240$. Every relevant transfer depends only on its state and $h$ modulo a divisor of $L$, and
+
+\begin{equation*}
+7^{36}\equiv1\pmod L. \tag{3}\label{eq:period}
+\end{equation*}
+
+For 16 of the 18 entrance configurations, the layer states and the needed residues repeat after 2 layers, following at most one transient layer. For the remaining two they repeat after 36 layers, without a transient. Each repeated pair consists of the \emph{entire} endpoint state and $h$ modulo the modulus used by that ladder, either 8 or 19240. The checker verifies all six transfers at each layer and the exact closing equality. The spacing only increases, so the uniform lower bound $h\ge2401$ persists.
+
+\noindent\textbf{Proposition 4 (ladder closure).} For each of the 18
+specified entrance configurations, the checked bottom word, the six
+transfers per layer and closure of the pair (entire endpoint state,
+spacing residue) determine the endpoint at every height $K\ge4$.
+\emph{Proof.} Induct on the layer number using Lemma 3. The lower spacing
+bound persists and the exact closed pair determines the next six
+transfers. Merely seeing the visible state repeat at two sample powers
+would not suffice.
+
+The explicit entrance configurations and their cycles are listed in Appendix B. The conclusion is a conditional half-line theorem: it controls these configurations at every height. The next two sections establish that the signed process actually enters them.
+
+\section{The signed boundary rule, including all larger powers}
+\label{sec:5}
+
+Let $M$ be a large power of 7 and $C_M=(M-1)/2$. Suppose that on each side the entire used set is described by a boundary record with holes and current coordinate within 512 of $C_M$. In these coordinates a cross-side jump of length $M$ is the reflection
+
+\begin{equation*}
+(s,x)\longmapsto(-s,1-x). \tag{4}\label{eq:reflection}
+\end{equation*}
+
+The finite boundary process offers all unused same-side power neighbors and the unused reflected point. It orders the candidates by their offset, preferring side + in a tie.
+
+\noindent\textbf{Lemma 5 (signed boundary rule).} For $M\ge7^6$, with
+the complete used-set records and the bounds just specified, the finite
+boundary rule agrees with the signed greedy rule throughout each
+certified boundary word.
+\emph{Proof.} Any power below $M$ is at most $M/7$. It cannot cross zero from $C_M+x$ with $|x|<512$. If such a backward jump is too large to reach the bounded boundary region, it lands in the filled prefix; the corresponding forward jump is worse than the finite candidate supplied by the certificate. The jump $M$ is exactly (4). Any power at least $7M$ reaches a magnitude far larger than an available boundary candidate. The numerical margin $M>100000$ is more than sufficient for all these inequalities.
+
+The separate checker scans offsets in increasing order, testing side + before side -, instead of using the generator's neighbor enumeration. It checks that every current point and chosen point, and each filled-front coordinate, stays within the stated bound.
+
+\section{A uniform transition from scale $m$ to scale $7m$}
+\label{sec:6}
+
+\noindent\textbf{Proposition 6 (uniform scale transition).} Fix $k\ge6$
+and the complete input state in Appendix A whose label is congruent to
+$k$ modulo 36. Put $m=7^k$, $C=(m-1)/2$, and $D=(7m-1)/2=C+3m$.
+Starting at index $m$ in that state, the exact greedy walk reaches the
+next complete table state at index $7m$. The construction below gives
+the transition and its count uniformly in $k$.
+
+The certificate uses labels $40,\ldots,75$ for convenient representatives.
+A label is a phase modulo 36, \emph{not} a lower bound on the exponent.
+The proof is the following five-part construction; Section 7 verifies
+phase closure and supplies the exact base from zero.
+
+\subsection*{(i) Inner boundary}
+
+Apply the boundary rule at $C$ until the front on the current side has offset greater than 100. These words have 99 to 111 choices. The other side's remaining used points have offsets below 100.
+
+On the outgoing side, the half-line walk has a checked finite transient and then a translation cycle. For every transient and cycle current coordinate $x$, the checker explicitly verifies
+
+\begin{equation*}
+1-x<\text{the other side\textquotesingle s filled front}.
+\end{equation*}
+
+As the walk translates outward this remains true. Therefore a cross-side $m$ jump cannot reach an unused value. If subtracting $m$ no longer crosses zero, it instead lands in the filled prefix on the same side. Powers below $m$ are already covered by the exact half-line greedy checks. Until the first competing $7m$ jump, this outgoing walk is therefore exactly the half-line walk.
+
+\subsection*{(ii) First crossing near $D$}
+
+At cycle entry let the front be $f$ relative to $C$. Let $U_i$ and $W_i$ be the current and proposed next coordinates relative to that front in phase $i$, and let the cycle length be $P$. In cycle $q$ the opposite candidate from a $7m$ jump has offset
+
+\begin{equation*}
+6m+1-f-U_i-qP
+\end{equation*}
+
+relative to $C$. It is unused because the other side has no used points near $D$ yet. It defeats the same-side candidate $f+W_i+qP$ exactly when
+
+\begin{equation*}
+\begin{aligned}2qP&>6m+1-2f-U_i-W_i&&\text{if the current side is positive},\\2qP&\ge6m+1-2f-U_i-W_i&&\text{if the current side is negative}.\end{aligned}
+\end{equation*}
+
+Take the first pair ($q$,$i$) in chronological order satisfying this condition. Each phase threshold is an exact integer inequality. If $m$ is increased by $\Delta$ divisible by $P$, every threshold $q$ increases by $3\Delta/P$. Thus the winning phase and the entire resulting state relative to $D$ depend only on $m$ modulo $P$. No large numerical extrapolation is used here.
+
+To justify the domain of this shift, the supplementary checker solves every phase threshold at the least $k\ge6$ in its exponent class. All thresholds are positive there (the smallest is 44105), and the winning phase and complete state agree with the certificate. Every threshold increases at larger scales in the class. The initial transient has current and chosen offsets below 2000, so its $7m$ reflection cannot win. The entire winning cycle has current and chosen magnitudes at most $D+9$; earlier cycles are farther inward. Hence the opposite crossing candidate is unused, and powers at least $49m$ are too large to compete.
+
+The new point on the opposite side is $C+3m+A$ in magnitude, with $-3\le A\le3$, checked for all 36 phases. The first side is filled up to a bounded distance from $D$, and has only bounded extra used points there.
+
+\subsection*{(iii) Return through the other side's old holes}
+
+The next two choices in magnitude are $C+2m+A$ and $C+m+A$. They are unused and are better than any cross-side alternative. There are now marked endpoints at offsets $m+A$, $2m+A$, $3m+A$ on this side.
+
+If $A$ was already used in the old inner boundary, descent from $m+A$ produces precisely the ladder of Section 4. The certified input is one of its 18 configurations; the finite bottom word and layer induction give the checkpoint immediately beyond $m+A$. The layer state at height $k$ is periodic in $k$ modulo 2 or 36.
+
+If $A$ was unused, subtraction of $m$ from $m+A$ reaches $A$ directly. There is no high ladder. A checked finite word completes the old holes through $A$. Apply one marked-point transfer of spacing $m$ to reach a checkpoint past $m+A$. This exceptional case occurs only in the phase labeled 43 (equivalently $k\equiv7\pmod{36}$).
+
+In either case apply a marked-point transfer of spacing $m$ to reach a checkpoint beyond $2m+A$. The point $3m+A$ remains marked.
+
+These half-line operations are also valid signed operations. For the first two descending moves, the offered $m$ subtraction beats the possible $7m$ crossing by $m+1-2A$ and $3m+1-2A$, respectively. For the subsequent return use $H=4096$. Both current and chosen offsets from $C$ lie in $[-100,2m+H)$. The bottom computations and marker bounds give this for chosen points. The supplementary checker also bounds transient currents and verifies $\max(U)-W_i<2000$ for each marker cycle, as well as current bounds throughout each repair. Here $U$ denotes cycle current coordinates and $W_i$ the marked choice. Translation extends these bounds to every repeated cycle. The latest target is $2m+A$, and $A+2000<H$. The lower bound is checked through the finite bottom, transient and repair words; translation only increases the coordinates. The exceptional direct return has its own checked finite word. The accompanying reduction-premise checker records the corresponding current bounds.
+
+A $7m$ crossing during this return has offset at least $4m+1-H$ and loses to the local candidate because $2m+1-2H>0$ for $m\ge7^6$. If an $m$ subtraction crosses zero, its opposite offset is $1-x\le101$, which is in the already filled first-side prefix since $3m-200>101$. Powers below $m$ cannot cross zero from this region's lower endpoint $C-100$, since their maximum is $m/7$. Higher powers are worse still: $49m>2(C+3m+H)$. Same-side backward moves into the filled prefix are excluded by the half-line rule. This verifies the signed/ half-line interface, rather than assuming the two processes agree.
+
+\subsection*{(iv) Approach to the outer boundary}
+
+Temporarily ignore the last marker $3m+A$. At the checkpoint beyond $2m+A$, take the checked transient to a translation cycle of length $P$. Write $f$ for the front relative to $2m+A$ after this transient. Execute
+
+\begin{equation*}
+q=\left\lfloor\frac{m-A-256-f}{P}\right\rfloor
+\end{equation*}
+
+complete cycles. The new front relative to $D$ is
+
+\begin{equation*}
+F=-256-\bigl((m-A-256-f)\bmod P\bigr). \tag{5}\label{eq:approach}
+\end{equation*}
+
+The supplementary checker verifies $q\ge0$ at the least exponent in each class (the smallest $q$ is 1586). Increasing $m$ by a multiple of $P$ increases $q$ by that multiple divided by $P$ and preserves $F$. The remainder identity alone would not establish that $q$ is a valid number of cycles.
+
+The cycle certificate checks that its largest current or chosen coordinate, minus $P$, is less than 200. Thus every executed cycle's current and chosen offsets relative to $D$ are less than $F+200\le-56$. The transient is bounded by $2m+4096$ in offsets from $C$, also below $D-56$. Since $A\ge-3$, the already-used marker $D+A$ is not selected again. A $7m$ reflection of a current offset below -56 has offset above 57 and strictly loses to the offered local candidate. Thus ignoring the final marker was legitimate. Formula (5) and the remaining finite state depend only on $m$ modulo $P$. Restore the already-used point $D+A$ to the boundary record; this restoration does not count as a new visit.
+
+\subsection*{(v) Outer boundary and the index}
+
+Both sides now have entirely filled prefixes ending within 512 of $D$, with bounded additional used points. Use the boundary rule at scale $7m$. For records $(f_+,B_+),(f_-,B_-)$ relative to $D$, the number of used integers, including zero, is exactly
+
+\begin{equation*}
+7m-2+f_++f_-+|B_+|+|B_-|.
+\end{equation*}
+
+Therefore index $n=7m$ is reached exactly when
+
+\begin{equation*}
+f_++f_-+|B_+|+|B_-|=3. \tag{6}\label{eq:count}
+\end{equation*}
+
+The starting value in (6) is at most 3. Every greedy choice adds one to it. The separate checker follows exactly the required 256 to 276 choices, verifies all ties with positive preference, and obtains the next state in Appendix A. For the last phase the next state is the first phase. This counts actual visited integers; premarked points are never counted as additional steps.
+
+\section{Closure for all exponents and coverage}
+\label{sec:7}
+
+All translation periods used in Section 6 divide $L=19240$. All layer cycles in Section 4 divide 36 and have stabilized by height 5. By (3), replacing $k$ by $k+36$ leaves $m$ modulo every required period unchanged. Equations (4)-(6), the first-crossing inequalities, and the endpoint transfer rule consequently give the \emph{same} normalized transition for every $k$ in a given phase. All size restrictions are preserved as $k$ increases. The common bound $m\ge7^6$ ensures the finitely many initial size restrictions.
+
+The verifier checks 36 such transitions, with complete inputs and outputs, and checks that they close in order. This establishes a finite transition rule, not a comparison of two sampled orbits.
+
+For the base case a separate uncompressed implementation generates every term from $n=0$ to $n=7^6=117649$. To bound its power search, let $R$ be the greatest magnitude already used and $p$ the first power exceeding $2R$. Then $\mathrm{current}+p$ is unused. For any larger power $q\ge7p$, $|\mathrm{current}\pm q|\ge q-R>p+R$. No such power can improve the available candidate. This proves the completeness of that finite neighbor enumeration. Its 117650 terms have the SHA-256 recorded in Section 9, and its endpoint is exactly phase 6 of the table. The supplied checker recomputes this prefix directly.
+
+Induction now gives the table at every scale $k\ge6$. Its least filled-front offset is -36 on either side. Hence every magnitude at most $C_k-37$ is used, proving (1) and therefore coverage of $\mathbb Z$.
+
+The initial run also checks phases 4 and 5 directly. Combining these finite checks with the induction yields period 36 for all $k\ge4$. No claim is needed here that 36 is the smallest possible period.
+
+\section{A deviation lower bound supplied by the first crossing}
+\label{sec:8}
+
+\noindent\textbf{Corollary 7 (conditional deviation lower bound).} The uniform scale transition in Proposition 6 implies the lower bound $3/8$ in (9). The transition and first-crossing components are formalized in Lean. The complete derivation in (7)--(9), including the subsequence limit and limsup conclusion, is not formalized.
+
+The argument below is conditional on the uniform transition and does not constitute an independent proof of it. Equality in (9) remains unproved.
+
+Write $E(n)=\bigl||a(n)|-n/2\bigr|$ and $m=7^k$, $k\ge6$. Let $n_k$ be the first crossing by a step of length $7m$ in the transition from scale $m$ to $7m$. The first-exit certificate gives
+
+\begin{equation*}
+n_k=4m+\delta_k,\qquad |a(n_k)|=\frac{7m-1}{2}+A_k. \tag{7}\label{eq:crossing}
+\end{equation*}
+
+where $-3\le A_k\le3$ and $-1\le\delta_k\le12$. Both offsets are functions of $k$ modulo 36. Here is the exact count establishing the index.
+
+Immediately before the crossing, let $(F,B)$ describe the outgoing side relative to $D=(7m-1)/2$, with $B$ measured from its front, and let $(f_0,B_0)$ describe the other side relative to $C=(m-1)/2$, with $B_0$ measured from $C$. The two sides have
+
+\begin{equation*}
+D+F-1+|B|\qquad\text{and}\qquad C+f_0-1+|B_0|
+\end{equation*}
+
+used magnitudes. Include zero and the new crossing point, then subtract one to convert the number of used integers to the index. This gives
+
+\begin{equation*}
+\delta_k=F+f_0+|B|+|B_0|-2.
+\end{equation*}
+
+The new crossing point has offset $A_k$ from $D$. Substitution in $E$ gives the exact identity
+
+\begin{equation*}
+\frac{E(n_k)}{n_k}=\frac38+\frac{8A_k-4-7\delta_k}{8(4m+\delta_k)}. \tag{8}\label{eq:deviation}
+\end{equation*}
+
+The numerator of the correction is bounded, while $m$ tends to infinity. Hence $E(n_k)/n_k$ tends to $3/8$, and consequently
+
+\begin{equation*}
+\limsup_{n\to\infty}\frac{E(n)}n\ge\frac38. \tag{9}\label{eq:lower}
+\end{equation*}
+
+This is a proof of a subsequence limit from the scale-transition theorem, not an inference from a graph. It is not an upper bound for all intervening indices and does not establish equality in (9).
+
+The supplementary \path{checker/check_crossing_corollary.py} derives all 36 offset pairs, checks the count by separately assembling the finite used sets, and checks (8) with rational arithmetic. A historical compressed-trace comparison recorded agreement for all 36 phases $k=4,\ldots,39$. This supplementary numerical comparison is not rerun by the supplied checker and is not needed for the corollary.
+
+\section{What was checked by a separate implementation}
+\label{sec:9}
+
+The generator enumerates power neighbors. The separate checker uses candidate-first scanning and repeated integer division for local and boundary moves; it imports no generator code. It checks:
+
+\begin{itemize}
+\item 119 uniform marked-endpoint transfer certificates;
+\item all 18 bottom configurations and their closed layer maps;
+\item all 36 signed scale transitions and their cyclic closure;
+\item 2573 distinct exact local transitions;
+\item 640839 literal local/boundary choices, including two direct marked-from-the-start simulations for every marker certificate;
+\item a separate uncompressed initial run of 117650 signed terms;
+\item the uniform locality inequalities and the residue identities.
+\end{itemize}
+
+The initial signed prefix has SHA-256 \nolinkurl{3a9478e37859b92ba9e2a5d3a3cd1576cbba5071ceed829baae5d32b777d0c2c} when encoded as little-endian signed 64-bit integers, including $a(0)$.
+
+\begin{samepage}
+Run from the root of the extracted repository:
+
+\begin{verbatim}
+python3 scripts/verify.py
+\end{verbatim}
+\end{samepage}
+
+Python 3.9 or newer and its standard library suffice. Do not use Python's -O option: the repository checker explicitly refuses it because it disables assertion checks. Exploratory computations through $7^{75}$ provide supplementary numerical evidence; the base case used here requires only the 117650 terms specified above. The infinite conclusion depends on the uniform transition.
+
+The command also checks file identity and negative tests. See \path{docs/verification.md} for the exact map from paper claims to checks. It additionally runs \path{checker/check_reduction_obligations.py}, which checks the finite premises added in the dated reduction audit: least-scale thresholds and cycle counts, anchor separation, current-coordinate bounds, and exact signed comparison margins. The original totals above are unchanged. The Python command checks finite premises; it does not itself prove the universal reduction. The separate Lean companion formalizes the exact base, complete scale transitions and coverage implication. In particular, the two representative tests in check\_first do not themselves establish its all-spacing claim; the algebraic phase-shift argument in Section 6(ii) is essential.
+
+Regenerate the certificates without overwriting the committed copies:
+
+\begin{verbatim}
+python3 src/generate_certificate.py
+\end{verbatim}
+
+Reports are written under \path{build/}. The source package includes the fixed certificates and their checksums, together with the generation inputs and executed verification records. Reproducing the checks requires no earlier large-prefix simulation.
+
+\section{Code, certificates and reproducibility}
+\label{sec:10}
+
+The source package \cite{package}, version 1.0.0, contains this manuscript,
+exact JSON certificates and generation inputs, the separate Python checker
+and generator, Lean sources and toolchain pin, and verification evidence.
+Its complete byte inventory is \path{release-manifest.json}. The file
+\path{EXPORT_PROVENANCE.json} maps the distribution to its source inputs;
+private development commit IDs in older records are historical provenance,
+not revisions of the public repository.
+
+The version DOI assigned to the combined manuscript and verification
+package is
+\begin{quote}\small
+\mbox{\url{https://doi.org/10.5281/zenodo.23912682}}
+\end{quote}
+The project repository address is
+\begin{quote}\small
+\mbox{\url{https://github.com/gujord/heraclitus-base7}}
+\end{quote}
+The supplied archive is self-contained and requires no access to a private
+repository. The DOI, version number and manifest identify the package
+without a self-referential commit hash.
+
+The Python commands are in Section 9. With the pinned Lean toolchain,
+run from the extracted package root:
+\begin{verbatim}
+python3 scripts/verify_lean.py --isolated --clean
+\end{verbatim}
+See \path{docs/reproducibility.md} for installation and the complete
+procedure. The clean build compiles all 244 project modules after checking
+21 source bindings, then audits 4998 declarations. The package's own fresh
+build and dependent checks are recorded under
+\path{evidence/public-package/}; older records retain their historical
+scope. These are checks within this project, not independent human review.
+
+For direct comparison with the mathematical definition, the following is
+\texttt{FollowsRule} verbatim from \path{formal/Heraclitus/OriginalProblem.lean},
+in namespace \path{Heraclitus.OriginalProblem}:
+\begin{lstlisting}
+def FollowsRule (a : Nat → Int) : Prop :=
+  a 0=0 ∧ ∀ n : Nat,
+    (¬∃ i : Nat, i≤n ∧ a i=a (n+1)) ∧
+    (∃ j : Nat, (a (n+1)-a n).natAbs=7^j) ∧
+    ∀ v : Int, (¬∃ i : Nat, i≤n ∧ a i=v) →
+      (∃ j : Nat, (v-a n).natAbs=7^j) →
+      (a (n+1)).natAbs≤v.natAbs ∧
+      ((a (n+1)).natAbs=v.natAbs → v≤a (n+1))
+\end{lstlisting}
+The coverage theorem's declaration is:
+\begin{lstlisting}
+theorem coverage (a : Nat → Int) (rule : FollowsRule a) :
+    ∀ x : Int, ∃ i : Nat, a i=x ∧ ∀ j : Nat, a j=x → j=i
+\end{lstlisting}
+Here \texttt{Nat} contains zero, so the allowed exponent includes $j=0$.
+The last inequality gives the larger integer, hence the positive integer,
+priority when absolute values tie. The theorem
+\texttt{canonical\_follows\_rule} proves that the canonical sequence
+satisfies this rule. Statement fidelity and the universal reduction in
+Sections 3--7 remain the main targets for mathematical review.
+
+Code is licensed under MIT; the manuscript, documentation and certificate
+data are licensed under CC BY 4.0. The component boundaries and full texts
+are given in \path{LICENSE} and \path{LICENSES/}.
+
+\section{Generalization and limitations}
+\label{sec:11}
+
+The marked-point argument is not specific to seven: for any fixed base, a certified translation cycle gives a transfer depending on the marker spacing modulo its period. For an odd base $b$, the coordinates $C=(b^k-1)/2$ are integral, the boundary reflection is again $x\mapsto1-x$, the high descent creates $b-1$ endpoints per layer, and the two boundary scales differ by $(b-1)b^k/2$. Thus the proof architecture extends naturally to other odd bases.
+
+What does \emph{not} automatically extend is the existence of a finite closed catalogue of entrance states and marker transfers. In an unrestricted experiment, inserting arbitrary extra markers into all discovered base-seven cycles generated many additional cycles and did not close before the imposed 200000-state limit. The proof uses the 119 transfers forced by its particular ladders and scale states, not arbitrary marker patterns. This restriction must be retained in any generalization.
+
+An auxiliary check shows that a single premarked point in an otherwise clean base-seven half-line walk with incoming distance 1 through 7 always allows eventual local coverage. Its reduction has 22 marker phases and 690 normalized states, ending in cycles of lengths 1,4,8,74,130. This explains the earlier appearances of 74 and 130, but is not itself the global signed proof.
+
+The priority for another base should be to identify its reachable marker transfers and prove a finite closure, or replace that closure by a uniform hole bound. Additional large prefixes alone do not establish it. The sharp $3/8$ deviation claim requires a separate argument about the order inside scales and is not claimed.
+
+\section{Earlier work and possible novelty}
+\label{sec:12}
+
+The definition and the coverage problem belong to the existing Heraclitus-transform literature and OEIS work. OEIS A379719 gives coverage and a block description for powers of two \cite{ref1}; OEIS A383442 asks a broader coverage question \cite{ref2}. Sloane's 2025 slides discuss a general infinite-step-set/gcd criterion [4, slide 8]. In his Rutgers Experimental Math Seminar on 10 September 2026, he formulates the conjecture that the Heraclitus transform of a set $S$ of positive step sizes visits every integer if and only if $S$ is infinite and $\gcd(S)=1$ \cite{talk2026}. The 2026 slides also express doubt about sufficiency [8, slide 9]. Here $S=\{7^j:j\ge0\}$ is infinite and contains 1, so it satisfies both conditions. The present coverage argument addresses this particular set; it provides no conclusion for arbitrary step sets. None of these general ideas is claimed as new here.
+
+OEIS A377091 announces, on 29 October 2026, an AI-assisted proof for square steps under review \cite{ref3}. That announcement does not describe a powers-of-seven theorem. No manuscript for that proof was obtained during this investigation, so possible overlap with Sloane, Xausa, Karlsson or collaborators cannot be ruled out.
+
+Searches on 2 November 2026 covered the transform's name, powers of seven, odd bases, the periods 74 and 130, the signed initial prefix, the relevant OEIS entries, and the authors' names. Sloane's home page and publication list were also inspected \cite{ref5,ref6}, and the relevant 2025 slide was read and visually checked. No matching prior base-seven coverage result was found in the sources searched. Possible overlap with unpublished work remains unresolved. Search engines returned much unrelated philosophical material; this is a limitation, not positive evidence of novelty. No absence-of-results search proves priority.
+
+A bounded follow-up search on 3 November 2026 queried the OEIS JSON API
+for the signed initial prefix and for the phrases ``not yet in the
+sequence'' together with ``power of 3'', ``power of 5'' or ``power of 7''.
+These queries returned no matches. Exact queries, times, returned counts and search limitations are
+recorded in the source package. The phrase search is sensitive to wording
+and does not exclude results under different descriptions or unpublished
+overlap.
+
+The possible new content is therefore the specific base-seven coverage theorem, its exact 36-scale state law, and the explicit closed marked-endpoint mechanism. These are candidates for novelty, subject to mathematical review and comparison with unpublished work.
+
+\section*{Verification status and AI assistance}
+The argument, certificate generator, separate checker and exposition were
+developed using OpenAI Codex under Roger Gujord's direction. This is a
+personal research project; use of Codex does not imply review or endorsement
+by OpenAI. The generator and checker use different implementations, but
+were developed within the same AI-assisted project.
+
+The Python checks establish finite certificate claims. The Lean companion
+supplies the complete exact base from zero, every successive scale
+transition with full used-set endpoints and exact counts, and coverage for
+any sequence satisfying the literal original rule. The definition includes
+zero initially, unused destinations, every distance $7^j$ for $j\ge0$,
+least absolute value and positive preference in ties. A canonical sequence
+satisfying that definition is also proved to exist. Neither coverage nor
+periodicity is assumed in the rule.
+
+The recorded fresh build rebuilt 244 project modules, checked 21 source
+bindings and audited 4998 declarations. It used Lean 4.35.0 with its standard
+library. The recorded allowed axioms are \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound}. The trust boundary includes
+the compiler and kernel and, separately, correspondence of the formal
+statements to the intended mathematical problem. Exporters of finite data
+are not verified parsers; the kernel checks propositions about the literal
+data they emit. Python results and file hashes are not Lean axioms.
+
+These checks were executed within this project. Independent human
+mathematical review of Sections 3--7 and statement fidelity remains
+outstanding, as does independently performed reproduction. The complete
+first-crossing deviation argument in (7)--(9), including the subsequence
+limit and limsup conclusion, remains a manuscript argument rather than a
+Lean theorem. Equality at $3/8$, coverage for all odd bases, minimality of
+the period 36 are not claimed.
+
+The dated build and review records are supplied with the sources in
+reference~\cite{package}. They identify what was freshly compiled, what was
+reused after identity checks, and which rejection tests were executed.
+They are supporting records rather than independent endorsements.
+
+\clearpage
+\begin{thebibliography}{8}
+\bibitem{ref1} OEIS A379719, powers-of-two Heraclitus transform, R. Sigrist.
+\par\mbox{\small\url{https://oeis.org/A379719}}
+
+\bibitem{ref2} OEIS A383442, triangular-number Heraclitus transform, N. J. A. Sloane.
+\par\mbox{\small\url{https://oeis.org/A383442}}
+
+\bibitem{ref3} OEIS A377091, square-step Heraclitus transform, R. Sigrist and subsequent comments, including Sloane and Xausa's announcement.
+\par\mbox{\small\url{https://oeis.org/A377091}}
+
+\bibitem{ref4} N. J. A. Sloane, In the Footsteps of Heraclitus, REU Seminar, Rutgers University, 24 June 2025, slides, especially slide 8.
+\par\mbox{\small\url{https://neilsloane.com/doc/REU2025.pdf}}
+
+\bibitem{ref5} N. J. A. Sloane, home page and recent talks/papers.
+\par\mbox{\small\url{https://neilsloane.com/}}
+
+\bibitem{ref6} N. J. A. Sloane, publication list.
+\par\mbox{\small\url{https://neilsloane.com/doc/pub.html}}
+
+\bibitem{package} Roger Gujord, The base-seven Heraclitus transform:
+manuscript and reproducible proof package, version 1.0.0, 2026.
+\par\mbox{\small\url{https://doi.org/10.5281/zenodo.23912682}}
+\par The accompanying source
+archive includes a complete \path{release-manifest.json}.
+\par\mbox{\small\url{https://github.com/gujord/heraclitus-base7}}
+
+\bibitem{talk2026} N. J. A. Sloane, Highlights from the First 400,000
+Sequences in the OEIS, Experimental Math Seminar, Rutgers University,
+10 September 2026. Video, approximately 09:30--10:15; slides, page 9.
+\par\mbox{\small\url{https://www.youtube.com/watch?v=HAHUrfhU8Eg}}
+\par\mbox{\small\url{https://neilsloane.com/doc/EMSep2026.pdf}}
+
+\end{thebibliography}
+
+\clearpage
+\input{tables.tex}
+\end{document}

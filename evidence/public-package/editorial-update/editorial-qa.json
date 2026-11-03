@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "0e0351725c6a6f8249161932075d19f59dd63038f31529089ea2f2ee1e398c83",
+  "pages": 16,
+  "visual_review": "Pages 12, 13 and 14 inspected directly. Other 13 rendered pages match the previously inspected edition byte for byte; no layout defects found.",
+  "page_png_sha256": {
+    "page-01.png": "d7cb003b39945c562f0dc4e978a379d2b30176ace6e9bff9e42db71e14f6c408",
+    "page-02.png": "c3d76775055a9f4db91d1f287e515e3d5f1dbd4813c7edd89ecde5176b749516",
+    "page-03.png": "56470a0497385cf882084bc3ba2238dd95c6e68e5598ea588a02e1ced69d23b9",
+    "page-04.png": "0631f65fbd55b016b400080bdc5311d1918893e8aff2d8415f9483484226a372",
+    "page-05.png": "af955464c24c1b1ae251136ab4f3d23fad67484930bc702706ea03134050b2ad",
+    "page-06.png": "5f40eabd3fb9dc9f33eeca210aeca08a7c4743d3bd5b150b49441d35086c08ed",
+    "page-07.png": "c3e63e0835af5e4be1281e79ea321bc90ec0a855435e300b3a8ad262ce3033a6",
+    "page-08.png": "78a13a166110e368e85918306c25fcc899565d41f71995eeaaa5c50bfebf9210",
+    "page-09.png": "9f8cbbab89ced5f13906d5f200aecb045484d6aaf48ca41abf80797a4e070fcb",
+    "page-10.png": "506a10fdd94259eb34bbc17af22a921766ba057ff5c81be3f67d00ab182afce6",
+    "page-11.png": "15b6d0d2ddf7795874f12ce122e37872fdfa14f66041832e7988c286db4dc763",
+    "page-12.png": "f25b5b08d4cde962dd27a7966883e21bb5efd60b71552e167c4eefa65bb6b41e",
+    "page-13.png": "6fe4d26f1e6134914f5ffca3f57ebccfa62c8d6d48ef584aebd1fdce6a7ed328",
+    "page-14.png": "dfaf5b906372dcd70f563cdf3a887b692e6a2471161384ce457bbf328bb53cc4",
+    "page-15.png": "a5eb7476243b02afd95aa0dddf1238213162c3761864c6ab7475ea394bc97bac",
+    "page-16.png": "4e9f92968c404fa09a1b66fd21755f7eeaf8409c26db4733f447164b44081a92"
+  },
+  "required_link_targets": [
+    "https://www.youtube.com/watch?v=HAHUrfhU8Eg",
+    "https://neilsloane.com/doc/EMSep2026.pdf",
+    "https://doi.org/10.5281/zenodo.23912682",
+    "https://github.com/gujord/heraclitus-base7"
+  ],
+  "all_pdf_link_targets": [
+    "https://doi.org/10.5281/zenodo.23912682",
+    "https://github.com/gujord/heraclitus-base7",
+    "https://neilsloane.com/",
+    "https://neilsloane.com/doc/EMSep2026.pdf",
+    "https://neilsloane.com/doc/REU2025.pdf",
+    "https://neilsloane.com/doc/pub.html",
+    "https://oeis.org/A377091",
+    "https://oeis.org/A379719",
+    "https://oeis.org/A383442",
+    "https://orcid.org/0009-0006-5227-980X",
+    "https://www.youtube.com/watch?v=HAHUrfhU8Eg"
+  ],
+  "source": "paper/base-seven-heraclitus.tex",
+  "scope": "Editorial/rendering checks within this project; no independent mathematical review."
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "missing-coverage",
+    "rejected": "Incomplete final theorem audit"
+  },
+  {
+    "name": "missing-base-object",
+    "rejected": "Incomplete artifact receipt"
+  },
+  {
+    "name": "changed-source",
+    "rejected": "Changed source: formal/Heraclitus/OriginalProblem.lean"
+  },
+  {
+    "name": "unexpected-axiom",
+    "rejected": "Unapproved axiom"
+  },
+  {
+    "name": "not-clean",
+    "rejected": "A successful fresh isolated clean build is required"
+  }
+]

@@ -1,0 +1,14 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows00.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows01.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows02.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows03.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows04.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows05.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows06.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows07.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows08.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows09.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows10.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/TransferCatalogue/Rows11.lean

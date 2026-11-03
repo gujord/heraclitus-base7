@@ -1,0 +1,155 @@
+{
+  "status": "PASS",
+  "started_utc": "2026-11-03T10:29:05.282418+00:00",
+  "seconds": 39.468,
+  "shared_report": "/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/build/public-evidence/formal/run.json",
+  "shared_report_sha256": "a66055265b2f9b683240b60fa44beb06f16cbf5fb37b58c75a5cb1a4062818f7",
+  "toolchain_prefix_command": [
+    "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/bin/lake",
+    "env",
+    "lean",
+    "--print-prefix"
+  ],
+  "lean_executable": "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+  "fresh_complete_import_closure": false,
+  "reused_objects": 244,
+  "compiled": [
+    {
+      "source": "research/finite_base/Fixtures.lean",
+      "object": "research/finite_base/Fixtures.olean",
+      "object_sha256": "d10d3c6b99220c6e897f96e537b0cc9addebc838316e9a7aa34aeca62cccb67f"
+    },
+    {
+      "source": "research/scale_schedule/Fixtures.lean",
+      "object": "research/scale_schedule/Fixtures.olean",
+      "object_sha256": "7701e5168956810378760115589bd862512ebbf1b5d5d81ff64aa2787c9f8295"
+    }
+  ],
+  "source_sha256": {
+    "research/scale_schedule/verify_coverage.py": "6ac686a3dce6f7842cfdb072aad13afc669ab477db9b9aa6c938444ba51043af",
+    "research/finite_base/Fixtures.lean": "3141935bab5bf1df9ceb5a57029dfd2ed9a5dbca7598e2d4ed50a288fe905252",
+    "research/finite_base/verify.py": "32868009b69c0662ebf770ef10bcbf58278a33900538616b28b40738045f5d47",
+    "research/scale_schedule/Fixtures.lean": "c4d4865cc5e62c672130022c1ee908d48c0c1ee331eb626d47e240c12832dbd0",
+    "research/scale_schedule/verify.py": "f2e640520cea52f8c923c28247c95bbfefaebf1585f01babfb9469965f9cf83a"
+  },
+  "axioms": {
+    "Heraclitus.FiniteBaseFixtures.first_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.FiniteBaseFixtures.positive_tie": [
+      "propext",
+      "Quot.sound"
+    ],
+    "Heraclitus.FiniteBaseFixtures.wrong_sign": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.FiniteBaseFixtures.wrong_front": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.FiniteBaseFixtures.zero_already_used": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.FiniteBaseFixtures.far_beyond_cutoff": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.initial_exponent": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.last_before_wrap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.first_after_wrap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.exponent_after_two_periods": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.first_transition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.base_length": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.filled": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.canonical_coverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.all_walks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.canonical_checkpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.Coverage.visited_interval": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.as_walk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.from_walk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.rule_iff_walk": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.canonical_follows_rule": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.coverage": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.OriginalProblem.checkpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Heraclitus.ScaleScheduleFixtures.first_radius": []
+  },
+  "mathematical_rejections": 14,
+  "receipt_rejections": 5,
+  "scope": "Final shared receipt and copied artifacts rechecked; two fresh fixtures, 14 mathematical rejections, 24 contract/fixture audits and five receipt rejections. Literal original-rule contract printed. This is not a second full build or human review."
+}

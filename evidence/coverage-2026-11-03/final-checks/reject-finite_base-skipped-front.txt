@@ -1,0 +1,3 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/coverage-2026-11-03/final-checks/Reject_finite_base_skipped-front.lean:3:52: error: Tactic `decide` proved that the proposition
+  Claim initial { positive := true, value := 1, front := 3 }
+is false

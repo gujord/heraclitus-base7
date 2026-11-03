@@ -1,0 +1,8 @@
+{
+  "status": "binding matches",
+  "used_rows": 35,
+  "short_rows": [
+    43
+  ],
+  "bottoms": 18
+}

@@ -1,0 +1,1 @@
+Regenerated all three certificates; JSON matched and separate checks passed. Reports: /Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/build/generated-certificates

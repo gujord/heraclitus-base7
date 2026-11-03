@@ -1,0 +1,24 @@
+name: certificate checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  certificate-checks:
+    name: certificate checks passed (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.9', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check distribution inventory
+        run: python scripts/check_release.py
+      - name: Check certificates and rejection tests
+        run: python scripts/verify.py
+      - name: Regenerate and compare all certificates
+        run: python src/generate_certificate.py

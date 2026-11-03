@@ -1,0 +1,68 @@
+Public-source follow-up: Sloane's September 2026 seminar
+Date: 2026-11-03
+
+Scope
+This is a targeted source and bibliography check, not a new comprehensive
+novelty search, an independent mathematical review, or a priority claim.
+Only public sources are used below. Downloaded pages, slides and automatic
+captions are working materials, not redistributed with this package.
+
+Identification and date
+Title: Highlights from the First 400,000 Sequences in the OEIS
+Speaker: N. J. A. Sloane
+Seminar: Experimental Math Seminar, Rutgers University
+Talk date: 10 September 2026
+Video: https://www.youtube.com/watch?v=HAHUrfhU8Eg
+Seminar archive: https://sites.math.rutgers.edu/~zeilberg/expmath/archive26.html
+Slides: https://neilsloane.com/doc/EMSep2026.pdf
+The seminar archive, slide title page and video description agree on the
+talk date. YouTube's player metadata gives publishDate and uploadDate as
+2026-09-14T15:53:42-07:00, not 10 September. These are distinct dates.
+The speaker's home-page item 412 says September 10, 2025; this conflicts
+with those three sources and is treated as a date error in that listing.
+
+Checked mathematical content
+Slide 9 was extracted and visually inspected. It states the conjectural
+equivalence between coverage by the Heraclitus transform and an infinite
+positive step set with gcd 1. The same slide expresses doubt about the
+sufficiency of these conditions. The public English automatic captions,
+approximately 09:30-10:15, agree on the two conditions and equivalence.
+The manuscript paraphrases the mathematical statement; it does not quote
+informal spoken wording. No independent audio transcription is claimed.
+Powers of seven meet the two conditions because they form an infinite set
+containing 1. This project's coverage argument addresses that particular
+set and yields no conclusion for arbitrary admissible step sets.
+
+Unresolved search lead (not a verified prior result)
+The public automatic captions around 55:15-55:55 contain an audience
+remark attributed to Victor Miller about an unidentified GitHub repository
+claiming a square-step A377091 proof. No owner, repository URL, manuscript
+or proof was identified or inspected here. The existence, content and
+validity of that alleged proof remain unverified. It is not cited as prior
+work in the manuscript and is not identified with any other announcement.
+
+Queries used before the video URL was supplied
+- Sloane Heraclitus "September" "2026" seminar
+- Sloane "pretty weak conjecture"
+- Sloane Heraclitus September 10 2026 YouTube
+- "Victor Miller" "Heraclitus"
+- "Sloane" "Heraclitus" site:youtube.com
+- "Sloane" "September 10, 2026"
+- "HAHUrfhU8Eg"
+- "Sloane" "Heraclitus" seminar 2026 September
+General web search produced substantial irrelevant philosophical material
+and did not reliably identify the talk. Direct primary-source inspection
+after the supplied video URL resolved its identity. The unidentified
+repository was not resolved by these searches. No absence of search
+results establishes novelty or excludes unpublished overlap.
+
+Bibliography access check
+All six external sources in references [1]-[6], the new video and its slide
+URL opened directly. The DOI in [7] returned HTTP 404, and an unauthenticated
+request to the project GitHub URL returned HTTP 404. At this check the DOI
+was reserved and the development repository private. These are pending
+publication access points, not currently public verification resources.
+The accompanying source archive provides the reproducible materials.
+Publication must make the cited release publicly accessible and recheck
+the DOI and repository links. Machine-readable fetch results and hashes
+are recorded with the separate editorial update evidence.

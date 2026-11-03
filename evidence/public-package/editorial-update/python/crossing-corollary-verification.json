@@ -1,0 +1,232 @@
+{
+  "status": "PASS",
+  "scope": "conditional on the base-seven uniform transition proof",
+  "conclusion": "limsup E(n)/n >= 3/8; no upper bound asserted",
+  "formula": "E(n_k)/n_k = 3/8 + (8*A-4-7*delta)/(8*(4*7^k+delta))",
+  "A_range": [
+    -3,
+    3
+  ],
+  "delta_range": [
+    -1,
+    12
+  ],
+  "phases": [
+    {
+      "phase": 0,
+      "A": 3,
+      "delta": 4,
+      "correction_numerator": -8
+    },
+    {
+      "phase": 1,
+      "A": 1,
+      "delta": 3,
+      "correction_numerator": -17
+    },
+    {
+      "phase": 2,
+      "A": 0,
+      "delta": 1,
+      "correction_numerator": -11
+    },
+    {
+      "phase": 3,
+      "A": -3,
+      "delta": -1,
+      "correction_numerator": -21
+    },
+    {
+      "phase": 4,
+      "A": 2,
+      "delta": 3,
+      "correction_numerator": -9
+    },
+    {
+      "phase": 5,
+      "A": -1,
+      "delta": -1,
+      "correction_numerator": -5
+    },
+    {
+      "phase": 6,
+      "A": 2,
+      "delta": 1,
+      "correction_numerator": 5
+    },
+    {
+      "phase": 7,
+      "A": 2,
+      "delta": 0,
+      "correction_numerator": 12
+    },
+    {
+      "phase": 8,
+      "A": 0,
+      "delta": 1,
+      "correction_numerator": -11
+    },
+    {
+      "phase": 9,
+      "A": -3,
+      "delta": -1,
+      "correction_numerator": -21
+    },
+    {
+      "phase": 10,
+      "A": 2,
+      "delta": 3,
+      "correction_numerator": -9
+    },
+    {
+      "phase": 11,
+      "A": -1,
+      "delta": -1,
+      "correction_numerator": -5
+    },
+    {
+      "phase": 12,
+      "A": 2,
+      "delta": 1,
+      "correction_numerator": 5
+    },
+    {
+      "phase": 13,
+      "A": -3,
+      "delta": 9,
+      "correction_numerator": -91
+    },
+    {
+      "phase": 14,
+      "A": 1,
+      "delta": 2,
+      "correction_numerator": -10
+    },
+    {
+      "phase": 15,
+      "A": -2,
+      "delta": 0,
+      "correction_numerator": -20
+    },
+    {
+      "phase": 16,
+      "A": 3,
+      "delta": 4,
+      "correction_numerator": -8
+    },
+    {
+      "phase": 17,
+      "A": 1,
+      "delta": 3,
+      "correction_numerator": -17
+    },
+    {
+      "phase": 18,
+      "A": 0,
+      "delta": 1,
+      "correction_numerator": -11
+    },
+    {
+      "phase": 19,
+      "A": -3,
+      "delta": -1,
+      "correction_numerator": -21
+    },
+    {
+      "phase": 20,
+      "A": 2,
+      "delta": 3,
+      "correction_numerator": -9
+    },
+    {
+      "phase": 21,
+      "A": -1,
+      "delta": -1,
+      "correction_numerator": -5
+    },
+    {
+      "phase": 22,
+      "A": 2,
+      "delta": 1,
+      "correction_numerator": 5
+    },
+    {
+      "phase": 23,
+      "A": -2,
+      "delta": 4,
+      "correction_numerator": -48
+    },
+    {
+      "phase": 24,
+      "A": -2,
+      "delta": -1,
+      "correction_numerator": -13
+    },
+    {
+      "phase": 25,
+      "A": -3,
+      "delta": 1,
+      "correction_numerator": -35
+    },
+    {
+      "phase": 26,
+      "A": 2,
+      "delta": 3,
+      "correction_numerator": -9
+    },
+    {
+      "phase": 27,
+      "A": -1,
+      "delta": -1,
+      "correction_numerator": -5
+    },
+    {
+      "phase": 28,
+      "A": 2,
+      "delta": 1,
+      "correction_numerator": 5
+    },
+    {
+      "phase": 29,
+      "A": -2,
+      "delta": 12,
+      "correction_numerator": -104
+    },
+    {
+      "phase": 30,
+      "A": 0,
+      "delta": 9,
+      "correction_numerator": -67
+    },
+    {
+      "phase": 31,
+      "A": -1,
+      "delta": 1,
+      "correction_numerator": -19
+    },
+    {
+      "phase": 32,
+      "A": 0,
+      "delta": -1,
+      "correction_numerator": 3
+    },
+    {
+      "phase": 33,
+      "A": -3,
+      "delta": 1,
+      "correction_numerator": -35
+    },
+    {
+      "phase": 34,
+      "A": 1,
+      "delta": 2,
+      "correction_numerator": -10
+    },
+    {
+      "phase": 35,
+      "A": -2,
+      "delta": 0,
+      "correction_numerator": -20
+    }
+  ]
+}

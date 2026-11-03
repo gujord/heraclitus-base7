@@ -1,0 +1,12 @@
+{
+  "build_input_archive_sha256": "e3bbf3588265c48a081c152b43c0a1f85f6806a6e11fe8dd27be3a136b5e3b2c",
+  "build_input_contains_no_project_objects": true,
+  "build_inputs_matched_to_initial_archive": 272,
+  "fresh_build_command": "python3 scripts/verify_lean.py --isolated --clean --jobs 4 --output build/public-evidence/formal --lake <installed-pinned-lake>",
+  "environment": "ELAN_HOME selected the existing Lean 4.35.0 compiler/standard library; no compiled project objects were copied.",
+  "python_command": "python3 scripts/verify.py --output build/public-evidence/python",
+  "regeneration_command": "python3 src/generate_certificate.py",
+  "dependent_final_command": "python3 research/scale_schedule/verify_coverage.py --shared build/public-evidence/formal --output build/public-evidence/final-checks --lake <installed-pinned-lake>",
+  "pdf_command": "python3 scripts/build_paper.py --engine /Library/TeX/texbin/pdflatex --output build/novelty-wording-2026-11-03/latex",
+  "scope": "Commands ran locally in this AI-assisted project. Dependent final checks reuse only objects from the fresh public-package build. Not independent human reproduction."
+}

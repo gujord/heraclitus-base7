@@ -1,0 +1,57 @@
+Bounded prior-work search — 3 November 2026
+
+Scope: these are our own executed OEIS JSON API requests at the times below.
+This records the local replication, not uninspected reports from another AI.
+It supplements, and does not replace, docs/novelty-search-2026-11-02.txt.
+This distribution records queries and results below. Raw responses are retained
+in the private development evidence and are not required for reproduction
+of the mathematical checks. The original search log is preserved there.
+
+UTC: 2026-11-03T08:21:18.058497+00:00
+Query: 0,1,2,3,4,-3,-2,-1,6,5,12,11
+URL: https://oeis.org/search?q=0%2C1%2C2%2C3%2C4%2C-3%2C-2%2C-1%2C6%2C5%2C12%2C11&fmt=json
+HTTP status: 200
+Reported count: 0
+
+UTC: 2026-11-03T08:21:18.708059+00:00
+Query: "Heraclitus transform"
+URL: https://oeis.org/search?q=%22Heraclitus+transform%22&fmt=json
+HTTP status: 200
+Reported count: 6
+  A400196 — https://oeis.org/A400196
+  A399979 — https://oeis.org/A399979
+  A377092 — https://oeis.org/A377092
+  A383442 — https://oeis.org/A383442
+  A393434 — https://oeis.org/A393434
+  A400197 — https://oeis.org/A400197
+
+UTC: 2026-11-03T08:21:19.105362+00:00
+Query: "not yet in the sequence" "power of 3"
+URL: https://oeis.org/search?q=%22not+yet+in+the+sequence%22+%22power+of+3%22&fmt=json
+HTTP status: 200
+Reported count: 0
+
+UTC: 2026-11-03T08:21:19.412653+00:00
+Query: "not yet in the sequence" "power of 5"
+URL: https://oeis.org/search?q=%22not+yet+in+the+sequence%22+%22power+of+5%22&fmt=json
+HTTP status: 200
+Reported count: 0
+
+UTC: 2026-11-03T08:21:19.712113+00:00
+Query: "not yet in the sequence" "power of 7"
+URL: https://oeis.org/search?q=%22not+yet+in+the+sequence%22+%22power+of+7%22&fmt=json
+HTTP status: 200
+Reported count: 0
+
+Interpretation and limitations:
+- No matching entry was returned for the exact signed prefix or the three
+  quoted phrase combinations for powers of 3, 5 and 7.
+- Six entries match the exact phrase "Heraclitus transform". This is not
+  an exhaustive list of related sequences: the known powers-of-two entry
+  A379719 is not among these six, and A400197 is an input step set.
+- Wording variants, related results under different definitions and
+  unpublished work are not excluded. These searches do not prove novelty,
+  establish priority, or show that competing odd-base work is imminent.
+- No new manuscript of the announced square-step proof was inspected.
+- The other agent's two general web searches were not reproduced here.
+- No contact, OEIS submission or publication was performed.

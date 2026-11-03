@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Reuse unchanged completed build records; this editorial update does not rerun Lean.",
+  "original_evidence_sha256": {
+    "formal/run.json": "a66055265b2f9b683240b60fa44beb06f16cbf5fb37b58c75a5cb1a4062818f7",
+    "final-checks/run.json": "30895ed1a4b7830c6cfae07efe114fb203ec6ea0a57dd37f87b8c8d7b17a5dfe",
+    "python/run.json": "88d4dc83d7087731cfca256501d27747c2d3144e5a33cd5d616e176d273be4ad",
+    "regeneration.json": "435d512aaef988be6072a986f1e7ea44e9904e4e01eded5231a8d9ce561d6e14",
+    "summary.json": "6627f52eb98ec48176b1d62c056c5086d9d92b4b65e973e4f7d273cd65eaefab",
+    "editorial-qa.json": "8951a28850439a957ba1ed0e1a62023d0f03dd5fdc71dc19964422aaf67e395a",
+    "metadata-validation.json": "ce0ab04b8d6c1533bbd95c6d4f4edb5b41cdac37c93ce20c7180c55d895723a0"
+  }
+}

@@ -1,0 +1,4 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/Refinement.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/formal/Heraclitus/FirstCrossing.lean

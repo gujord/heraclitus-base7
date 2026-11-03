@@ -1,0 +1,36 @@
+{
+  "recorded_at_utc": "2026-11-03T10:47:46.794730+00:00",
+  "scope": "Source/reference, PDF, package checks and fresh Python verification. Original clean Lean build reused by exact hash identity.",
+  "commands": [
+    {
+      "command": "python3 scripts/build_paper.py --engine /Library/TeX/texbin/pdflatex --output build/reference-review/latex",
+      "result": "PASS; 16 pages, no overfull boxes, missing glyphs or unresolved references"
+    },
+    {
+      "command": "pdftoppm -r 100 -png paper/base-seven-heraclitus.pdf build/reference-review/rendered/page",
+      "result": "PASS; pages 12-14 inspected, remaining 13 identical"
+    },
+    {
+      "command": "python3 release/test_editorial_export.py",
+      "result": "PASS; 8 tests"
+    },
+    {
+      "command": "python3 release/test_distribution.py",
+      "result": "PASS; 7 tests"
+    },
+    {
+      "command": "python3 scripts/check_release.py",
+      "cwd": "newly exported tree",
+      "result": "PASS; 1468 inventory entries in initial editorial candidate"
+    },
+    {
+      "command": "python3 scripts/verify.py",
+      "cwd": "newly exported tree",
+      "result": "PASS; all four steps and 14 rejection tests"
+    }
+  ],
+  "changed_tool_sha256": {
+    "release/export_public.py": "0f124bee73525f864957a668c8c9615af332e802b2586dc25506786feba1cbd5",
+    "release/test_editorial_export.py": "5408dee2f3de8dd56b8472e267637f8147cf601a24b526f01b733b6c62a81c70"
+  }
+}

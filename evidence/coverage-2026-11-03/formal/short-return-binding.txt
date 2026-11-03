@@ -1,0 +1,18 @@
+{
+  "status": "binding matches",
+  "phase": 43,
+  "least_exponent": 7,
+  "anchor": 2,
+  "short_word": [
+    2,
+    1
+  ],
+  "transfer_indices": [
+    11,
+    51
+  ],
+  "transfer_keys": [
+    "[[1,-2,[]],8,7]",
+    "[[2,-1,[]],1,0]"
+  ]
+}

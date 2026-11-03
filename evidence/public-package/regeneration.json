@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "Executed regeneration from the freshly extracted public package; all three JSON files are byte-identical and the generator ran the separate checkers. Python verification and all 14 tests passed separately. This receipt freezes all Python verification/generation inputs.",
+  "command": "python3 src/generate_certificate.py",
+  "certificates": {
+    "single-marker-7.json": {
+      "sha256": "235d1ecad6cb25bfcf9fa0c3150287e6a4d7547a0576f6dcfce8d213a48855a8",
+      "bytes": 30354,
+      "byte_identical": true
+    },
+    "ladder-machine.json": {
+      "sha256": "7f9598209443ddfdf95e96b2e43bdefd1aa77e3ed55f4200f403bf5f8b7f1ffc",
+      "bytes": 1138244,
+      "byte_identical": true
+    },
+    "signed-machine.json": {
+      "sha256": "628803d23a88646f2ed78e9409beda70582a7881d45d74cd25d5ef947ddc2d53",
+      "bytes": 257146,
+      "byte_identical": true
+    }
+  },
+  "source_sha256": {
+    "VERSION": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03",
+    "certificates/ladder-machine.json": "7f9598209443ddfdf95e96b2e43bdefd1aa77e3ed55f4200f403bf5f8b7f1ffc",
+    "certificates/manifest.json": "84a4765772aa94181c1e319ff15f43c546788cbea400ce3ee9af27b1d7d47d53",
+    "certificates/signed-machine.json": "628803d23a88646f2ed78e9409beda70582a7881d45d74cd25d5ef947ddc2d53",
+    "certificates/single-marker-7.json": "235d1ecad6cb25bfcf9fa0c3150287e6a4d7547a0576f6dcfce8d213a48855a8",
+    "checker/check_certificate.py": "e90cc833f2daee7c62a0cecbd4291281814e7a1794a21ce5e0aca8852a51603b",
+    "checker/check_crossing_corollary.py": "0ed248ce2f96a4c274a0319fc3453d464ca87112e6fbcfb508f41b613275d3d3",
+    "checker/check_reduction_obligations.py": "7d2f19ec433f41672bfa391660dbd876e61cc0ac26a7776bde70ad9a1191dfd1",
+    "scripts/check_integrity.py": "9981012f3ab76a8f93dcde59447fe9d515fcce5fba799f02db0d60dea5a06e2e",
+    "scripts/verify.py": "b14d104f9b1e17d86db16808d37083d6f5efa69e3dcbd54d40b2b41988f1ce89",
+    "src/generate_certificate.py": "8a6e32374d3d5d4bb5ad92e9ce5e4313f47076347e4be49e22a7e3943fece9d4",
+    "src/inputs/base7-cont-states.jsonl": "7ac4423bd6cc4f73a2c20df51d9160abf80648839f3710296e7a412e225c7914",
+    "src/inputs/base7-prefix-states.jsonl": "f300048c3ea359c8d0766515fd92c9f187fa4e44d48a1f141c177e9e8a8f35bb",
+    "src/inputs/ladder-cores.json": "fdecbe79ce6e449b1894150c0b243eeb3238e81647278b58bbfe5f8c2d668f60",
+    "src/local_closure.py": "5a20d01a6f4ae11c5b7601ea8b701fb7acd7b6a030a4b30d746dd9b3013b5ac0",
+    "src/marker_machine.py": "7eb42118f48f5731797d81f8695b311e01a68783db9a7d9a1f399120d82f7cee",
+    "src/signed_machine.py": "3df0ff58a48ed0c2f8463c63e4ab97f00e1b523c1417b9a8b15933fba8273607",
+    "src/single_marker.py": "a1559417773232d4d598b490c9125cfc30cd46c7cf62c87d8230788e195a7697",
+    "tests/test_certificate_rejection.py": "5de32b572aa74454497569c8310881da851bab6c3ce96272cc82d2d1a6bf4cbd",
+    "tests/test_reduction_obligations.py": "8e9e2b4036f14466643a8d5ae4e5980c46a1237b428196912abd3a3221fdaba3"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "status": "certificate checks passed",
+  "version": "1.0.0",
+  "started_utc": "2026-11-03T10:46:53.166817+00:00",
+  "python": "3.9.12",
+  "implementation": "CPython",
+  "platform": "Darwin 24.6.0",
+  "integrity_files": 6,
+  "steps": [
+    {
+      "step": 1,
+      "exit_code": 0,
+      "seconds": 3.327
+    },
+    {
+      "step": 2,
+      "exit_code": 0,
+      "seconds": 0.108
+    },
+    {
+      "step": 3,
+      "exit_code": 0,
+      "seconds": 0.234
+    },
+    {
+      "step": 4,
+      "exit_code": 0,
+      "seconds": 2.494
+    }
+  ],
+  "seconds": 6.168,
+  "scope": "Finite certificate checks, direct base case, conditional corollary, supplementary reduction premises, and rejection tests. Not a formal proof or human review."
+}

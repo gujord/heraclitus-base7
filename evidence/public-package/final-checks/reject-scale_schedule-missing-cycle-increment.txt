@@ -1,0 +1,3 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/public_release/clean-build/heraclitus-base7-1.0.0/build/public-evidence/final-checks/Reject_scale_schedule_missing-cycle-increment.lean:3:108: error: Tactic `decide` proved that the proposition
+  (ScaleScheduleData.schedule.entry (index 36)).checked.link.approach.row.exponent (35 / 36) = 42
+is false

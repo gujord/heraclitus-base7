@@ -1,0 +1,33 @@
+Licensing for the base-seven Heraclitus transform release
+=======================================================
+
+Copyright (c) 2026 Roger Gujord, to the extent copyright subsists.
+
+The public distribution uses different licenses for different components:
+
+* Python and Lean source code, build/verification scripts, and workflow
+  configuration: MIT. Full text: LICENSES/MIT.txt.
+* Manuscript (PDF, LaTeX and text), documentation, bibliography, certificate
+  JSON, discovery inputs, authored reports and metadata: Creative Commons
+  Attribution 4.0 International (CC BY 4.0).
+  Full text: LICENSES/CC-BY-4.0.txt.
+
+These licenses apply by component, not as a choice between two licenses for
+the same file. Source code quoted within prose remains MIT. Mathematical
+facts are not restricted by this notice. Third-party names, citations and
+license texts retain their existing status; no rights in third-party works
+are asserted. The compiler and standard library are not bundled here and
+retain their own licenses.
+
+Private development archives (archive/) are excluded from the public
+distribution and from this license grant. They are retained unchanged for
+historical provenance. This notice grants no additional rights in them.
+
+The manuscript, programs and formalization were developed using OpenAI
+Codex under Roger Gujord's direction. See docs/provenance.md for the roles,
+executed checks and limitations. Licensing does not certify mathematical
+correctness, independent review, novelty or authorship of every expression.
+
+Suggested attribution: Roger Gujord, The base-seven Heraclitus transform:
+manuscript and reproducible proof package, version 1.0.0,
+DOI 10.5281/zenodo.23912682.

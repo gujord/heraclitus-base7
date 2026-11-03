@@ -1,0 +1,8 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases00.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases01.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases02.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases03.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases04.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom/Cases05.lean

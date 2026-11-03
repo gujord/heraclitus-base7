@@ -1,0 +1,8 @@
+{
+  "status": "binding matches",
+  "rows": 36,
+  "used_anchors": 35,
+  "unused_labels": [
+    43
+  ]
+}

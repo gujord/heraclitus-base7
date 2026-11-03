@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "scope": "Additional finite premises of the dated prose audit; requires the main certificate check. Not a formal universal proof or independent human review.",
+  "certificate_sha256": {
+    "ladder-machine.json": "7f9598209443ddfdf95e96b2e43bdefd1aa77e3ed55f4200f403bf5f8b7f1ffc",
+    "signed-machine.json": "628803d23a88646f2ed78e9409beda70582a7881d45d74cd25d5ef947ddc2d53"
+  },
+  "marker_transfers": 119,
+  "phase_count": 36,
+  "ranges": {
+    "marker_cycle_current_above_target": [
+      -1,
+      143
+    ],
+    "first_phase_threshold_minimum": [
+      44105,
+      16712865122386198462571267240462989
+    ],
+    "first_last_cycle_upper_relative_D": [
+      1,
+      9
+    ],
+    "approach_cycle_count": [
+      1586,
+      5570955040795399487523755746820968
+    ],
+    "approach_cycle_upper_minus_period": [
+      -1,
+      25
+    ],
+    "approach_transient_upper_relative_2m": [
+      -2,
+      88
+    ],
+    "approach_current_lower_relative_2m": [
+      -14,
+      4
+    ],
+    "crossing_anchor": [
+      -3,
+      3
+    ]
+  },
+  "phases": [
+    {
+      "label": 40,
+      "least_k": 40,
+      "first_q_min": 2387552160340885494653038177208988,
+      "approach_q": 795850720113628498217679392402967
+    },
+    {
+      "label": 41,
+      "least_k": 41,
+      "first_q_min": 16712865122386198462571267240462989,
+      "approach_q": 5570955040795399487523755746820968
+    },
+    {
+      "label": 42,
+      "least_k": 6,
+      "first_q_min": 44105,
+      "approach_q": 1586
+    },
+    {
+      "label": 43,
+      "least_k": 7,
+      "first_q_min": 308816,
+      "approach_q": 102910
+    },
+    {
+      "label": 44,
+      "least_k": 8,
+      "first_q_min": 17294304,
+      "approach_q": 720568
+    },
+    {
+      "label": 45,
+      "least_k": 9,
+      "first_q_min": 15132589,
+      "approach_q": 40353352
+    },
+    {
+      "label": 46,
+      "least_k": 10,
+      "first_q_min": 105928206,
+      "approach_q": 35309373
+    },
+    {
+      "label": 47,
+      "least_k": 11,
+      "first_q_min": 741497515,
+      "approach_q": 247165810
+    },
+    {
+      "label": 48,
+      "least_k": 12,
+      "first_q_min": 5190482687,
+      "approach_q": 187044417
+    },
+    {
+      "label": 49,
+      "least_k": 13,
+      "first_q_min": 36333378890,
+      "approach_q": 12111126269
+    },
+    {
+      "label": 50,
+      "least_k": 14,
+      "first_q_min": 2034669218447,
+      "approach_q": 84777884073
+    },
+    {
+      "label": 51,
+      "least_k": 15,
+      "first_q_min": 1780335566215,
+      "approach_q": 4747561509687
+    },
+    {
+      "label": 52,
+      "least_k": 16,
+      "first_q_min": 12462348963587,
+      "approach_q": 4154116321167
+    },
+    {
+      "label": 53,
+      "least_k": 17,
+      "first_q_min": 697891541961521,
+      "approach_q": 29078814248368
+    },
+    {
+      "label": 54,
+      "least_k": 18,
+      "first_q_min": 4885240793731248,
+      "approach_q": 203551699738774
+    },
+    {
+      "label": 55,
+      "least_k": 19,
+      "first_q_min": 4274585694514915,
+      "approach_q": 11398895185372888
+    },
+    {
+      "label": 56,
+      "least_k": 20,
+      "first_q_min": 29922099861604488,
+      "approach_q": 9974033287201467
+    },
+    {
+      "label": 57,
+      "least_k": 21,
+      "first_q_min": 209454699031231489,
+      "approach_q": 69818233010410468
+    },
+    {
+      "label": 58,
+      "least_k": 22,
+      "first_q_min": 1466182893218620505,
+      "approach_q": 30075546527561444
+    },
+    {
+      "label": 59,
+      "least_k": 23,
+      "first_q_min": 10263280252530343615,
+      "approach_q": 27368747340080916087
+    },
+    {
+      "label": 60,
+      "least_k": 24,
+      "first_q_min": 71842961767712405387,
+      "approach_q": 23947653922570801768
+    },
+    {
+      "label": 61,
+      "least_k": 25,
+      "first_q_min": 502900732373986837789,
+      "approach_q": 1341068619663964900552
+    },
+    {
+      "label": 62,
+      "least_k": 26,
+      "first_q_min": 3520305126617907864606,
+      "approach_q": 1173435042205969288173
+    },
+    {
+      "label": 63,
+      "least_k": 27,
+      "first_q_min": 24642135886325355052315,
+      "approach_q": 8214045295441785017410
+    },
+    {
+      "label": 64,
+      "least_k": 28,
+      "first_q_min": 172494951204277485366287,
+      "approach_q": 3538357973421076622896
+    },
+    {
+      "label": 65,
+      "least_k": 29,
+      "first_q_min": 2414929316859884795128180,
+      "approach_q": 402488219476647465854658
+    },
+    {
+      "label": 66,
+      "least_k": 30,
+      "first_q_min": 8452252609009596782948705,
+      "approach_q": 2817417536336532260982873
+    },
+    {
+      "label": 67,
+      "least_k": 31,
+      "first_q_min": 59165768263067177480641015,
+      "approach_q": 157775382034845806615042486
+    },
+    {
+      "label": 68,
+      "least_k": 32,
+      "first_q_min": 828320755682940484728974375,
+      "approach_q": 138053459280490080788162367
+    },
+    {
+      "label": 69,
+      "least_k": 33,
+      "first_q_min": 2899122644890291696551410390,
+      "approach_q": 966374214963430565517136769
+    },
+    {
+      "label": 70,
+      "least_k": 34,
+      "first_q_min": 162350868113856335006878982447,
+      "approach_q": 6764619504744013958619957573
+    },
+    {
+      "label": 71,
+      "least_k": 35,
+      "first_q_min": 142057009599624293131019109715,
+      "approach_q": 378818692265664781682717625687
+    },
+    {
+      "label": 72,
+      "least_k": 36,
+      "first_q_min": 994399067197370051917133768087,
+      "approach_q": 331466355732456683972377922667
+    },
+    {
+      "label": 73,
+      "least_k": 37,
+      "first_q_min": 55686347763052722907359491013521,
+      "approach_q": 2320264490127196787806645458868
+    },
+    {
+      "label": 74,
+      "least_k": 38,
+      "first_q_min": 389804434341369060351516437095248,
+      "approach_q": 16241851430890377514646518212274
+    },
+    {
+      "label": 75,
+      "least_k": 39,
+      "first_q_min": 341078880048697927807576882458415,
+      "approach_q": 909543680129861140820205019888888
+    }
+  ]
+}

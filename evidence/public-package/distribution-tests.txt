@@ -1,0 +1,12 @@
+test_changed_certificate (test_distribution.DistributionBoundaryTests) ... ok
+test_local_build_outputs_allowed (test_distribution.DistributionBoundaryTests) ... ok
+test_manifest_path_escape (test_distribution.DistributionBoundaryTests) ... ok
+test_missing_exporter (test_distribution.DistributionBoundaryTests) ... ok
+test_symlink_rejected (test_distribution.DistributionBoundaryTests) ... ok
+test_unlisted_private_note (test_distribution.DistributionBoundaryTests) ... ok
+test_valid_distribution (test_distribution.DistributionBoundaryTests) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 6.385s
+
+OK

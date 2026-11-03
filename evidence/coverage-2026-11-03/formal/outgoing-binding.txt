@@ -1,0 +1,6 @@
+{
+  "status": "binding matches",
+  "rows": 36,
+  "phases": 231,
+  "transient_steps": 0
+}

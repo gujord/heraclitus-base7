@@ -1,0 +1,19 @@
+def Heraclitus.OriginalProblem.FollowsRule : (Nat → Int) → Prop :=
+fun a =>
+  a 0 = 0 ∧
+    ∀ (n : Nat),
+      (¬∃ i, i ≤ n ∧ a i = a (n + 1)) ∧
+        (∃ j, (a (n + 1) - a n).natAbs = 7 ^ j) ∧
+          ∀ (v : Int),
+            (¬∃ i, i ≤ n ∧ a i = v) →
+              (∃ j, (v - a n).natAbs = 7 ^ j) →
+                (a (n + 1)).natAbs ≤ v.natAbs ∧ ((a (n + 1)).natAbs = v.natAbs → v ≤ a (n + 1))
+Heraclitus.OriginalProblem.rule_iff_walk (a : Nat → Int) :
+  Heraclitus.OriginalProblem.FollowsRule a ↔ Heraclitus.GlobalWalk.IsWalk a
+Heraclitus.OriginalProblem.canonical_follows_rule :
+  Heraclitus.OriginalProblem.FollowsRule Heraclitus.GlobalWalk.sequence
+Heraclitus.OriginalProblem.coverage (a : Nat → Int) (rule : Heraclitus.OriginalProblem.FollowsRule a) (x : Int) :
+  ∃ i, a i = x ∧ ∀ (j : Nat), a j = x → j = i
+Heraclitus.OriginalProblem.checkpoint (a : Nat → Int) (rule : Heraclitus.OriginalProblem.FollowsRule a) (k : Nat)
+  (large : 6 ≤ k) (x : Int) (low : -((↑(7 ^ k) - 1) / 2) + 37 ≤ x) (high : x ≤ (↑(7 ^ k) - 1) / 2 - 37) :
+  ∃ i, i ≤ 7 ^ k ∧ a i = x

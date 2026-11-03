@@ -1,0 +1,1 @@
+PASS: 36 approach rows bound to 8 checked transient/cycle pairs

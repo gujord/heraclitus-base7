@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "checked_archive_sha256": "2e73d1e30ef3fefddf01ce24d35d245b02825cb026d7ced14b9172d0c66b62c7",
+  "checked_files": 1469,
+  "forbidden_paths": [],
+  "message_file_extensions": [
+    ".eml",
+    ".mbox",
+    ".msg"
+  ],
+  "email_address_pattern_matches": [],
+  "matching_archive_contents_over_256_bytes": [],
+  "pdf_text_address_scan": "Passed separately in editorial QA.",
+  "scope": "Automated path, text-pattern and byte-identity checks of the exported ZIP. Manual review of author attributions and matching technical language is recorded separately.",
+  "manual_review": "The four correspondence matches describe mathematical or statement correspondence. Named external authors occur in public-source attributions, search records and unresolved-overlap qualifications; no claim of their review, approval or endorsement was found. The introduction is self-contained."
+}

@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "sha256": "00592757b25954dab3003f4e5cbbff268c19d88793d728fcb198303c5c8ada1f",
+  "bytes": 2423758,
+  "scope": "Two fresh source exports with the same source/worktree input produce identical ZIP bytes. Final proof evidence was not yet included."
+}

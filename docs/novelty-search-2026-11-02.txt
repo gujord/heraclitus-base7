@@ -1,0 +1,59 @@
+PRIOR-WORK SEARCH, 2 NOVEMBER 2026
+
+Scope: base-seven Heraclitus coverage, the 36-scale state law, and
+finite marked-endpoint transfer methods. Read-only research; no messages
+or submissions were sent.
+
+Queries included:
+  "Heraclitus transform" "coverage" powers
+  "Heraclitus" "Xausa" "Karlsson" mathematics
+  "greedy walk" "powers of seven"
+  "Heraclitus transform" powers odd bases
+  "Heraclitus" "Sloane" "Xausa" powers
+  "Heraclitus" "seven" site:oeis.org
+  "Heraclitus transform" "74" "130"
+  "Heraclitus" "powers of seven"
+  "Sloane" "Xausa" Heraclitus paper proof
+  "Heraclitus" "Xausa" site:arxiv.org
+  "Heraclitus transform" permutation powers 7 2026
+  "0, 1, 2, 3, 4, -3, -2, -1, 6, 5" sequence
+  "Heraclitus" "odd bases" mathematics
+  "Heraclitus" "Xausa" "Karlsson" proof
+  "powers of 7" "greedy" "integer"
+
+Primary pages actually inspected:
+  https://oeis.org/A379719
+    Powers-of-two coverage and block structure are already stated there.
+  https://oeis.org/A383442
+    General Heraclitus definition and a broad coverage conjecture.
+  https://oeis.org/A377091
+    29 October 2026 announcement of an AI-assisted square-step proof
+    under review. No powers-of-seven claim or manuscript was supplied
+    by the entry viewed.
+  https://neilsloane.com/
+  https://neilsloane.com/doc/pub.html
+    Current home/publication lists inspected. A search of the retrieved
+    publication-list text found no Xausa match. The Heraclitus item
+    found there was the 24 June 2025 REU talk.
+  https://neilsloane.com/doc/REU2025.pdf
+    Downloaded and text-searched; the full relevant slide 8 was rendered
+    and visually read. It poses the broader infinite-step-set/gcd
+    question while also expressing doubt about that general conjecture.
+    It does not provide the base-seven result considered here.
+
+The indexed search result for a claimed factorial-coverage proof at
+trureturing.org was also noticed. That is a different allowed step set
+and its claimed formal source was not audited in this base-seven task.
+No conclusion about the correctness or priority of that claim is made.
+
+RESULT
+
+No matching prior theorem for powers-of-seven coverage, the particular
+36-scale law, or the 119-transfer construction was found in the material
+retrieved. Most exact-name queries also returned unrelated philosophy.
+That weak search coverage limits the conclusion. It does not certify
+novelty, and does not exclude unpublished work by Sloane, Xausa, Karlsson
+or others. Their square-step manuscript has not been obtained or compared.
+
+At the time of this search, the proof draft was private. No priority claim
+was established by this search.

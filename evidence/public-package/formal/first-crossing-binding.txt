@@ -1,0 +1,6 @@
+{
+  "status": "binding matches",
+  "rows": 36,
+  "phase_comparisons": 231,
+  "source_sha256": "628803d23a88646f2ed78e9409beda70582a7881d45d74cd25d5ef947ddc2d53"
+}

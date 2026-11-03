@@ -1,0 +1,103 @@
+{
+  "checked_date": "2026-11-03",
+  "links": [
+    {
+      "url": "https://oeis.org/A379719",
+      "checked_at_utc": "2026-11-03T10:41:44.592346+00:00",
+      "status": 200,
+      "final_url": "https://oeis.org/A379719",
+      "bytes": 19374,
+      "sha256": "ef8f44d9bc362b9cae82ee4ad4b6fdfc13aae3a5ad16ff40e61c2ee018912437"
+    },
+    {
+      "url": "https://oeis.org/A383442",
+      "checked_at_utc": "2026-11-03T10:41:44.593057+00:00",
+      "status": 200,
+      "final_url": "https://oeis.org/A383442",
+      "bytes": 18416,
+      "sha256": "702bf52051403e4a0eebd594578c5072837150f6b8809ccc2f7fc0a4be10720e"
+    },
+    {
+      "url": "https://oeis.org/A377091",
+      "checked_at_utc": "2026-11-03T10:41:44.593295+00:00",
+      "status": 200,
+      "final_url": "https://oeis.org/A377091",
+      "bytes": 34696,
+      "sha256": "0cf6a8d4d3aa964fa73ca17d14f772bc63812723cc599568e02c622dbe3cd7ab"
+    },
+    {
+      "url": "https://neilsloane.com/doc/REU2025.pdf",
+      "checked_at_utc": "2026-11-03T10:41:44.593510+00:00",
+      "status": 200,
+      "final_url": "https://neilsloane.com/doc/REU2025.pdf",
+      "bytes": 8302428,
+      "sha256": "4a52d80cd342b88eec5f95a59a272836041c8b6d53d6781067268a6c474d2c45"
+    },
+    {
+      "url": "https://neilsloane.com/",
+      "checked_at_utc": "2026-11-03T10:41:44.593731+00:00",
+      "status": 200,
+      "final_url": "https://neilsloane.com/",
+      "bytes": 39962,
+      "sha256": "0d32f7bbac8769b6fdc8010d57605131158f9881e6592aebc86de08a1c55fdb4"
+    },
+    {
+      "url": "https://neilsloane.com/doc/pub.html",
+      "checked_at_utc": "2026-11-03T10:41:44.593953+00:00",
+      "status": 200,
+      "final_url": "https://neilsloane.com/doc/pub.html",
+      "bytes": 181462,
+      "sha256": "f2a8e8430fae5b75a362577909e8d1856101fa5079766ba438ecbe8e065208b4"
+    },
+    {
+      "url": "https://doi.org/10.5281/zenodo.23912682",
+      "checked_at_utc": "2026-11-03T10:41:44.594165+00:00",
+      "status": 404,
+      "final_url": "https://doi.org/10.5281/zenodo.23912682"
+    },
+    {
+      "url": "https://github.com/gujord/heraclitus-base7",
+      "checked_at_utc": "2026-11-03T10:41:44.594442+00:00",
+      "status": 404,
+      "final_url": "https://github.com/gujord/heraclitus-base7"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=HAHUrfhU8Eg",
+      "status": 200,
+      "body_bytes": 1169647,
+      "body_sha256": "12ee10db761330fd83f31687b1c29d3d3a3a9db4233dbded7185ac61a68e8b8a",
+      "verification_recorded_at_utc": "2026-11-03T10:45:19.943597+00:00"
+    },
+    {
+      "url": "https://neilsloane.com/doc/EMSep2026.pdf",
+      "status": 200,
+      "body_bytes": 48697704,
+      "body_sha256": "045ccddd59c986d31c2d31492e968006716621cd062c6775b3e9e1ad6525879a",
+      "verification_recorded_at_utc": "2026-11-03T10:45:19.943597+00:00"
+    },
+    {
+      "url": "https://sites.math.rutgers.edu/~zeilberg/expmath/archive26.html",
+      "status": 200,
+      "body_bytes": 30538,
+      "body_sha256": "53f4f5372ee2dc0776f83a0f258f81ee4284313a14e7aba9314aed8ccbecdf95",
+      "verification_recorded_at_utc": "2026-11-03T10:45:19.943597+00:00"
+    }
+  ],
+  "pending_public_access": [
+    "https://doi.org/10.5281/zenodo.23912682",
+    "https://github.com/gujord/heraclitus-base7"
+  ],
+  "talk": {
+    "title": "Highlights from the First 400,000 Sequences in the OEIS",
+    "speaker": "N. J. A. Sloane",
+    "seminar": "Experimental Math Seminar, Rutgers University",
+    "talk_date": "2026-09-10",
+    "youtube_upload_and_publish_date": "2026-09-14T15:53:42-07:00",
+    "slide_page_inspected": 9,
+    "title_page_date_checked": true,
+    "caption_interval": "09:30-10:15",
+    "automatic_caption_sha256": "fd37da7ed5b850b9337de1360887ae0bb7ae8b355142ec5ebd4aab515696a23a",
+    "audio_transcription_independently_checked": false
+  },
+  "scope": "Public references only. Full web pages, slides and automatic transcripts are not redistributed. DOI and repository access must be rechecked after publication."
+}

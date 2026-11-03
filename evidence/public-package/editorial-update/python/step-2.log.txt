@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "conditional on the base-seven uniform transition proof",
+  "conclusion": "limsup E(n)/n >= 3/8; no upper bound asserted",
+  "formula": "E(n_k)/n_k = 3/8 + (8*A-4-7*delta)/(8*(4*7^k+delta))",
+  "A_range": [
+    -3,
+    3
+  ],
+  "delta_range": [
+    -1,
+    12
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "scope": "Fresh reproduction from an extracted public package, plus editorial/source preservation checks. Same project and machine; not independent human review.",
+  "lean_modules": 244,
+  "axiom_audits": 4998,
+  "source_bindings": 21,
+  "lean_seconds": 2366.554,
+  "lean_source_hashes": 272,
+  "mathematical_rejections": 14,
+  "receipt_rejections": 5,
+  "numbered_equations_unchanged": 9,
+  "remaining_displays_unchanged": 19,
+  "removed_displays": "Four unnumbered displays in the removed comparison with the excluded gap note.",
+  "appendix_rows_unchanged": 54,
+  "literal_lean_definition_and_coverage_declaration_match": true,
+  "protected_file_count": 3032,
+  "formal_tree_unchanged_since": "56095dfcd85c8947709b2a11365461e11a86fd9e",
+  "manuscript_sha256": {
+    "paper/base-seven-heraclitus.tex": "1b9681411dd2a757a72f2c4e6ad6b58bdf5db4dbb6efc504a7f36e7c9d7df8c7",
+    "paper/base-seven-heraclitus.pdf": "51b76aa0cde5420dc14260557c3312b38c347e96f0aef2824aa92662850cd4d4",
+    "paper/base-seven-heraclitus.txt": "3c65f01f87ff3cfc59f653cb4e5781125aee6f20f65e8661523b75e574d5d7d4",
+    "paper/tables.tex": "3807b44d95b40038c9711c4d068f376277bae051c6246415b8fdc37f3b6e949f",
+    "paper/references.bib": "1aa7aa3d1dfcddcf32ee72c72a7debaf7c023c8b7b038fc505b4940b2dbb6c43"
+  },
+  "license_and_schema_sha256": {
+    "LICENSES/MIT.txt": "858ec502a9104f8c7a58e6150ae0d4811017c44f033980e86c1c94fb63ce0759",
+    "LICENSES/CC-BY-4.0.txt": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+    "build/public_release/cff-schema.json": "17bc7993c67b95eec988dadca78b65cb29cd489d1fceba71040a141dfb9791df"
+  }
+}

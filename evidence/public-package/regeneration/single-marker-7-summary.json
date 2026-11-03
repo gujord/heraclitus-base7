@@ -1,0 +1,24 @@
+{
+  "base": 7,
+  "incoming_cases": 7,
+  "marker_cases": 22,
+  "states": 690,
+  "root_periods": [
+    1,
+    8,
+    8,
+    4
+  ],
+  "resulting_periods": [
+    1,
+    8,
+    8,
+    4,
+    130,
+    74
+  ],
+  "max_used_coordinate": 54,
+  "min_current": -38,
+  "max_current": 54,
+  "max_candidate": 54
+}

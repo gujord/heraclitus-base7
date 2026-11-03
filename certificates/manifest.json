@@ -1,0 +1,31 @@
+{
+  "files": {
+    "certificates/ladder-machine.json": {
+      "bytes": 1138244,
+      "sha256": "7f9598209443ddfdf95e96b2e43bdefd1aa77e3ed55f4200f403bf5f8b7f1ffc"
+    },
+    "certificates/signed-machine.json": {
+      "bytes": 257146,
+      "sha256": "628803d23a88646f2ed78e9409beda70582a7881d45d74cd25d5ef947ddc2d53"
+    },
+    "certificates/single-marker-7.json": {
+      "bytes": 30354,
+      "sha256": "235d1ecad6cb25bfcf9fa0c3150287e6a4d7547a0576f6dcfce8d213a48855a8"
+    },
+    "src/inputs/base7-cont-states.jsonl": {
+      "bytes": 13453,
+      "sha256": "7ac4423bd6cc4f73a2c20df51d9160abf80648839f3710296e7a412e225c7914"
+    },
+    "src/inputs/base7-prefix-states.jsonl": {
+      "bytes": 24548,
+      "sha256": "f300048c3ea359c8d0766515fd92c9f187fa4e44d48a1f141c177e9e8a8f35bb"
+    },
+    "src/inputs/ladder-cores.json": {
+      "bytes": 86885,
+      "sha256": "fdecbe79ce6e449b1894150c0b243eeb3238e81647278b58bbfe5f8c2d668f60"
+    }
+  },
+  "schema_version": 1,
+  "scope": "Byte identity of the three certificates and their bundled generation inputs; not a mathematical proof.",
+  "version": "1.0.0"
+}

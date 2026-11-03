@@ -1,0 +1,80 @@
+{
+  "base": 7,
+  "incoming_cases": 7,
+  "marker_cases": 22,
+  "states": 690,
+  "root_periods": [
+    1,
+    8,
+    8,
+    4
+  ],
+  "resulting_periods": [
+    1,
+    8,
+    8,
+    4,
+    130,
+    74
+  ],
+  "max_used_coordinate": 54,
+  "min_current": -38,
+  "max_current": 54,
+  "max_candidate": 54
+}
+case 4 2 modulus 8 transient 1 period 2 certificates 8
+case 5 -1 modulus 8 transient 1 period 2 certificates 8
+case 6 2 modulus 19240 transient 0 period 36 certificates 106
+case 8 0 modulus 8 transient 1 period 2 certificates 106
+case 9 -3 modulus 8 transient 0 period 2 certificates 106
+case 13 -3 modulus 8 transient 1 period 2 certificates 106
+case 14 1 modulus 8 transient 0 period 2 certificates 106
+case 15 -2 modulus 8 transient 0 period 2 certificates 106
+case 16 3 modulus 8 transient 0 period 2 certificates 106
+case 17 1 modulus 8 transient 1 period 2 certificates 106
+case 23 -2 modulus 8 transient 0 period 2 certificates 106
+case 24 -2 modulus 8 transient 1 period 2 certificates 106
+case 25 -3 modulus 8 transient 0 period 2 certificates 106
+case 29 -2 modulus 19240 transient 0 period 36 certificates 119
+case 30 0 modulus 8 transient 0 period 2 certificates 119
+case 31 -1 modulus 8 transient 0 period 2 certificates 119
+case 32 0 modulus 8 transient 0 period 2 certificates 119
+case 33 -3 modulus 8 transient 1 period 2 certificates 119
+DONE 18 cases 119 certificates
+40 entry 2 ladder True periods 8 8 inner/outer 101 262 MATCH
+41 entry -1 ladder True periods 8 8 inner/outer 103 266 MATCH
+42 entry 2 ladder True periods 8 74 inner/outer 105 276 MATCH
+43 entry 2 ladder False periods 8 8 inner/outer 100 261 MATCH
+44 entry 0 ladder True periods 1 8 inner/outer 99 256 MATCH
+45 entry -3 ladder True periods 8 1 inner/outer 104 258 MATCH
+46 entry 2 ladder True periods 8 8 inner/outer 101 262 MATCH
+47 entry -1 ladder True periods 8 8 inner/outer 103 266 MATCH
+48 entry 2 ladder True periods 8 74 inner/outer 105 258 MATCH
+49 entry -3 ladder True periods 8 8 inner/outer 108 256 MATCH
+50 entry 1 ladder True periods 1 8 inner/outer 101 259 MATCH
+51 entry -2 ladder True periods 8 1 inner/outer 104 258 MATCH
+52 entry 3 ladder True periods 8 8 inner/outer 107 257 MATCH
+53 entry 1 ladder True periods 1 8 inner/outer 102 262 MATCH
+54 entry 0 ladder True periods 1 8 inner/outer 99 256 MATCH
+55 entry -3 ladder True periods 8 1 inner/outer 104 258 MATCH
+56 entry 2 ladder True periods 8 8 inner/outer 101 262 MATCH
+57 entry -1 ladder True periods 8 8 inner/outer 103 266 MATCH
+58 entry 2 ladder True periods 8 130 inner/outer 105 256 MATCH
+59 entry -2 ladder True periods 8 1 inner/outer 108 258 MATCH
+60 entry -2 ladder True periods 8 8 inner/outer 101 260 MATCH
+61 entry -3 ladder True periods 8 1 inner/outer 106 258 MATCH
+62 entry 2 ladder True periods 8 8 inner/outer 101 262 MATCH
+63 entry -1 ladder True periods 8 8 inner/outer 103 266 MATCH
+64 entry 2 ladder True periods 8 130 inner/outer 105 261 MATCH
+65 entry -2 ladder True periods 4 8 inner/outer 111 260 MATCH
+66 entry 0 ladder True periods 8 8 inner/outer 108 260 MATCH
+67 entry -1 ladder True periods 8 1 inner/outer 106 260 MATCH
+68 entry 0 ladder True periods 4 8 inner/outer 100 262 MATCH
+69 entry -3 ladder True periods 8 8 inner/outer 100 258 MATCH
+70 entry 1 ladder True periods 1 8 inner/outer 101 259 MATCH
+71 entry -2 ladder True periods 8 1 inner/outer 104 258 MATCH
+72 entry 3 ladder True periods 8 8 inner/outer 107 257 MATCH
+73 entry 1 ladder True periods 1 8 inner/outer 102 262 MATCH
+74 entry 0 ladder True periods 1 8 inner/outer 99 256 MATCH
+75 entry -3 ladder True periods 8 1 inner/outer 104 258 MATCH
+DONE 36 scale transitions 8 new marker certificates 0 new ladders

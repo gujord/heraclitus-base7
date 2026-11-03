@@ -1,0 +1,4 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/ReturnBridge.lean
+/Users/rogerg/ai/math/heraclitus-base7/formal/Heraclitus/LadderBottom.lean

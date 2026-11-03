@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "Citation/editorial update. Existing clean Lean and Python build records retained unchanged and linked by hash; no new Lean build.",
+  "baseline_commit": "c435ccd95edee1907de16fcbb9c51819eeb81e9b",
+  "sections_1_to_11_and_introduction_unchanged": true,
+  "verification_status_unchanged": true,
+  "numbered_equations_unchanged": 9,
+  "displays_unchanged": 19,
+  "appendix_rows_unchanged": 54,
+  "protected_file_count": 3618,
+  "lean_build_inputs_unchanged": 272,
+  "formal_tree_unchanged_since": "56095dfcd85c8947709b2a11365461e11a86fd9e",
+  "manuscript_sha256": {
+    "paper/base-seven-heraclitus.tex": "bbd36a3de7d805fb2f3442dd858a38b42d0f074b9daf8b7dfec731678036cea2",
+    "paper/base-seven-heraclitus.pdf": "0e0351725c6a6f8249161932075d19f59dd63038f31529089ea2f2ee1e398c83",
+    "paper/base-seven-heraclitus.txt": "cf43922226e0cef0bd01091c59c82a2109f12379ea61c219ad1e20eda7506c23",
+    "paper/tables.tex": "3807b44d95b40038c9711c4d068f376277bae051c6246415b8fdc37f3b6e949f",
+    "paper/references.bib": "e1d741e95fb388487749ab530aa9b9c6bbf043ca430f23cee93f2b7c84dcb361"
+  },
+  "fresh_python_check": "PASS from the newly exported tree; all 14 rejection tests included. No new regeneration or Lean build.",
+  "editorial_export_tests": 8,
+  "distribution_tests": 7
+}
