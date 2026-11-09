@@ -1,0 +1,3 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-radius.lean:3:47: error: Tactic `decide` proved that the proposition
+  ScaleInduction.radius 7 = 411772
+is false

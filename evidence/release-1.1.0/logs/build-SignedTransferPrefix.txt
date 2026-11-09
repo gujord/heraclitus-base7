@@ -1,0 +1,2 @@
+'Heraclitus.UpperTransferPrefix.actual_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperTransferPrefix.actual_transfer_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,3 @@
+'Heraclitus.PhysicalTail.points_mem' depends on axioms: [propext, Quot.sound]
+'Heraclitus.PhysicalTail.points_nodup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.PhysicalTail.count_le_cover' depends on axioms: [propext, Classical.choice, Quot.sound]

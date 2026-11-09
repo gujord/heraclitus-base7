@@ -1,0 +1,7 @@
+'Heraclitus.RoutePrefix.word_take' depends on axioms: [propext]
+'Heraclitus.RoutePrefix.connected_take' does not depend on any axioms
+'Heraclitus.RoutePrefix.checked_route_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.RoutePrefix.marked_checked_route_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.RoutePrefix.execute_lift_ray' depends on axioms: [propext, Quot.sound]
+'Heraclitus.RoutePrefix.signed_marked_route_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.RoutePrefix.actual_signed_route_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]

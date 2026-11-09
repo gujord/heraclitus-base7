@@ -1,0 +1,142 @@
+[
+  {
+    "name": "finite_base/negative-tie",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_negative-tie.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_negative-tie.lean:3:53: error: Tactic `decide` proved that the proposition\n  Claim initial { positive := false, value := 1, front := 2 }\nis false\n"
+  },
+  {
+    "name": "finite_base/skipped-front",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_skipped-front.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_skipped-front.lean:3:52: error: Tactic `decide` proved that the proposition\n  Claim initial { positive := true, value := 1, front := 3 }\nis false\n"
+  },
+  {
+    "name": "finite_base/revisit-zero",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_revisit-zero.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_revisit-zero.lean:3:69: error: Tactic `decide` proved that the proposition\n  Claim FiniteBaseFixtures.first { positive := true, value := 0, front := 2 }\nis false\n"
+  },
+  {
+    "name": "finite_base/too-large",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_too-large.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_too-large.lean:3:57: error: Tactic `decide` proved that the proposition\n  Claim initial { positive := true, value := 823543, front := 1 }\nis false\n"
+  },
+  {
+    "name": "finite_base/changed-current-hint",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_changed-current-hint.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_changed-current-hint.lean:3:89: error: Tactic `decide` proved that the proposition\n  traceCheck initial\n      [let __src := FiniteBaseFixtures.first;\n        { positive := __src.positive, current := 2, pos := __src.pos, neg := __src.neg }] =\n    true\nis false\n"
+  },
+  {
+    "name": "finite_base/invented-opposite-point",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_invented-opposite-point.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_invented-opposite-point.lean:3:92: error: Tactic `decide` proved that the proposition\n  traceCheck initial\n      [let __src := FiniteBaseFixtures.first;\n        { positive := __src.positive, current := __src.current, pos := __src.pos,\n          neg := { front := 1, extra := [3] } }] =\n    true\nis false\n"
+  },
+  {
+    "name": "finite_base/dropped-opposite-point",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_dropped-opposite-point.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_dropped-opposite-point.lean:3:92: error: Tactic `decide` proved that the proposition\n  traceCheck\n      (let __src := initial;\n      { positive := __src.positive, current := __src.current, pos := __src.pos, neg := { front := 1, extra := [3] } })\n      [FiniteBaseFixtures.first] =\n    true\nis false\n"
+  },
+  {
+    "name": "finite_base/omitted-visit",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_omitted-visit.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_omitted-visit.lean:3:68: error: Tactic `decide` proved that the proposition\n  traceCheck initial [FiniteBaseFixtures.second] = true\nis false\n"
+  },
+  {
+    "name": "scale_schedule/wrong-first-exponent",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-first-exponent.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-first-exponent.lean:3:100: error: Tactic `decide` proved that the proposition\n  (ScaleScheduleData.schedule.entry (index 0)).checked.link.approach.row.exponent 0 = 5\nis false\n"
+  },
+  {
+    "name": "scale_schedule/missing-cycle-increment",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_missing-cycle-increment.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_missing-cycle-increment.lean:3:108: error: Tactic `decide` proved that the proposition\n  (ScaleScheduleData.schedule.entry (index 36)).checked.link.approach.row.exponent (35 / 36) = 42\nis false\n"
+  },
+  {
+    "name": "scale_schedule/wrong-35-period",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-35-period.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-35-period.lean:3:33: error: Tactic `decide` proved that the proposition\n  index 0 = index 35\nis false\n"
+  },
+  {
+    "name": "scale_schedule/wrong-37-period",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-37-period.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-37-period.lean:3:33: error: Tactic `decide` proved that the proposition\n  index 0 = index 37\nis false\n"
+  },
+  {
+    "name": "scale_schedule/wrong-radius",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-radius.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-radius.lean:3:47: error: Tactic `decide` proved that the proposition\n  ScaleInduction.radius 7 = 411772\nis false\n"
+  },
+  {
+    "name": "scale_schedule/wrong-next-radius",
+    "command": [
+      "/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/lean",
+      "-DwarningAsError=true",
+      "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-next-radius.lean"
+    ],
+    "exit_code": 1,
+    "diagnostic": "/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_scale_schedule_wrong-next-radius.lean:3:72: error: Tactic `decide` proved that the proposition\n  ScaleInduction.radius 7 = ScaleInduction.radius 6 + 3 * 7 ^ 6 + 1\nis false\n"
+  }
+]

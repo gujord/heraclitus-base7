@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Cite the supplied version of this AI-assisted manuscript and reproducible proof package. The license field describes the software: MIT for code, CC BY 4.0 for prose and data, by component as specified in LICENSE. See docs/provenance.md for verification scope."
+title: "The base-seven Heraclitus transform: manuscript and reproducible proof package"
+type: software
+authors:
+  - family-names: Gujord
+    given-names: Roger
+    orcid: "https://orcid.org/0009-0006-5227-980X"
+version: 1.1.0
+license: MIT
+repository-code: "https://github.com/gujord/heraclitus-base7"
+abstract: "Local, unpublished 1.1.0 candidate: proposed computer-assisted coverage proof and exact original-rule rational-epsilon 3/8 equality contract, with complete Lean sources and a fresh-build workflow. Independent human mathematical review remains outstanding. No real-analysis library limsup API theorem or novelty claim is asserted."
+keywords:
+  - Heraclitus transform
+  - greedy integer walks
+  - computer-assisted proof
+  - powers of seven

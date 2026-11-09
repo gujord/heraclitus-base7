@@ -1,0 +1,6 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_changed-current-hint.lean:3:89: error: Tactic `decide` proved that the proposition
+  traceCheck initial
+      [let __src := FiniteBaseFixtures.first;
+        { positive := __src.positive, current := 2, pos := __src.pos, neg := __src.neg }] =
+    true
+is false

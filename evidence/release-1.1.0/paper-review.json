@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "pdf_pages": 19,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "overfull_boxes": 0,
+  "unresolved_references": 0,
+  "mathematical_source_unchanged": true,
+  "comparison": "Previous completed 1.1.0-dev manuscript retained in the private reference snapshot; only version labels and Section 10 reproduction text changed.",
+  "display_equations_preserved": 27,
+  "files": {
+    "paper/references.bib": "e1d741e95fb388487749ab530aa9b9c6bbf043ca430f23cee93f2b7c84dcb361",
+    "paper/base-seven-heraclitus.pdf": "037ae2816567796faf5ccd8b9a854d924e2ab93cf3266efb1ff2ffeb60b2f63d",
+    "paper/tables.tex": "3807b44d95b40038c9711c4d068f376277bae051c6246415b8fdc37f3b6e949f",
+    "paper/base-seven-heraclitus.txt": "35eaa9af57eb8563e75155aa9797bbb6cac835763bf1aa8f3077d169e72f5094",
+    "paper/base-seven-heraclitus.tex": "4369cfc73aa519cf0d3d32400c2f836c7aa7e2e19f933662cd1c68e4eabec8c4"
+  }
+}

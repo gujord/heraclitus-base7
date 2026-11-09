@@ -1,0 +1,2 @@
+'Heraclitus.ActualLowerBound.original_rule_crossing_defect' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.ActualLowerBound.original_rule_frequent_lower' depends on axioms: [propext, Classical.choice, Quot.sound]

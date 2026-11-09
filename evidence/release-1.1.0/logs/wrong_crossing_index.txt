@@ -1,0 +1,3 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/tests/release-probes/wrong_crossing_index.lean:4:89: error: Tactic `decide` proved that the proposition
+  Heraclitus.UpperScaleAssembly.crossingIndex ⟨0, ⋯⟩ 0 44105 = 470598
+is false

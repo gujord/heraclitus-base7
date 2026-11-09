@@ -1,0 +1,3 @@
+'Heraclitus.UpperTransferPrefix.catalogue_prefixes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperTransferPrefix.catalogue_uniform' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperTransferPrefix.actual_catalogue_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

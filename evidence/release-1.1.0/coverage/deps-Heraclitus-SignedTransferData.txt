@@ -1,0 +1,4 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/lean-tools/elan/toolchains/leanprover--lean4---v4.35.0/bin/../src/lean/Init.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/formal/Heraclitus/SignedTransfer.lean
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/formal/Heraclitus/TransferCatalogueData.lean

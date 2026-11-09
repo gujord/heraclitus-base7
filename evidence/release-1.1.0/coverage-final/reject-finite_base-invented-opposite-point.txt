@@ -1,0 +1,7 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_invented-opposite-point.lean:3:92: error: Tactic `decide` proved that the proposition
+  traceCheck initial
+      [let __src := FiniteBaseFixtures.first;
+        { positive := __src.positive, current := __src.current, pos := __src.pos,
+          neg := { front := 1, extra := [3] } }] =
+    true
+is false

@@ -1,0 +1,2 @@
+'Heraclitus.CrossingArithmetic.crossing_identity' depends on axioms: [propext, Quot.sound]
+'Heraclitus.CrossingArithmetic.crossing_error_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]

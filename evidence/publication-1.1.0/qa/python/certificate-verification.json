@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "single_marker": {
+    "states": 690,
+    "marker_cases": 22,
+    "status": "PASS"
+  },
+  "unique_marker_certificates": 119,
+  "ladder_cases": 18,
+  "signed_scale_transitions": 36,
+  "separate_direct_edge_checks": 2573,
+  "separate_literal_moves": 640839,
+  "uniform_spacing_minimum": 2401,
+  "checked_locality_bound": 2000,
+  "residue_modulus": 19240,
+  "exponent_period": 36,
+  "scale_start": 6,
+  "guaranteed_core_margin": 37,
+  "base_terms": 117650,
+  "base_sha256": "3a9478e37859b92ba9e2a5d3a3cd1576cbba5071ceed829baae5d32b777d0c2c",
+  "scope": "finite certificate audit plus the universal lemmas in the accompanying proof; no human or proof-assistant review"
+}

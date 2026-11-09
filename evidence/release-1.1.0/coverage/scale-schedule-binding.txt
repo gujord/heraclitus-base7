@@ -1,0 +1,1 @@
+PASS: all 36 successive exponent classes match the generated schedule

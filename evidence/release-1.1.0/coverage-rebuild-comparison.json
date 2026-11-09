@@ -1,0 +1,10 @@
+{
+  "first_receipt_sha256": "710e83aaae391a5119107869d0b6802619eda8c2c1ec742cab26a1547d90ffd8",
+  "fresh_coverage_builds": 2,
+  "identical_axiom_audits": 4998,
+  "identical_object_files": 244,
+  "identical_source_files": 272,
+  "scope": "Two separately fresh same-compiler coverage builds, not independent human review.",
+  "second_receipt_sha256": "424a519042560bf9c53ecc1eb6411098d27ed09d76fc9a1c9622235c7dc6d6a0",
+  "status": "PASS"
+}

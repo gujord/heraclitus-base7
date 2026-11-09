@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "date": "2026-11-09",
+  "version": "1.1.0",
+  "proof_source_files_unchanged": 353,
+  "full_lean_build_repeated": false,
+  "prior_fresh_project_modules": 351,
+  "publication_controls_passed": 10,
+  "python": "certificate checks passed",
+  "regeneration": "PASS",
+  "historical_evidence_files_preserved": 1160,
+  "paper_pages": 19,
+  "paper_all_pages_rendered_and_visually_reviewed": true,
+  "paper_overfull_boxes": 0,
+  "paper_unresolved_references": 0,
+  "paper_mathematical_source_unchanged": true,
+  "paper_sha256": {
+    "paper/base-seven-heraclitus.pdf": "9851683b92ec3e87c62e57abb26fdd34e189b6ae658d0bf841734fc98a87a964",
+    "paper/base-seven-heraclitus.tex": "6ffcb9611422b8637910b37eb618b98f7402b435a96554598659ef7a7a8a15e4",
+    "paper/base-seven-heraclitus.txt": "6dacb1c6020d4584be20f4f053bef6bb1bd16b2036ac8173e0f81c5f7537c574",
+    "paper/references.bib": "e1d741e95fb388487749ab530aa9b9c6bbf043ca430f23cee93f2b7c84dcb361",
+    "paper/tables.tex": "3807b44d95b40038c9711c4d068f376277bae051c6246415b8fdc37f3b6e949f"
+  },
+  "protected_preexisting_files_unchanged": 4996,
+  "note": "First packaging check correctly rejected the historical coverage README binding against the current 1.1.0 guide. The old README binding is now checked against the preserved 1.0.0 manifest; the current guide is separately checked against the complete 1.1.0 clean-build receipt. All mathematical bindings remain exact. Both cases have negative controls."
+}

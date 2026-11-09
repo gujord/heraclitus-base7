@@ -1,0 +1,5 @@
+'Heraclitus.ReturnEnvelopeArithmetic.conditional_defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.ReturnEnvelopeArithmetic.conditional_deviation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.ReturnEnvelopeArithmetic.conditional_simple_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

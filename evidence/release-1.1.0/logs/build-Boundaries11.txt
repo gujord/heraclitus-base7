@@ -1,0 +1,6 @@
+'Heraclitus.UpperBoundaryPrefix.row73_inner_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.row73_outer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.row74_inner_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.row74_outer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.row75_inner_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.row75_outer_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

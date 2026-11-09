@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "first_run_status": "FAIL",
+  "reason": "Coverage Audit and research Audit used the same output path. Corrected by separate complete roots; all original tests retained.",
+  "proof_source_changes": 0,
+  "changed_distribution_files": [
+    "EXPORT_PROVENANCE.json",
+    "research/README.md",
+    "scripts/rebuild_release.py"
+  ],
+  "first_failed_report_sha256": "7138594742ed6608eab1f11dd9494074f7c20e445b53d4d5499fe85d0cffc956"
+}

@@ -1,0 +1,2 @@
+'Heraclitus.DescentBottomBound.defects' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.DescentBottomBound.short_defects' depends on axioms: [propext, Classical.choice, Quot.sound]

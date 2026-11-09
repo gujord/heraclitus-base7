@@ -1,0 +1,3 @@
+'Heraclitus.UpperLadderPrefix.chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperLadderPrefix.one_layer' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperLadderPrefix.tower' depends on axioms: [propext, Classical.choice, Quot.sound]

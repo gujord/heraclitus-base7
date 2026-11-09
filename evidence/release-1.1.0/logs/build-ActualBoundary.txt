@@ -1,0 +1,4 @@
+'Heraclitus.UpperBoundaryPrefix.actual_catalogue_boundary_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Heraclitus.UpperBoundaryPrefix.actual_catalogue_boundary' depends on axioms: [propext, Classical.choice, Quot.sound]

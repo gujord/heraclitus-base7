@@ -1,0 +1,3 @@
+'Heraclitus.UpperReturnGeometry.original_rule_return_geometry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

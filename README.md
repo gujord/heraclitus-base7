@@ -1,32 +1,27 @@
 # The base-seven Heraclitus transform
 
-**Version 1.0.0 — manuscript and reproducible proof package.**
+**Version 1.1.0 — 9 November 2026.**
 
-A proposed computer-assisted proof that the greedy walk with jumps
-`1, 7, 49, ...` visits every integer exactly once. The package contains the
-manuscript, exact certificates, a separate Python checker and generators,
-and a Lean formalization of the literal rule, finite base and complete
-coverage theorem. It was developed using OpenAI Codex under Roger Gujord's
-direction and has not received independent human mathematical review.
+Set `a(0)=0`. From `a(n)`, choose an unused integer at distance `7^j`,
+`j>=0`, of least absolute value; prefer positive values in ties.
 
-Read the [manuscript](paper/base-seven-heraclitus.pdf), then the
-[verification scope](docs/verification.md) and [reproduction instructions](docs/reproducibility.md).
-The complete deviation derivation (7)–(9) is not formalized in Lean.
-Equality at 3/8 and general odd-base coverage remain unproved. No matching
-prior base-seven coverage result was found in the sources searched;
-possible overlap with unpublished work remains unresolved.
+This package contains the proposed computer-assisted coverage proof and the
+completed exact rational-epsilon **3/8 equality contract** for this rule.
+Independent human review of the manuscript, universal reduction and formal
+statement fidelity remains outstanding. No novelty claim is made here.
 
-## Exact rule
+With `E(n)=||a(n)|-n/2|`, the added proof establishes
+`8E(n)-3n <= 32771+6*(k-4)` for every `k>=6` and
+`7^k<=n<=7^(k+1)`. It combines eventual upper bounds with arbitrarily late
+lower witnesses. `Heraclitus.UpperScaleAssembly.original_rule_three_eighths`
+inhabits `Heraclitus.UpperMachineAudit.OriginalRuleThreeEighths` from the
+literal original rule, with no additional transition, time, radius or tail
+hypothesis. This is the exact rational-epsilon formulation of limsup 3/8;
+no real-analysis library limsup API conversion is claimed.
 
-Start at `a(0)=0`. From `a(n)`, choose an unused integer `v` with
-`|v-a(n)|=7^j`, `j>=0`, minimizing `|v|`; prefer the positive integer in a
-tie. The coverage theorem applies to this literal rule. For every `k>=6`,
-the used set through index `7^k` contains `[-C_k+37, C_k-37]`, where
-`C_k=(7^k-1)/2`. See `formal/Heraclitus/OriginalProblem.lean`.
+## Reproduce
 
-## Run
-
-Python 3.9 or newer; only the standard library is required for these checks:
+Python >=3.9, standard library only:
 
 ```sh
 python3 scripts/check_release.py
@@ -34,51 +29,28 @@ python3 scripts/verify.py
 python3 src/generate_certificate.py
 ```
 
-The first checks distribution integrity. The second checks certificates,
-the direct finite base, exact corollary calculations and rejection tests.
-The third regenerates the certificates into `build/` and compares them to
-the supplied originals. These commands do not compile the Lean proof.
-
-With the pinned Lean toolchain installed, run separately:
+With the pinned Lean 4.35.0 toolchain installed:
 
 ```sh
-python3 scripts/verify_lean.py --isolated --clean
+python3 scripts/rebuild_release.py --jobs 4
 ```
 
-This performs 21 source bindings, a fresh 244-module build and 4,998 axiom
-audits. The [Lean guide](formal/README.md) describes the trust boundary.
-The bundled CI workflow runs **distribution integrity, Python certificate checks and regeneration**;
-its green status does not represent a Lean build.
+This builds all **351 project modules** from source: 244 coverage modules
+and 107 research modules. It audits 4,998 coverage declarations and 1,595
+research theorem statements/axiom lists, checks 21 coverage source bindings,
+and runs the Python and Lean rejection controls. It imports no prior project
+objects. See [reproduction](docs/reproducibility.md),
+[verification scope](docs/verification.md), and [release notes](docs/release-1.1.0.md).
+The complete clean-build receipts are in `evidence/release-1.1.0/`.
+Publication-only changes and their exact link to that build are recorded in
+`evidence/publication-1.1.0/`. Earlier public evidence is preserved unchanged.
 
-## Package layout
+Read the [paper](paper/base-seven-heraclitus.pdf),
+[authoritative LaTeX](paper/base-seven-heraclitus.tex),
+[proof guide](research/README.md), and [provenance](docs/provenance.md).
+The inventory `release-manifest.json` checks exact bytes, not truth.
 
-| Directory | Purpose |
-|---|---|
-| `paper/` | PDF, editable LaTeX, generated search text and bibliography |
-| `formal/` | Complete Lean proof sources and pinned toolchain |
-| `certificates/` | Three unchanged mathematical certificates and scoped integrity manifest |
-| `checker/`, `src/`, `tests/` | Separate checker, generators, generation inputs and rejection tests |
-| `research/` | Required data exporters and final contract/rejection fixtures |
-| `docs/` | Reproduction, statement review, provenance and bounded prior-work search |
-| `evidence/public-package/` | Clean package build/check records; later editorial review in `editorial-update/` |
-| `evidence/coverage-2026-11-03/` | Unmodified historical coverage build and final-check records |
-
-The three earlier gap/base-3/base-5 drafts are not included or assumed.
-The package does not require access to the private development repository.
-Historical reports may contain private commit IDs and machine paths;
-[provenance](docs/provenance.md) explains their scope.
-The [reference review](docs/reference-review-2026-11-03.md) records the
-September 2026 seminar citation and the remaining publication-access checks.
-
-## Citation and licenses
-
-Roger Gujord, *The base-seven Heraclitus transform: manuscript and
-reproducible proof package*, version 1.0.0. Version DOI:
-[10.5281/zenodo.23912682](https://doi.org/10.5281/zenodo.23912682).
-Project repository: [gujord/heraclitus-base7](https://github.com/gujord/heraclitus-base7).
-The source archive is self-contained and requires no repository access.
-
-**MIT for code; CC BY 4.0 for prose and data**, by component.
-See [LICENSE](LICENSE) and [CITATION.cff](CITATION.cff).
-`release-manifest.json` inventories all distributed bytes except itself;
-`EXPORT_PROVENANCE.json` records the actual source mapping.
+Code: MIT. Prose/data: CC BY 4.0, by component in [LICENSE](LICENSE).
+The historical DOI [10.5281/zenodo.23912682](https://doi.org/10.5281/zenodo.23912682)
+identifies **1.0.0 only**. No DOI has been assigned to version 1.1.0.
+The public repository is [gujord/heraclitus-base7](https://github.com/gujord/heraclitus-base7).

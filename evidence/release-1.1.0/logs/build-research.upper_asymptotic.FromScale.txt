@@ -1,0 +1,4 @@
+'Heraclitus.UpperAsymptotic.eventual_upper_of_scale_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperAsymptotic.eventual_upper_of_proposed_envelope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -3,8 +3,10 @@
 This directory formalizes the literal base-seven greedy rule, its canonical
 sequence, the exact finite base, all successive scale transitions and coverage
 of every integer. The manuscript remains a proposed computer-assisted proof
-pending independent human mathematical review. The complete deviation argument
-in equations (7)–(9), including the limsup lower bound, is not formalized.
+pending independent human mathematical review. The separate research extension now proves the exact original-rule
+rational-epsilon 3/8 equality contract. For the entire 351-module chain run
+`python3 scripts/rebuild_release.py --jobs 4` from the package root.
+The commands below check only the 244-module coverage component.
 
 ## Reproduce
 

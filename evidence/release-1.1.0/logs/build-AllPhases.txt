@@ -1,0 +1,3 @@
+'Heraclitus.UpperPhaseBridge.reached_entrance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperPhaseBridge.original_rule_all_phase_routes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperPhaseBridge.original_rule_all_scales' depends on axioms: [propext, Classical.choice, Quot.sound]

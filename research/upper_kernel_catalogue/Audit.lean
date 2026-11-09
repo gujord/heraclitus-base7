@@ -1,0 +1,19 @@
+import Catalogue
+import Bottoms
+
+#print axioms Heraclitus.UpperKernelCatalogue.transfer_route_bounds
+#print axioms Heraclitus.UpperKernelCatalogue.matches_sound
+#print axioms Heraclitus.UpperKernelCatalogue.checkLocals_sound
+#print axioms Heraclitus.UpperKernelCatalogue.allLocal_prefix
+#print axioms Heraclitus.UpperKernelCatalogue.allLocal_append
+#print axioms Heraclitus.UpperKernelCatalogue.route_allLocal
+#print axioms Heraclitus.UpperKernelCatalogue.bottom_allLocal
+#print axioms Heraclitus.UpperKernelCatalogue.all_transfers
+#print axioms Heraclitus.UpperKernelCatalogue.signed_markers_bound
+#print axioms Heraclitus.UpperKernelCatalogue.all_approaches
+#print axioms Heraclitus.UpperKernelCatalogue.all_bottoms
+#print axioms Heraclitus.UpperKernelCatalogue.all_bottom_prefixes
+
+#check Heraclitus.UpperKernelCatalogue.all_transfers
+#check Heraclitus.UpperKernelCatalogue.signed_markers_bound
+#check Heraclitus.UpperKernelCatalogue.all_bottom_prefixes

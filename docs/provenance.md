@@ -1,94 +1,36 @@
-# Provenance and distribution scope
+# Provenance and trust
 
-Roger Gujord directed this personal research project. OpenAI Codex was used
-to develop the argument, manuscript, generator, separate checker and Lean
-formalization. Their differing implementations are not independent human
-review. OpenAI has not reviewed or endorsed the result.
+Roger Gujord's base-seven research uses AI-assisted development. Version 1.1.0
+packages the completed exact original-rule rational-epsilon 3/8 contract,
+the manuscript and a portable fresh-build workflow.
 
-Version 1.0.0 was prepared locally for a manual Zenodo deposit under
-version DOI `10.5281/zenodo.23912682`, reserved before the export.
-The export record describes the preparation state at that time; it is not
-a claim of priority confirmation or independently performed reproduction.
+The immutable `evidence/release-1.1.0/report.json` records the complete clean
+candidate build: 351 freshly compiled project modules, no prior project
+objects, complete axiom audits, source bindings and rejection controls.
+It binds the candidate's original input bytes. The final release removes
+prerelease labels, rebuilds the paper and updates publication metadata and
+distribution integrity checking. The full Lean build was not repeated for
+these editorial changes. All proof sources, certificates, mathematical
+checkers and the complete-build runner remain byte-identical to that run.
 
-## Deterministic export
+`evidence/publication-1.1.0/promotion.json` records the exact before/after
+hashes and retains the original changed inputs and candidate manifest.
+The integrity check permits only the listed editorial files to differ and
+also checks the precise permitted manuscript wording replacements.
+`EXPORT_PROVENANCE.json` records final inputs; `release-manifest.json`
+identifies every final distribution byte. Python verification, regeneration,
+publication rejection controls and PDF review were run again for publication.
+The 1,160 historical public evidence files are retained byte for byte with
+their original scopes; they are not relabelled as fresh 1.1.0 evidence.
 
-The development tool `release/export_public.py` selects explicit source
-paths and overlays public-facing documentation, without copying Git
-history, build caches, agent instructions, coordination files or archives.
-`EXPORT_PROVENANCE.json` records the private base commit, worktree status
-and source-file hash map actually used. It separately records the one
-derived integrity manifest and the version substitution. The public
-`release-manifest.json` inventories every distributed file except itself.
-ZIP entries are sorted and carry fixed timestamps and permissions.
+The full build is same-project, AI-operated reproduction, not independent
+human review. The runner needs no historical compiled objects or private
+paths. Independent review of the universal reduction and formal statement
+fidelity remains outstanding.
 
-The three earlier gap/base-3/base-5 notes are excluded because they are
-separate unrevised drafts. The present manuscript neither cites nor assumes
-them. All private archive bytes are preserved in the development repository.
-Their absence from this package is not a claim about their results.
-
-The public certificate manifest retains the six original entries for the
-three mathematical certificates and three generation inputs, with exactly
-their original sizes and hashes. Archive entries are omitted explicitly;
-no mathematical certificate or verification logic is changed. The original
-development manifest remains unchanged. Public documentation is an overlay;
-in particular the shorter `formal/README.md` is a documented difference from
-historical source receipts. All 244 Lean source files remain unchanged.
-
-## Build records
-
-The new build ran from a freshly extracted public ZIP, with no project
-objects copied in. Only the installed pinned compiler/standard library
-were reused. `evidence/public-package/formal/run.json` records the actual
-inputs and compiled object hashes. The final export must match all its
-source hashes even if manuscript and metadata work finished during the
-build. Dependent final checks reuse only hash-validated objects from that
-build, and are described separately in their receipt.
-
-`evidence/coverage-2026-11-03/` contains unmodified historical build and
-final-check reports from the private development tree. Absolute machine
-paths and private Git commit IDs inside old reports identify that historical
-execution, not public repository revisions or files required on a reader's
-machine. They are retained byte for byte for traceability. No old report is
-rewritten to appear to come from the public package.
-
-Later citation and manuscript checks are stored in
-`evidence/public-package/editorial-update/` when present. Their link record
-identifies the original build reports by hash; the original reports remain
-unchanged. The export still requires all 272 Lean build inputs and every
-checked Python input to match. An editorial update is not a new Lean build.
-
-## Manuscript changes and old references
-
-The release presentation makes the base-seven argument self-contained,
-numbers the key statements and reproduces the literal Lean contract.
-The nine numbered mathematical equations and both certificate-derived
-appendix tables are retained. The earlier comparison with the separate gap
-note is removed with its references. Historical reports refer to the older
-section numbering:
-
-| Older manuscript | This edition |
-|---|---|
-| Sections 1–7 | Sections 1–7 |
-| Section 7a | Section 8 (deviation lower bound) |
-| Section 8 | Section 9 (Python checks) |
-| Section 8a | Section 10 (package and formal contract) |
-| Sections 9 and 10 | Sections 11 and 12 |
-| Section 10a and references [7]–[9] | Removed; separate unrevised notes excluded |
-| Reference [10] | Reference [7], the versioned package |
-
-The old evidence speaks to the sources it identifies. It is not a review of
-later prose changes. The new editorial checks are recorded separately.
-
-## Licenses and metadata
-
-Roger selected CC BY 4.0 for text and data and MIT for code. See `LICENSE`
-for component boundaries. The CFF and `.zenodo.json` single software-license
-field describes the code (MIT); their descriptions explicitly identify the
-CC BY prose/data components. A CFF license array would mean alternative
-licenses for the same work, so it is not used to express this split.
-For the manual Zenodo record, add both licenses and preserve the component
-description. The DOI is a reserved version DOI, not a concept DOI.
-
-No independent human mathematical review or independently performed clean
-reproduction has yet been obtained. Review statement fidelity and Sections
-3–7; the complete first-crossing deviation derivation remains outside Lean.
+Version 1.0.0 was published on 3 November 2026. Its DOI
+10.5281/zenodo.23912682 does not identify 1.1.0. Version 1.1.0 is released
+on GitHub; no new DOI or Zenodo publication is claimed. Code is MIT and
+prose/data CC BY 4.0. No private history or archived notes are included.
+The bounded prior-work searches retain their historical dates and limitations;
+possible unpublished overlap remains unresolved. No novelty claim is added.

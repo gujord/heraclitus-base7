@@ -1,0 +1,21 @@
+{
+  "optimized": {
+    "exit_code": 1,
+    "intended_diagnostic": "Optimized Python prohibited",
+    "status": "PASS"
+  },
+  "existing-output": {
+    "exit_code": 1,
+    "intended_diagnostic": "Use a NEW directory",
+    "status": "PASS"
+  },
+  "wrong-compiler": {
+    "exit_code": 1,
+    "intended_diagnostic": "Wrong Lean version",
+    "status": "PASS"
+  },
+  "failed_run_cannot_leave_PASS": {
+    "status": "PASS"
+  },
+  "workflow_sha256": "2200ea8bf5a0064a8acabac04dfcc2cc11002fb42c7541bdcbf4a88517d339d6"
+}

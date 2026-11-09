@@ -1,0 +1,2 @@
+'Heraclitus.UpperScaleAssembly.original_rule_scale_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperScaleAssembly.original_rule_three_eighths' depends on axioms: [propext, Classical.choice, Quot.sound]

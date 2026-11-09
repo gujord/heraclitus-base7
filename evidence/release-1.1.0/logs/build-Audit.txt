@@ -1,0 +1,25 @@
+'Heraclitus.UpperKernelCatalogue.transfer_route_bounds' depends on axioms: [propext]
+'Heraclitus.UpperKernelCatalogue.matches_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.checkLocals_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.allLocal_prefix' does not depend on any axioms
+'Heraclitus.UpperKernelCatalogue.allLocal_append' does not depend on any axioms
+'Heraclitus.UpperKernelCatalogue.route_allLocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.bottom_allLocal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.all_transfers' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.signed_markers_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.all_approaches' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.all_bottoms' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperKernelCatalogue.all_bottom_prefixes' depends on axioms: [propext, Classical.choice, Quot.sound]
+Heraclitus.UpperKernelCatalogue.all_transfers (c : Heraclitus.TransferCertificate.CheckedTransfer) :
+  c ∈ Heraclitus.TransferCatalogue.catalogue →
+    Heraclitus.UpperKernelCatalogue.nodesBound 53 (Heraclitus.UpperKernelCatalogue.transferNodes c.transfer)
+Heraclitus.UpperKernelCatalogue.signed_markers_bound (c : Heraclitus.TransferCertificate.CheckedTransfer) :
+  c ∈ Heraclitus.UpperKernelCatalogue.signedMarkerRows →
+    Heraclitus.UpperKernelCatalogue.nodesBound 43 (Heraclitus.UpperKernelCatalogue.transferNodes c.transfer)
+Heraclitus.UpperKernelCatalogue.all_bottom_prefixes (c : Heraclitus.LadderBottom.CheckedBottom) :
+  c ∈ Heraclitus.LadderBottomData.catalogue →
+    ∀ (i : Nat),
+      i ≤ c.bottom.word.length →
+        Heraclitus.UpperKernelCatalogue.HasLocal 53
+          (Heraclitus.execute (Heraclitus.LadderDescent.start c.bottom.entrance.entrance.old 2401)
+            (List.take i c.bottom.word))

@@ -1,14 +1,23 @@
 {
   "title": "The base-seven Heraclitus transform: manuscript and reproducible proof package",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "upload_type": "software",
   "language": "eng",
   "creators": [
-    {"name": "Gujord, Roger", "orcid": "0009-0006-5227-980X"}
+    {
+      "name": "Gujord, Roger",
+      "orcid": "0009-0006-5227-980X"
+    }
   ],
-  "description": "<p>AI-assisted research package for the base-seven Heraclitus transform: an exact greedy walk starting at zero, using jumps 7^j for j &gt;= 0 to unused integers, minimizing absolute value with positive preference in ties. Includes the manuscript, finite certificates, separate Python checker and generators, and a Lean formalization of the literal rule, finite base, all scale transitions and coverage of every integer.</p><p>The manuscript remains a proposed computer-assisted proof pending independent human mathematical review. The complete first-crossing deviation derivation (7)-(9) and limsup lower bound 3/8 are not formalized in Lean; equality remains unproved. No matching prior base-seven coverage result was found in the sources searched; possible overlap with unpublished work remains unresolved.</p><p>Licenses apply by component: MIT for Python/Lean code and scripts; CC BY 4.0 for manuscript, documentation and certificate data. See LICENSE in the source archive. This metadata file's license field describes the software. Add both MIT and CC BY 4.0 in the manual Zenodo record.</p>",
+  "description": "<p>Version 1.1.0 containing the proposed computer-assisted base-seven coverage proof and the completed exact original-rule rational-epsilon 3/8 equality contract. Includes the manuscript, separate certificate checker and generator, all Lean proof sources and a portable fresh-build workflow. Independent human review remains outstanding. No real-analysis library limsup API theorem or novelty claim is asserted.</p><p>MIT for code; CC BY 4.0 for prose and data, by component in LICENSE.</p>",
   "license": "mit",
   "access_right": "open",
-  "keywords": ["Heraclitus transform", "greedy integer walks", "computer-assisted proof", "Lean", "powers of seven"],
-  "notes": "Prepared for manual upload to the saved Zenodo draft with reserved version DOI 10.5281/zenodo.23912682. Do not use a new automatic GitHub deposit for this first version; this file does not publish anything or reserve a second DOI."
+  "keywords": [
+    "Heraclitus transform",
+    "greedy integer walks",
+    "computer-assisted proof",
+    "Lean",
+    "powers of seven"
+  ],
+  "notes": "Version 1.1.0 is released on GitHub. No Zenodo upload or new DOI assignment is recorded. DOI 10.5281/zenodo.23912682 belongs to historical version 1.0.0 only."
 }

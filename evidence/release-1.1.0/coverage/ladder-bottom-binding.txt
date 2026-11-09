@@ -1,0 +1,1 @@
+{"action": "matched", "case_count": 18, "chunk_occurrences": 684, "chunk_size": 64, "generated_modules": 36, "scope": "Untrusted data identity, not a mathematical proof", "unique_chunk_choices": 27904, "unique_chunks": 442, "word_choices": 43154}

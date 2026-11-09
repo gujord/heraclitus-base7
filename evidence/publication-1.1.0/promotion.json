@@ -1,0 +1,52 @@
+{
+  "candidate_manifest_sha256": "4f6bccef51ac52dac22327d12a94d51a8c4d9eb646086ac607f96a83bf7234fb",
+  "date": "2026-11-09",
+  "editorial_changes": {
+    ".zenodo.json": {
+      "after_sha256": "1f7dd2f7bda93725989bfb1c43ac2aa5cfd482ab97dcccbefdaca5f7a79c1f96",
+      "before_sha256": "c8548da38d90ea78bdee78392232795e9a2baa09ea44801303e0e40ced7b3496"
+    },
+    "CITATION.cff": {
+      "after_sha256": "d3ebce5691d042c9c3044e80f7ada8570915a915789dff15a151229af0f2d89e",
+      "before_sha256": "e2dfaa81d337b71cb22f2e77dd18d90bf6dc34ee23e0cb78552a83c73ac577d9"
+    },
+    "README.md": {
+      "after_sha256": "a3b1e820296fc57c86135958bb28866e04c7a4021e221dccf01788ff830db384",
+      "before_sha256": "f67d4f007c78baec1d03e3800cb98cb77ee1232d8ce0c445ff99a572ff507467"
+    },
+    "docs/provenance.md": {
+      "after_sha256": "954aa23f424b76c9d0576594f10c1c520872551e6fd6b30d54366e708e40d3e8",
+      "before_sha256": "6bf212ef1b879150f313cb86bfdb30dc47954361099818ae06a6d1e160858ad1"
+    },
+    "docs/release-1.1.0.md": {
+      "after_sha256": "b767b4b7dddebf48b46aff9a9bd723bd872dce86eb6433269c388097f40a8834",
+      "before_sha256": "3f5d13f51ee755fbdf283ac626519b59c5c70c82fb70e2aa1607d68beeaab4de"
+    },
+    "docs/reproducibility.md": {
+      "after_sha256": "ee3c9da67a1b84750edd3ebd521cc739c8d2968a87e3fbf0315249c5ef4e6b59",
+      "before_sha256": "4854f0c3a653e886be8953cd5542b13b813bd3db131c27f2572712c71313c781"
+    },
+    "paper/base-seven-heraclitus.pdf": {
+      "after_sha256": "9851683b92ec3e87c62e57abb26fdd34e189b6ae658d0bf841734fc98a87a964",
+      "before_sha256": "037ae2816567796faf5ccd8b9a854d924e2ab93cf3266efb1ff2ffeb60b2f63d"
+    },
+    "paper/base-seven-heraclitus.tex": {
+      "after_sha256": "6ffcb9611422b8637910b37eb618b98f7402b435a96554598659ef7a7a8a15e4",
+      "before_sha256": "4369cfc73aa519cf0d3d32400c2f836c7aa7e2e19f933662cd1c68e4eabec8c4"
+    },
+    "paper/base-seven-heraclitus.txt": {
+      "after_sha256": "6dacb1c6020d4584be20f4f053bef6bb1bd16b2036ac8173e0f81c5f7537c574",
+      "before_sha256": "35eaa9af57eb8563e75155aa9797bbb6cac835763bf1aa8f3077d169e72f5094"
+    },
+    "scripts/check_release.py": {
+      "after_sha256": "119f8998701ebbf210926a63e312aa86da76f5d4aaebf8c46b671dd75b64ecba",
+      "before_sha256": "4ef75f3279fa055b78da34bf3b261df0a49fe61bb1d6a56b8229643dcbb1127d"
+    }
+  },
+  "fresh_build_report_sha256": "54a5f6d2dca49f655fd69da834ae148f966ea5a969dc87b7b10ec2016311866c",
+  "full_lean_build_repeated": false,
+  "historical_evidence_files_preserved": 1160,
+  "historical_manifest_sha256": "03c9550cf5f66c1488c372487406ad3dccdce40fdcc7d120012fbb069aa37d18",
+  "scope": "Editorial promotion of the fully built candidate; proof inputs unchanged.",
+  "version": "1.1.0"
+}

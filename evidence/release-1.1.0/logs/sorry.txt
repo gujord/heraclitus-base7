@@ -1,0 +1,1 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/tests/release-probes/sorry.lean:4:8: error: declaration uses `sorry`

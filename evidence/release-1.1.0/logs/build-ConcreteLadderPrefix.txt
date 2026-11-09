@@ -1,0 +1,2 @@
+'Heraclitus.UpperLadderPrefix.halfline_all_prefixes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperLadderPrefix.actual_ladder_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

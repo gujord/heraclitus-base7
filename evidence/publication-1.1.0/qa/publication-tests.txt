@@ -1,0 +1,11 @@
+PASS unchanged
+PASS proof-with-edited-manifest
+PASS forged-proof-promotion
+PASS historical-evidence
+PASS manuscript-math
+PASS original-input
+PASS missing-old-evidence
+PASS private-path
+PASS current-coverage-guide
+PASS historical-coverage-guide-binding
+All 10 publication controls passed.

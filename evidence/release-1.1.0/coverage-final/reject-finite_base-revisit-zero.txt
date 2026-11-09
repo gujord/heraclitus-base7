@@ -1,0 +1,3 @@
+/Users/rogerg/ai/math/heraclitus-base7/build/release-1.1.0-candidate-2026-11-09/fresh-extraction-v2/heraclitus-base7-1.1.0/build/release-rebuild/coverage-final/Reject_finite_base_revisit-zero.lean:3:69: error: Tactic `decide` proved that the proposition
+  Claim FiniteBaseFixtures.first { positive := true, value := 0, front := 2 }
+is false

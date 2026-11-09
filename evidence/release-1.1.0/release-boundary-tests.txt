@@ -1,0 +1,15 @@
+test_changed_theorem (__main__.ReleaseTests) ... ok
+test_complete_evidence (__main__.ReleaseTests) ... ok
+test_false_completion_and_reuse (__main__.ReleaseTests) ... ok
+test_manifested_presentation_is_rejected (__main__.ReleaseTests) ... ok
+test_missing_dependency (__main__.ReleaseTests) ... ok
+test_path_policy (__main__.ReleaseTests) ... ok
+test_stale_manuscript (__main__.ReleaseTests) ... ok
+test_symlink (__main__.ReleaseTests) ... ok
+test_unlisted_file (__main__.ReleaseTests) ... ok
+test_valid (__main__.ReleaseTests) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 6.893s
+
+OK

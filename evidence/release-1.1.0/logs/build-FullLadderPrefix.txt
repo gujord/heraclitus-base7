@@ -1,0 +1,3 @@
+'Heraclitus.UpperLadderPrefix.descent_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperLadderPrefix.ascent_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperLadderPrefix.complete_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]

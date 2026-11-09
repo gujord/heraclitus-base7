@@ -1,0 +1,3 @@
+'Heraclitus.ReturnTailTower.towerPoints_length' depends on axioms: [propext]
+'Heraclitus.ReturnTailTower.towerPoints_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.ReturnTailTower.tower_count_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -27,5 +27,5 @@
   },
   "schema_version": 1,
   "scope": "Byte identity of the three certificates and their bundled generation inputs; not a mathematical proof.",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

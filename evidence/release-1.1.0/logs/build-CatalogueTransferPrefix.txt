@@ -1,0 +1,3 @@
+'Heraclitus.UpperTransferPrefix.prefix_node_mem' depends on axioms: [propext, Quot.sound]
+'Heraclitus.UpperTransferPrefix.transfer_from_nodes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.UpperTransferPrefix.uniform_from_nodes' depends on axioms: [propext, Classical.choice, Quot.sound]

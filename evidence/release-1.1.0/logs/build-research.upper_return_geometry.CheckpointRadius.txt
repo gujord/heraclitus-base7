@@ -1,0 +1,1 @@
+'Heraclitus.UpperReturnGeometry.original_rule_scale_radius' depends on axioms: [propext, Classical.choice, Quot.sound]

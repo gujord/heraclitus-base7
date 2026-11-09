@@ -9,8 +9,8 @@ Do not edit this generated file.
                                           Roger Gujord
                                    ORCID: 0009-0006-5227-980X
 
-                                        3 November 2026
-                                            Version 1.0.0
+                                        9 November 2026
+                                            Version 1.1.0
 
 
 
@@ -24,8 +24,10 @@ Do not edit this generated file.
      Ck = (7k − 1)/2 and k ≥ 6. The accompanying certificates have a separate Python checker;
      a Lean companion formalizes the exact rule, base, transitions and coverage. Conditional on
      the uniform transition, a first-crossing argument gives lim supn→∞ |a(n)| − n/2 /n ≥ 3/8.
-     That complete deviation corollary is not formalized in Lean, and equality remains open.
-     This AI-assisted manuscript awaits independent human mathematical review.
+     A Lean extension now establishes the exact rational-epsilon contract for equality at 3/8
+     from the original rule, using the formalized base and scale transitions. Its upper estimate
+     covers every actual index, with complete used-set, tail, time and radius bounds throughout
+     each scale. This AI-assisted manuscript awaits independent human mathematical review.
 
 
 Introduction
@@ -44,15 +46,14 @@ stretches of the walk; a finite repair handles the next previsited endpoint. Six
 form each ladder layer. Closing both the entire endpoint state and its spacing residue gives an
 induction over arbitrarily many layers, and then over successive scales. A repeating pattern in
 sampled prefixes alone would not supply this step.
-Section 1 states the exact rule and proposed theorem. Sections 2–7 give the certificate
-representation and universal reduction, and Section 8 derives the conditional deviation bound.
-Sections 9 and 10 separate executed checks from proof obligations and give reproduction
-commands. Sections 11–12 discuss generalization, related work and limitations. The exact
-formal rule and coverage statement are reproduced in Section 10.
+Sections 1–7 give the coverage argument; Section 8 gives the deviation bounds. The remaining
+sections describe verification, reproduction, limitations and related work.
+
+
 
 
                                                   1
-The base-seven Heraclitus transform                                                    Version 1.0.0
+The base-seven Heraclitus transform                                                    Version 1.1.0
 
 
 1    Statement and precise rule
@@ -105,7 +106,7 @@ returns to its entire state (c, B) after P > 0 choices, with total front shift P
 front shift before choice i, vi the chosen coordinate in the then-current normalization, and
 
                                                  2
-The base-seven Heraclitus transform                                                 Version 1.0.0
+The base-seven Heraclitus transform                                                 Version 1.1.0
 
 
 Wi = Di + vi , for 0 ≤ i < P . Suppose the Wi give distinct residues modulo P . Then successive
@@ -161,7 +162,7 @@ inserting h only at the specified phase:
 
 
                                                3
-The base-seven Heraclitus transform                                                 Version 1.0.0
+The base-seven Heraclitus transform                                                 Version 1.1.0
 
 
 For h ≥ 2401 the initial region is before h. Before the marked phase, any cycle choice is at
@@ -214,7 +215,7 @@ without a transient. Each repeated pair consists of the entire endpoint state an
 the modulus used by that ladder, either 8 or 19240. The checker verifies all six transfers at
 
                                                   4
-The base-seven Heraclitus transform                                                    Version 1.0.0
+The base-seven Heraclitus transform                                                    Version 1.1.0
 
 
 each layer and the exact closing equality. The spacing only increases, so the uniform lower
@@ -266,7 +267,7 @@ Section 7 verifies phase closure and supplies the exact base from zero.
 
 
                                                  5
-The base-seven Heraclitus transform                                                   Version 1.0.0
+The base-seven Heraclitus transform                                                   Version 1.1.0
 
 
 (i) Inner boundary
@@ -323,7 +324,7 @@ are better than any cross-side alternative. There are now marked endpoints at of
 
 
                                                 6
-The base-seven Heraclitus transform                                                    Version 1.0.0
+The base-seven Heraclitus transform                                                    Version 1.1.0
 
 
 If A was already used in the old inner boundary, descent from m + A produces precisely the
@@ -382,7 +383,7 @@ Since A ≥ −3, the already-used marker D + A is not selected again. A 7m refl
 
 
                                                  7
-The base-seven Heraclitus transform                                                  Version 1.0.0
+The base-seven Heraclitus transform                                                  Version 1.1.0
 
 
 current offset below -56 has offset above 57 and strictly loses to the offered local candidate.
@@ -436,16 +437,17 @@ period.
 
 
                                                 8
-The base-seven Heraclitus transform                                                   Version 1.0.0
+The base-seven Heraclitus transform                                                   Version 1.1.0
 
 
-8    A deviation lower bound supplied by the first crossing
+8    Deviation bounds and the 3/8 equality
 Corollary 7 (conditional deviation lower bound). The uniform scale transition in
-Proposition 6 implies the lower bound 3/8 in (9). The transition and first-crossing components
-are formalized in Lean. The complete derivation in (7)–(9), including the subsequence limit
-and limsup conclusion, is not formalized.
-The argument below is conditional on the uniform transition and does not constitute an
-independent proof of it. Equality in (9) remains unproved.
+Proposition 6 implies the lower bound 3/8 in (9). In the Lean development, the formalized
+base and scale transitions now also imply the exact lower-bound epsilon statement directly
+from the original rule. The formal proof uses the phase-42 family described below.
+The first-crossing argument below is conditional on the uniform transition and does not
+constitute an independent proof of it. The all-index upper bound and complete original-rule
+contract are established later in this section by an additional formal assembly.
 Write E(n) = |a(n)| − n/2 and m = 7k , k ≥ 6. Let nk be the first crossing by a step of length
 7m in the transition from scale m to 7m. The first-exit certificate gives
 
@@ -490,7 +492,161 @@ and is not needed for the corollary.
 
 
                                                  9
-The base-seven Heraclitus transform                                               Version 1.0.0
+The base-seven Heraclitus transform                                                   Version 1.1.0
+
+
+A machine-checked phase-42 proof
+
+Put F (n) = 8E(n) − 3n. For every integer t ≥ 0, the theorem original_rule_crossing42
+gives the exact actual-walk identities
+
+               kt = 6 + 36t,    mt = 7kt ,    nt = 4mt + 1,   2a(nt ) = −7mt − 3.             (10)
+
+Here 42 is the certificate’s phase label; its least admissible exponent is 6. The actual checkpoint
+is obtained from the complete scale schedule. The existing certified outgoing word then supplies
+both the elapsed count and the signed coordinate in (10). Neither identity is an assumed
+crossing formula or an extrapolation from finite simulations.
+The theorem original_rule_crossing_defect proves the integer identity in
+                                                 E(nt )  3  5
+                               F (nt ) = 5,             = +    .                              (11)
+                                                  nt     8 8nt
+The ratio equality is its elementary rational rewriting. The indices are unbounded: for any
+cutoff N ≥ 0, taking t = N gives nt ≥ N . Consequently original_rule_frequent_lower
+proves
+                 ∀p, q ∈ N>0 ∀N ∈ N ∃n ≥ max{N, 1} : −8pn ≤ qF (n).                     (12)
+For positive n this is the rational-epsilon lower-limsup contract E(n)/n ≥ 3/8−p/q at arbitrarily
+late indices. Its only sequence hypothesis is the literal OriginalProblem.FollowsRule; the
+existing proofs of the base and transitions are imported into its proof. The sources are
+research/actual_lower_bound/.
+This formal route uses one sufficient infinite phase family. The general 36-phase subsequence-
+limit calculation in (7)–(9) remains a manuscript derivation; the new Lean conclusion is the
+exact integer statement (12), rather than a theorem expressed through a real-analysis library’s
+limsup interface.
+
+
+Complete-state tail bounds
+
+Let Un = {a(0), . . . , a(n)}. For a nonnegative integer cutoff D, define
+
+                      TD (n) = #{x ∈ Un : xa(n) > 0, |a(n)| < |x| ≤ D},
+                      QD (n) = #{x ∈ Un : |x| > D}.
+
+Thus TD counts already visited points farther out on the current ray, and QD counts all
+exterior points on both rays. Exact counting gives
+
+                               n ≤ D + |a(n)| + TD (n) + QD (n).                              (13)
+
+Indeed the central part is covered by at most D + |a(n)| + 1 points; the remaining points are
+in the tail or the exterior. The walk’s n + 1 visited points are distinct, including zero once.
+The Lean proof handles the zero-current case as well. Moreover, the 36 complete checkpoint
+records and actual-state reachability give QCk (n) ≤ 7 whenever k ≥ 6 and n ≤ 7k . Inside the
+scale interval [7k , 7k+1 ), this exterior bound is applied at checkpoint k + 1. These results are
+in research/physical_counting/.
+Lemma 8 (complete signed-ladder tail bound). Choose one of the 18 configurations
+(A, f, B) in Appendix B, put O = {x : x < f } ∪ B, and let m = 7k , C = (m − 1)/2, k ≥ 6.
+Suppose the actual walk at index b has current point s(C + A + m), where s ∈ {−1, 1}. In the
+ray coordinates of Section 2, its complete used-offset set on side s is exactly
+
+                                O ∪ {A + m, A + 2m, A + 3m}.
+
+                                                10
+The base-seven Heraclitus transform                                                 Version 1.1.0
+
+
+The opposite ray has a complete boundary record (g, H) with g ≥ 3m − 200; zero is included
+once and ray coordinates represent only positive magnitudes. Then the subsequent complete
+ladder word of Proposition 4, including descent, bottom and ascent with the two outer markers
+retained, has a finite length ℓ and satisfies
+
+                        TD (b + i) ≤ 55 + 6(k − 4)   (0 ≤ i ≤ ℓ, D ∈ N).                    (14)
+
+Its complete signed endpoint and exact move count agree with the checked ladder construction.
+Proof. For a normalized local state (c, B ′ ), the number of local occupied offsets ahead of the
+current is bounded by
+
+                       G(c, B ′ ) = max{0, −c − 1} + #{x ∈ B ′ : x > c}.
+
+Kernel checks establish G ≤ 53 at every required transfer state and every prefix of all 18
+complete bottom words, with equality of the complete represented used sets. The full-transfer
+prefix theorem covers the transient, arbitrarily many translated cycles, the partial cycle and
+the repair, retaining every later marker. At a repair seam the target is absorbed into the local
+state. Induction through the six transfers per layer and through all k − 4 layers therefore
+covers all remaining markers by the original tower of 6(k − 4) points. The forced descent fits
+the same budget. Adding the two persistent outer markers gives (14). The signed return
+envelope proves validity of the same constructed word for both signs, and greedy uniqueness
+identifies all of its prefixes with the actual walk from the stated complete input.
+This argument is formalized by actual_ladder_tail in research/upper_ladder_prefix/C
+oncreteLadderPrefix.lean. The numerical local bound, tower cover and signed validity are
+proved within that theorem. Its input-state match, scale radius and opposite-ray filled bound
+remain explicit premises.
+The subsequent research/upper_phase_bridge/ development discharges all these premises
+from the original rule for all 35 ordinary phase families. It includes the two-move phase-43
+core, whose tail is at most four, in a single theorem for every k ≥ 6. This theorem retains
+the exact actual start index, complete start and endpoint states, signed validity and move
+count, and proves (14) at every prefix of the selected return core. The division k − 6 = 36t + i,
+0 ≤ i < 36, makes the phase dispatch exhaustive, rather than a test of selected exponents.
+The research/upper_boundary_prefix/ development proves TD ≤ 39 through every prefix
+of all 72 signed boundary words, given their complete actual input states. For all 36 inner
+words it discharges that input condition from the original rule at index 7k , for every k ≥ 6.
+The subsequent return assembly also reaches the complete actual outer inputs from the marked
+approach endpoints.
+
+
+The all-index estimate and exact equality contract
+
+Theorem 9 (original-rule deviation bound). Every sequence satisfying the rule of Section
+1 obeys
+                 F (n) ≤ 32771 + 6(k − 4) (k ≥ 6, 7k ≤ n ≤ 7k+1 ).                  (15)
+It satisfies the lower contract (12) and the upper contract
+
+                  ∀p, q ∈ N>0   ∃N ∈ N     ∀n ≥ max{N, 1} :     qF (n) ≤ 8pn.               (16)
+
+These exact integer statements are the rational-epsilon formulation of
+
+                                                E(n)  3
+                                      lim sup        = .                                    (17)
+                                        n→∞      n    8
+
+                                                11
+The base-seven Heraclitus transform                                                Version 1.1.0
+
+
+Proof of the scale estimate. Fix m = 7k , C = Ck , D = Ck+1 and L = k − 4 ≥ 2. Before the first
+crossing, complete inner-boundary and outgoing-cycle prefix descriptions give F (n) ≤ 16261.
+The proof covers every repetition and splits the offset index by quotient and remainder of the
+exact cycle length. Its finite current, front and occupied-set bounds refer to all 36 original
+schedule rows; there is no assumption that an endpoint bound controls intervening states.
+At the crossing and its two entrance moves, the old active ray lies strictly below the current.
+The three marked entrance points therefore give TD ≤ 3. Lemma 8 and its actual-input
+instantiation bound the complete core by 55 + 6L. The post-core transfers, including both
+exceptional phase-43 transfers, have bound 56. The marked approach has bound 44, and the
+outer boundary has bound 39. Full-state equalities join these actual words. Their terminal
+state equals the next checkpoint; injectivity identifies its index as exactly 7k+1 . Splitting
+at each word length, including both ends, proves TD (n) ≤ 55 + 6L at every index from the
+crossing through that checkpoint.
+The radius bounds follow directly from the two complete checkpoints. For n > 7k , the filled
+central interval and injectivity give |a(n)| > C − 37. For n ≤ 7k+1 , inclusion in the next
+checkpoint’s entire used set gives |a(n)| ≤ D + 4096; the finite offset bound is checked on both
+rays of all 36 records. Hence throughout the return,
+
+                        C − 4096 ≤ |a(n)| ≤ D + 4096,        n ≥ 4m − 1.
+
+The time bound follows from the exact crossing correction −1 ≤ δk ≤ 12 and the affine
+cycle-index relation at every exponent. Combining these inequalities with (13) and QD ≤ 7
+gives
+                     8|a(n)| − 7n ≤ 32771,  n − 8|a(n)| ≤ 28737 + 6L.
+Their maximum is F (n). This proves (15) on the return, while the before-crossing bound
+covers the remaining indices. The phase division k − 6 = 36t + i exhausts all k ≥ 6.
+The formal theorem original_rule_scale_bound in research/upper_scale_assembly/
+Theorem.lean proves (15) with only the original rule and the displayed index bounds as
+hypotheses. The exact discrete asymptotic argument in research/upper_asymptotic/Fr
+omScale.lean then gives (16). Together with (12), original_rule_three_eighths proves
+the named target OriginalRuleThreeEighths. This is an inhabitant of that proposition,
+not merely its definition or a conditional arithmetic lemma. No additional transition, tail,
+reachability, time or radius premise remains; the existing base and transition proofs are
+dependencies. Equation (17) is the usual real-notation interpretation of the two epsilon
+contracts; the Lean statement uses exact integers and does not invoke a real-analysis library’s
+limsup API.
 
 
 9     What was checked by a separate implementation
@@ -506,12 +662,14 @@ checks:
 
     • 2573 distinct exact local transitions;
 
-    • 640839 literal local/boundary choices, including two direct marked-from-the-start simu-
-      lations for every marker certificate;
+                                                12
+The base-seven Heraclitus transform                                                 Version 1.1.0
 
-    • a separate uncompressed initial run of 117650 signed terms;
 
-    • the uniform locality inequalities and the residue identities.
+   • 640839 literal local/boundary choices, including two direct marked-from-the-start simu-
+     lations for every marker certificate;
+   • a separate uncompressed initial run of 117650 signed terms;
+   • the uniform locality inequalities and the residue identities.
 
 The initial signed prefix has SHA-256 3a9478e37859b92ba9e2a5d3a3cd1576cbba5071ceed82
 9baae5d32b777d0c2c when encoded as little-endian signed 64-bit integers, including a(0).
@@ -540,40 +698,58 @@ python3 src/generate_certificate.py
 Reports are written under build/. The source package includes the fixed certificates and their
 checksums, together with the generation inputs and executed verification records. Reproducing
 the checks requires no earlier large-prefix simulation.
-
-
-
-
-                                                10
-The base-seven Heraclitus transform                                               Version 1.0.0
+The 9 November research extension additionally checks local bounds for all 119 transfers, eight
+signed-marker records and 36 approach records. For the 18 complete bottom words, 442 shared
+bitmap chunks supply exact full-state checks covering all 43172 prefixes, including their initial
+states. These finite checks feed the universal prefix and ladder proofs used in Lemma 8; they
+are not additional sampled large exponents.
 
 
 10     Code, certificates and reproducibility
-The source package [7], version 1.0.0, contains this manuscript, exact JSON certificates and
-generation inputs, the separate Python checker and generator, Lean sources and toolchain pin,
-and verification evidence. Its complete byte inventory is release-manifest.json. The file
-EXPORT_PROVENANCE.json maps the distribution to its source inputs; private development
-commit IDs in older records are historical provenance, not revisions of the public repository.
-The version DOI assigned to the combined manuscript and verification package is
+The published source package [7], version 1.0.0, contains the manuscript of 3 November 2026,
+exact JSON certificates and generation inputs, the separate Python checker and generator,
+Lean sources and toolchain pin, and verification evidence. Its complete byte inventory is
+release-manifest.json. The file EXPORT_PROVENANCE.json maps the distribution to its
+source inputs; private development commit IDs in older records are historical provenance, not
+revisions of the public repository.
+The present manuscript belongs to the release 1.1.0, dated 9 November 2026. Its added
+deviation proofs are not part of the published 1.0.0 package. The historical version DOI
+
+                                               13
+The base-seven Heraclitus transform                                                Version 1.1.0
+
 
       https://doi.org/10.5281/zenodo.23912682
 
-The project repository address is
+identifies 1.0.0 only; no DOI is assigned to version 1.1.0. The project repository is https:
+//github.com/gujord/heraclitus-base7. The package is self-contained and requires no
+private repository.
+With Python and the pinned Lean 4.35.0 toolchain installed, run from the extracted package
+root:
 
-      https://github.com/gujord/heraclitus-base7
+python3 scripts/check_release.py
+python3 scripts/rebuild_release.py --jobs 4
 
-The supplied archive is self-contained and requires no access to a private repository. The DOI,
-version number and manifest identify the package without a self-referential commit hash.
-The Python commands are in Section 9. With the pinned Lean toolchain, run from the
-extracted package root:
-
-python3 scripts/verify_lean.py --isolated --clean
-
-See docs/reproducibility.md for installation and the complete procedure. The clean
-build compiles all 244 project modules after checking 21 source bindings, then audits 4998
-declarations. The package’s own fresh build and dependent checks are recorded under eviden
-ce/public-package/; older records retain their historical scope. These are checks within this
-project, not independent human review.
+See docs/reproducibility.md. This runner checks the separate Python certificates and
+regeneration, all 21 coverage source bindings, and freshly compiles the entire 351-module
+project closure: 244 coverage modules and 107 research modules. It audits 4998 coverage
+declarations and 1595 research theorem statements and their transitive axiom lists, and requires
+an actual inhabitant of the exact equality target. It uses no prior compiled project objects.
+Only the pinned compiler’s standard library is prebuilt.
+The controls include the 14 Python rejection/premise tests, 14 coverage mathematical rejections
+and five receipt mutations, followed by five research controls: a proof placeholder, false
+arithmetic, an incorrect crossing index, a false actual crossing defect and an injected axiom.
+The mathematical false claims also have their negations proved. The allowed transitive axioms
+are propext, Classical.choice and Quot.sound. The clean candidate build is recorded
+under evidence/release-1.1.0/. Final version labels and publication metadata were
+updated afterwards; the unchanged proof inputs and the exact editorial changes are bound
+in evidence/publication-1.1.0/. Source and object identities are rechecked at build
+completion.
+Earlier development runs built the research extension in stages, reusing identity-checked
+objects: first 75, then 94, then 107 research modules. Those historical reports retain their
+original execution scopes. The complete candidate rebuild is a same-project machine check,
+not independent human review. The exact rational-epsilon equality contract is proved in Lean;
+a real-analysis-library limsup conversion is not claimed.
 For direct comparison with the mathematical definition, the following is FollowsRule verbatim
 from formal/Heraclitus/OriginalProblem.lean, in namespace Heraclitus.OriginalPro
 blem:
@@ -595,12 +771,14 @@ the larger integer, hence the positive integer, priority when absolute values ti
 canonical_follows_rule proves that the canonical sequence satisfies this rule. Statement
 fidelity and the universal reduction in Sections 3–7 remain the main targets for mathematical
 review.
+
+                                              14
+The base-seven Heraclitus transform                                                 Version 1.1.0
+
+
 Code is licensed under MIT; the manuscript, documentation and certificate data are licensed
 under CC BY 4.0. The component boundaries and full texts are given in LICENSE and
 LICENSES/.
-
-                                              11
-The base-seven Heraclitus transform                                                 Version 1.0.0
 
 
 11     Generalization and limitations
@@ -622,8 +800,9 @@ Its reduction has 22 marker phases and 690 normalized states, ending in cycles o
 signed proof.
 The priority for another base should be to identify its reachable marker transfers and prove a
 finite closure, or replace that closure by a uniform hole bound. Additional large prefixes alone
-do not establish it. The sharp 3/8 deviation claim requires a separate argument about the
-order inside scales and is not claimed.
+do not establish it. The all-index estimate (15) and the exact 3/8 contract are proved here
+for base seven; their numerical bounds and finite catalogues are not asserted for other bases.
+Minimality of the 36-scale period remains unproved.
 
 
 12     Earlier work and possible novelty
@@ -644,18 +823,18 @@ Karlsson or collaborators cannot be ruled out.
 Searches on 2 November 2026 covered the transform’s name, powers of seven, odd bases, the
 periods 74 and 130, the signed initial prefix, the relevant OEIS entries, and the authors’ names.
 Sloane’s home page and publication list were also inspected [5, 6], and the relevant 2025 slide
+
+
+                                               15
+The base-seven Heraclitus transform                                                    Version 1.1.0
+
+
 was read and visually checked. No matching prior base-seven coverage result was found in the
 sources searched. Possible overlap with unpublished work remains unresolved. Search engines
 returned much unrelated philosophical material; this is a limitation, not positive evidence of
 novelty. No absence-of-results search proves priority.
 A bounded follow-up search on 3 November 2026 queried the OEIS JSON API for the signed
 initial prefix and for the phrases “not yet in the sequence” together with “power of 3”, “power
-
-
-                                               12
-The base-seven Heraclitus transform                                                    Version 1.0.0
-
-
 of 5” or “power of 7”. These queries returned no matches. Exact queries, times, returned
 counts and search limitations are recorded in the source package. The phrase search is sensitive
 to wording and does not exclude results under different descriptions or unpublished overlap.
@@ -682,21 +861,23 @@ compiler and kernel and, separately, correspondence of the formal statements to 
 mathematical problem. Exporters of finite data are not verified parsers; the kernel checks
 propositions about the literal data they emit. Python results and file hashes are not Lean
 axioms.
+The research extension proves (10), the integer identity F (nt ) = 5 in (11), the exact lower
+contract (12), the all-index estimate (15) and the upper contract (16) from the original rule.
+The combined equality target is now a proved Lean proposition, using exact rational-epsilon
+contracts. The broader 36-phase subsequence-limit derivation in (7)–(9) is not the formal route
+used for the lower contract, and the real notation in (17) is not a claim to have formalized a
+real-analysis library’s limsup API.
 These checks were executed within this project. Independent human mathematical review of
 Sections 3–7 and statement fidelity remains outstanding, as does independently performed
-reproduction. The complete first-crossing deviation argument in (7)–(9), including the sub-
-sequence limit and limsup conclusion, remains a manuscript argument rather than a Lean
-theorem. Equality at 3/8, coverage for all odd bases, minimality of the period 36 are not
-claimed.
-The dated build and review records are supplied with the sources in reference [7]. They identify
-what was freshly compiled, what was reused after identity checks, and which rejection tests
-were executed. They are supporting records rather than independent endorsements.
+reproduction. Those review tasks are distinct from the completed machine checks and do not
+prevent further formalization. Coverage for all odd bases, minimality of the period 36 and
+novelty are not established.
 
 
 
 
-                                                13
-The base-seven Heraclitus transform                                              Version 1.0.0
+                                                16
+The base-seven Heraclitus transform                                              Version 1.1.0
 
 
 References
@@ -735,8 +916,8 @@ References
 
 
 
-                                             14
-The base-seven Heraclitus transform                                                                           Version 1.0.0
+                                             17
+The base-seven Heraclitus transform                                                                           Version 1.1.0
 
 
 Appendix A. Signed scale states
@@ -786,8 +967,8 @@ runs.
 
 
 
-                                                         15
-The base-seven Heraclitus transform                                                          Version 1.0.0
+                                                         18
+The base-seven Heraclitus transform                                                          Version 1.1.0
 
 
 Appendix B. Old half-line regions and ladder closure
@@ -818,5 +999,5 @@ and period count six-marker layers. Ellipses and semicolons follow Appendix A.
 
 
 
-                                                    16
+                                                    19
 

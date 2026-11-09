@@ -1,0 +1,4 @@
+'Heraclitus.TailCover.localAhead_mem' depends on axioms: [propext, Quot.sound]
+'Heraclitus.TailCover.physical_tail_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.TailCover.physical_state_tail_cover' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.TailCover.physical_state_tail_53' depends on axioms: [propext, Classical.choice, Quot.sound]

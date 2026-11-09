@@ -6,11 +6,11 @@ authors:
   - family-names: Gujord
     given-names: Roger
     orcid: "https://orcid.org/0009-0006-5227-980X"
-version: 1.0.0
+version: 1.1.0
+date-released: 2026-11-09
 license: MIT
 repository-code: "https://github.com/gujord/heraclitus-base7"
-doi: "10.5281/zenodo.23912682"
-abstract: "AI-assisted research package containing a proposed computer-assisted coverage proof for the base-seven Heraclitus transform, exact finite certificates, separate Python checker and generators, and a Lean formalization of the literal rule, finite base, uniform scale transitions and coverage. The complete 3/8 deviation derivation is not formalized in Lean; equality remains unproved and independent human mathematical review is outstanding. No matching prior base-seven coverage result was found in the sources searched; possible overlap with unpublished work remains unresolved."
+abstract: "Version 1.1.0: proposed computer-assisted coverage proof and exact original-rule rational-epsilon 3/8 equality contract, with complete Lean sources and a fresh-build workflow. Independent human mathematical review remains outstanding. No real-analysis library limsup API theorem or novelty claim is asserted."
 keywords:
   - Heraclitus transform
   - greedy integer walks

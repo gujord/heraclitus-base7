@@ -1,0 +1,3 @@
+'Heraclitus.SignedTail43.phase43_checkpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.SignedTail43.actual_phase43_short_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.SignedTail43.original_rule_phase43_short_tail' depends on axioms: [propext, Classical.choice, Quot.sound]

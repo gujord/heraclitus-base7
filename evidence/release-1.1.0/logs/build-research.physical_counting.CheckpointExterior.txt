@@ -1,0 +1,5 @@
+'Heraclitus.CheckpointExterior.all_phase_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Heraclitus.CheckpointExterior.original_rule_outside_le_seven' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'Heraclitus.CheckpointExterior.original_rule_count' depends on axioms: [propext, Classical.choice, Quot.sound]
