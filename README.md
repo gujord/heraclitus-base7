@@ -52,5 +52,9 @@ The inventory `release-manifest.json` checks exact bytes, not truth.
 
 Code: MIT. Prose/data: CC BY 4.0, by component in [LICENSE](LICENSE).
 The historical DOI [10.5281/zenodo.23912682](https://doi.org/10.5281/zenodo.23912682)
-identifies **1.0.0 only**. No DOI has been assigned to version 1.1.0.
+identifies **1.0.0 only**. The version DOI for **1.1.0** is
+[10.5281/zenodo.24086002](https://doi.org/10.5281/zenodo.24086002).
 The public repository is [gujord/heraclitus-base7](https://github.com/gujord/heraclitus-base7).
+
+The DOI metadata update preserves all proof inputs and earlier execution
+receipts; its exact editorial changes are recorded in `evidence/doi-1.1.0/`.

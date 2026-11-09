@@ -19,5 +19,6 @@
     "Lean",
     "powers of seven"
   ],
-  "notes": "Version 1.1.0 is released on GitHub. No Zenodo upload or new DOI assignment is recorded. DOI 10.5281/zenodo.23912682 belongs to historical version 1.0.0 only."
+  "notes": "Version 1.1.0 DOI: 10.5281/zenodo.24086002. Supplied by Roger for the new Zenodo version. Zenodo publication is not claimed by the preparation record. DOI 10.5281/zenodo.23912682 identifies historical version 1.0.0 only.",
+  "doi": "10.5281/zenodo.24086002"
 }

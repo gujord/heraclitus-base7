@@ -1,0 +1,19 @@
+test_broken_ladder_closure_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_missing_auxiliary_edge_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_missing_file_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_missing_incoming_case_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_missing_referenced_transfer_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_missing_scale_row_is_rejected_by_real_main (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_optimized_python_is_refused (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_reversed_sign_tie_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_wrong_greedy_choice_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_wrong_marker_output_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_wrong_marker_residue_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_wrong_translation_shift_is_rejected (test_certificate_rejection.CertificateRejectionTests) ... ok
+test_modular_front_does_not_prove_marker_separation (test_reduction_obligations.ReductionPremiseTests) ... ok
+test_modular_front_does_not_prove_nonnegative_cycle_count (test_reduction_obligations.ReductionPremiseTests) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 2.809s
+
+OK

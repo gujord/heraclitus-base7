@@ -1,6 +1,7 @@
 # Version 1.1.0
 
-Released on GitHub on 9 November 2026. No new DOI has been assigned.
+Released on GitHub on 9 November 2026. Version DOI: `10.5281/zenodo.24086002`.
+The subsequent DOI update prepares the corresponding Zenodo deposit.
 
 Changes from 1.0.0:
 
@@ -23,3 +24,7 @@ prerelease suffix. Publication edits are separately recorded in
 `evidence/publication-1.1.0/`; all 351 proof modules, certificates and
 mathematical checkers are identical to the successful clean-build inputs.
 The full Lean build was not repeated for these editorial changes.
+
+The DOI is now included in the manuscript, bibliography, citation file and
+package metadata. `evidence/doi-1.1.0/` binds this editorial update to the
+previous GitHub release without changing proof sources or prior receipts.

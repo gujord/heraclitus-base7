@@ -30,7 +30,7 @@ def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def check_promotion(root, entries):
+def check_promotion(root, entries, manuscript_text=None):
     directory = root/'evidence/publication-1.1.0'
     if not directory.exists():
         return {}
@@ -59,7 +59,9 @@ def check_promotion(root, entries):
         if old not in old_tex:
             raise ValueError('Missing expected manuscript phrase')
         old_tex = old_tex.replace(old, new)
-    if old_tex != (root/'paper/base-seven-heraclitus.tex').read_text():
+    if manuscript_text is None:
+        manuscript_text = (root/'paper/base-seven-heraclitus.tex').read_text()
+    if old_tex != manuscript_text:
         raise ValueError('Manuscript changes exceed publication wording')
     history_data = (directory/'historical-manifest.json').read_bytes()
     if sha(history_data) != promotion['historical_manifest_sha256']:

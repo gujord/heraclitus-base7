@@ -1,0 +1,7 @@
+{
+  "first_qa_collection": "FAIL: display extraction regex also matched the title line-break spacing command, including updated DOI title metadata.",
+  "second_qa_collection": "FAIL: an incorrect expected count of 23 numbered equation blocks was used; inspection of both original and current sources confirms 27 numbered equation blocks plus 4 unnumbered displays.",
+  "resolution": "Exclude double-backslash spacing commands and compare both complete equation/display lists byte for byte. All 27 numbered and 4 unnumbered blocks are identical. The already-passing exact full-source metadata replacement check remains unchanged.",
+  "mathematical_inputs_changed": false,
+  "first_preliminary_zip_sha256": "5049fd1981d6e6c835270c444f54c3bed18e814027671cbe8a785473ae8c3df8"
+}

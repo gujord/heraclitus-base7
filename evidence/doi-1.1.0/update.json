@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-09",
+  "doi": "10.5281/zenodo.24086002",
+  "doi_source": "Supplied by Roger for the new Zenodo version.",
+  "editorial_changes": {
+    ".zenodo.json": {
+      "after_sha256": "3324147a52e3c80e54c979fd48faf05e09854ca8895217dbac291b2eb9e6065c",
+      "before_sha256": "1f7dd2f7bda93725989bfb1c43ac2aa5cfd482ab97dcccbefdaca5f7a79c1f96"
+    },
+    "CITATION.cff": {
+      "after_sha256": "c40d349b46b0eba5fc61fd7ba579e68d0b3ab9d8f6737e8044073170c367887d",
+      "before_sha256": "d3ebce5691d042c9c3044e80f7ada8570915a915789dff15a151229af0f2d89e"
+    },
+    "README.md": {
+      "after_sha256": "81933554789a671b9a57c3fe782bbaa5dc527c37d13abc2cad312242005042c1",
+      "before_sha256": "a3b1e820296fc57c86135958bb28866e04c7a4021e221dccf01788ff830db384"
+    },
+    "docs/provenance.md": {
+      "after_sha256": "07b2b2ad5a2d371fe61afd64b61f0f2c533c634ad4b4cdd6aa690446d45b5e60",
+      "before_sha256": "954aa23f424b76c9d0576594f10c1c520872551e6fd6b30d54366e708e40d3e8"
+    },
+    "docs/release-1.1.0.md": {
+      "after_sha256": "92b1d073d4ad9d84672ea4c9df9115cc81aebb818a5361fda8bae12bab47fb09",
+      "before_sha256": "b767b4b7dddebf48b46aff9a9bd723bd872dce86eb6433269c388097f40a8834"
+    },
+    "paper/base-seven-heraclitus.pdf": {
+      "after_sha256": "cbcb6108ed544617a57768f2c864029556fae0a70c69dd186eabad87fb0dc17c",
+      "before_sha256": "9851683b92ec3e87c62e57abb26fdd34e189b6ae658d0bf841734fc98a87a964"
+    },
+    "paper/base-seven-heraclitus.tex": {
+      "after_sha256": "3c2825dab199f374d579c59511ea33b6e4dce0c88a02f842515f7c85b8dcb591",
+      "before_sha256": "6ffcb9611422b8637910b37eb618b98f7402b435a96554598659ef7a7a8a15e4"
+    },
+    "paper/base-seven-heraclitus.txt": {
+      "after_sha256": "42a1afed10fec9d21a1ff1ce42fbe697814c4e248a81d53c362c809954c037e1",
+      "before_sha256": "6dacb1c6020d4584be20f4f053bef6bb1bd16b2036ac8173e0f81c5f7537c574"
+    },
+    "paper/references.bib": {
+      "after_sha256": "51a19b833f3db223cd52c49bc76d43148b51659cc9843f0f732facfd8bc012d0",
+      "before_sha256": "e1d741e95fb388487749ab530aa9b9c6bbf043ca430f23cee93f2b7c84dcb361"
+    },
+    "scripts/check_publication.py": {
+      "after_sha256": "7060b431cfbdb272a66b881be75029fd15998ab46d6456dc9d62e228790bd169",
+      "before_sha256": "d7f50eb7d360df4c0e7499b747a81f337e995e6144da23a99c6b3e4287a93467"
+    },
+    "scripts/check_release.py": {
+      "after_sha256": "4dc70a2ae03af6781ab7c32cf452467c7cd3481a27acbcdb497281f4ae5f8de2",
+      "before_sha256": "119f8998701ebbf210926a63e312aa86da76f5d4aaebf8c46b671dd75b64ecba"
+    }
+  },
+  "full_lean_build_repeated": false,
+  "previous_manifest_sha256": "d6303d3025302a7c94f761ccd26948eba415af26cad942ec51caffa030a35bfb",
+  "scope": "DOI editorial update; all prior evidence and mathematical inputs unchanged.",
+  "version": "1.1.0",
+  "zenodo_published_by_this_workflow": false
+}

@@ -44,7 +44,9 @@ def check(root):
     if observed != set(entries) | {"release-manifest.json"}:
         raise ValueError("Missing/unexpected files: " + repr(sorted(observed ^ (set(entries) | {"release-manifest.json"}))))
     from check_publication import check_promotion
-    editorial_changes = check_promotion(root, entries)
+    from check_doi_update import check_doi_update
+    built_entries, previous_tex, version_doi = check_doi_update(root, entries)
+    editorial_changes = check_promotion(root, built_entries, previous_tex)
     receipt_path = root / "evidence/public-package/formal/run.json"
     if receipt_path.is_file():
         receipt = json.loads(receipt_path.read_text())
@@ -56,7 +58,7 @@ def check(root):
                 if history['files'][name]['sha256'] != expected:
                     raise ValueError('Historical coverage guide binding changed')
                 continue
-            if entries[name]["sha256"] != expected:
+            if built_entries[name]["sha256"] != expected:
                 raise ValueError("Distribution differs from the clean Lean receipt: " + name)
     if manifest.get("version") == "1.1.0":
         required = {"proof-inventory.json", "scripts/rebuild_release.py",
@@ -65,8 +67,8 @@ def check(root):
         if not required.issubset(entries) or (root/"VERSION").read_text().strip() != "1.1.0":
             raise ValueError("Missing 1.1.0 proof or wrong version")
         provenance = json.loads((root/"EXPORT_PROVENANCE.json").read_text())
-        if provenance.get("version_doi") is not None:
-            raise ValueError("No DOI has been assigned to version 1.1.0")
+        if provenance.get("version_doi") != version_doi:
+            raise ValueError("Version DOI differs from verified metadata update")
         receipt_path = root/"evidence/release-1.1.0/report.json"
         if provenance.get("verification_evidence_included") and not receipt_path.is_file():
             raise ValueError("Promised proof evidence is missing")
@@ -76,7 +78,7 @@ def check(root):
                     receipt.get("reused_prior_project_objects") == 0 and receipt.get("final_target_proved") is True):
                 raise ValueError("Incomplete fresh 1.1.0 receipt")
             for name, expected in receipt["input_sha256"].items():
-                if name != "EXPORT_PROVENANCE.json" and entries[name]["sha256"] != expected:
+                if name != "EXPORT_PROVENANCE.json" and built_entries[name]["sha256"] != expected:
                     if editorial_changes.get(name, {}).get('before_sha256') != expected:
                         raise ValueError("Distribution differs from the complete build: " + name)
     return len(entries)

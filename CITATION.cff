@@ -7,6 +7,7 @@ authors:
     given-names: Roger
     orcid: "https://orcid.org/0009-0006-5227-980X"
 version: 1.1.0
+doi: "10.5281/zenodo.24086002"
 date-released: 2026-11-09
 license: MIT
 repository-code: "https://github.com/gujord/heraclitus-base7"

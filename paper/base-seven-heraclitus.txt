@@ -10,7 +10,8 @@ Do not edit this generated file.
                                    ORCID: 0009-0006-5227-980X
 
                                         9 November 2026
-                                            Version 1.1.0
+                                        Version 1.1.0
+                          https://doi.org/10.5281/zenodo.24086002
 
 
 
@@ -48,7 +49,6 @@ induction over arbitrarily many layers, and then over successive scales. A repea
 sampled prefixes alone would not supply this step.
 Sections 1–7 give the coverage argument; Section 8 gives the deviation bounds. The remaining
 sections describe verification, reproduction, limitations and related work.
-
 
 
 
@@ -706,8 +706,8 @@ are not additional sampled large exponents.
 
 
 10     Code, certificates and reproducibility
-The published source package [7], version 1.0.0, contains the manuscript of 3 November 2026,
-exact JSON certificates and generation inputs, the separate Python checker and generator,
+The accompanying source package [7], version 1.1.0, contains the manuscript of 9 November
+2026, exact JSON certificates and generation inputs, the separate Python checker and generator,
 Lean sources and toolchain pin, and verification evidence. Its complete byte inventory is
 release-manifest.json. The file EXPORT_PROVENANCE.json maps the distribution to its
 source inputs; private development commit IDs in older records are historical provenance, not
@@ -721,9 +721,12 @@ deviation proofs are not part of the published 1.0.0 package. The historical ver
 
       https://doi.org/10.5281/zenodo.23912682
 
-identifies 1.0.0 only; no DOI is assigned to version 1.1.0. The project repository is https:
-//github.com/gujord/heraclitus-base7. The package is self-contained and requires no
-private repository.
+identifies 1.0.0 only. The version DOI for the present 1.1.0 package is
+
+      https://doi.org/10.5281/zenodo.24086002
+
+The project repository is https://github.com/gujord/heraclitus-base7. The package is
+self-contained and requires no private repository.
 With Python and the pinned Lean 4.35.0 toolchain installed, run from the extracted package
 root:
 
@@ -743,8 +746,9 @@ The mathematical false claims also have their negations proved. The allowed tran
 are propext, Classical.choice and Quot.sound. The clean candidate build is recorded
 under evidence/release-1.1.0/. Final version labels and publication metadata were
 updated afterwards; the unchanged proof inputs and the exact editorial changes are bound
-in evidence/publication-1.1.0/. Source and object identities are rechecked at build
-completion.
+in evidence/publication-1.1.0/. The subsequent DOI metadata update is recorded
+separately in evidence/doi-1.1.0/; it changes no mathematical source or build receipt.
+Source and object identities are rechecked at build completion.
 Earlier development runs built the research extension in stages, reusing identity-checked
 objects: first 75, then 94, then 107 research modules. Those historical reports retain their
 original execution scopes. The complete candidate rebuild is a same-project machine check,
@@ -766,16 +770,18 @@ The coverage theorem’s declaration is:
 theorem coverage (a : Nat → Int) (rule : FollowsRule a) :
     ∀ x : Int, ∃ i : Nat, a i=x ∧ ∀ j : Nat, a j=x → j=i
 
-Here Nat contains zero, so the allowed exponent includes j = 0. The last inequality gives
-the larger integer, hence the positive integer, priority when absolute values tie. The theorem
-canonical_follows_rule proves that the canonical sequence satisfies this rule. Statement
-fidelity and the universal reduction in Sections 3–7 remain the main targets for mathematical
-review.
+
+
 
                                               14
 The base-seven Heraclitus transform                                                 Version 1.1.0
 
 
+Here Nat contains zero, so the allowed exponent includes j = 0. The last inequality gives
+the larger integer, hence the positive integer, priority when absolute values tie. The theorem
+canonical_follows_rule proves that the canonical sequence satisfies this rule. Statement
+fidelity and the universal reduction in Sections 3–7 remain the main targets for mathematical
+review.
 Code is licensed under MIT; the manuscript, documentation and certificate data are licensed
 under CC BY 4.0. The component boundaries and full texts are given in LICENSE and
 LICENSES/.
@@ -818,17 +824,17 @@ particular set; it provides no conclusion for arbitrary step sets. None of these
 claimed as new here.
 OEIS A377091 announces, on 29 October 2026, an AI-assisted proof for square steps under
 review [3]. That announcement does not describe a powers-of-seven theorem. No manuscript
-for that proof was obtained during this investigation, so possible overlap with Sloane, Xausa,
-Karlsson or collaborators cannot be ruled out.
-Searches on 2 November 2026 covered the transform’s name, powers of seven, odd bases, the
-periods 74 and 130, the signed initial prefix, the relevant OEIS entries, and the authors’ names.
-Sloane’s home page and publication list were also inspected [5, 6], and the relevant 2025 slide
 
 
                                                15
 The base-seven Heraclitus transform                                                    Version 1.1.0
 
 
+for that proof was obtained during this investigation, so possible overlap with Sloane, Xausa,
+Karlsson or collaborators cannot be ruled out.
+Searches on 2 November 2026 covered the transform’s name, powers of seven, odd bases, the
+periods 74 and 130, the signed initial prefix, the relevant OEIS entries, and the authors’ names.
+Sloane’s home page and publication list were also inspected [5, 6], and the relevant 2025 slide
 was read and visually checked. No matching prior base-seven coverage result was found in the
 sources searched. Possible overlap with unpublished work remains unresolved. Search engines
 returned much unrelated philosophical material; this is a limitation, not positive evidence of
@@ -873,9 +879,6 @@ reproduction. Those review tasks are distinct from the completed machine checks 
 prevent further formalization. Coverage for all odd bases, minimality of the period 36 and
 novelty are not established.
 
-
-
-
                                                 16
 The base-seven Heraclitus transform                                              Version 1.1.0
 
@@ -902,8 +905,8 @@ References
    https://neilsloane.com/doc/pub.html
 
 [7] Roger Gujord, The base-seven Heraclitus transform: manuscript and reproducible proof
-    package, version 1.0.0, 2026.
-   https://doi.org/10.5281/zenodo.23912682
+    package, version 1.1.0, 2026.
+   https://doi.org/10.5281/zenodo.24086002
    The accompanying source archive includes a complete release-manifest.json.
    https://github.com/gujord/heraclitus-base7
 

@@ -1,0 +1,13 @@
+PASS unchanged
+PASS changed-proof
+PASS forged-proof-exception
+PASS old-evidence
+PASS manuscript-math
+PASS bibliography
+PASS citation-doi
+PASS zenodo-doi
+PASS original-input
+PASS missing-old-evidence
+PASS private-path
+PASS provenance-doi
+All 12 DOI/publication controls passed.

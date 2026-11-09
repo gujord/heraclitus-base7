@@ -30,7 +30,16 @@ fidelity remains outstanding.
 
 Version 1.0.0 was published on 3 November 2026. Its DOI
 10.5281/zenodo.23912682 does not identify 1.1.0. Version 1.1.0 is released
-on GitHub; no new DOI or Zenodo publication is claimed. Code is MIT and
+on GitHub. Roger supplied DOI 10.5281/zenodo.24086002 for its new Zenodo
+version. The DOI is included in the manuscript and current metadata; the
+preparation record does not assert Zenodo publication. Code is MIT and
 prose/data CC BY 4.0. No private history or archived notes are included.
 The bounded prior-work searches retain their historical dates and limitations;
 possible unpublished overlap remains unresolved. No novelty claim is added.
+
+The DOI update is separately recorded in `evidence/doi-1.1.0/`. All previous
+public evidence, including the original 1.1.0 promotion records, is retained
+byte for byte. The integrity check validates the successive editorial links
+and the exact permitted LaTeX and bibliography replacements. No full Lean
+rebuild was performed for this metadata update; Python verification and
+regeneration, metadata rejection controls and PDF review are recorded anew.

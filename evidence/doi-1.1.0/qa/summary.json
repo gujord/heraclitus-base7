@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "version": "1.1.0",
+  "doi": "10.5281/zenodo.24086002",
+  "doi_source": "User supplied for the new Zenodo version",
+  "zenodo_publication_performed": false,
+  "github_modified": false,
+  "full_lean_build_repeated": false,
+  "prior_clean_build_modules": 351,
+  "prior_public_evidence_files_unchanged": 1900,
+  "protected_private_files_unchanged": 4996,
+  "formal_research_checker_generator_test_files_unchanged": 402,
+  "doi_rejection_controls_passed": 12,
+  "python": "certificate checks passed",
+  "certificate_regeneration": "PASS",
+  "paper_pages": 19,
+  "all_pages_rendered_and_visually_reviewed": true,
+  "overfull_boxes": 0,
+  "unresolved_references": 0,
+  "exact_manuscript_metadata_replacements_verified": true,
+  "numbered_equation_blocks_unchanged": 27,
+  "unnumbered_display_blocks_unchanged": 4,
+  "paper_files": {
+    "paper/base-seven-heraclitus.pdf": "cbcb6108ed544617a57768f2c864029556fae0a70c69dd186eabad87fb0dc17c",
+    "paper/base-seven-heraclitus.tex": "3c2825dab199f374d579c59511ea33b6e4dce0c88a02f842515f7c85b8dcb591",
+    "paper/base-seven-heraclitus.txt": "42a1afed10fec9d21a1ff1ce42fbe697814c4e248a81d53c362c809954c037e1",
+    "paper/references.bib": "51a19b833f3db223cd52c49bc76d43148b51659cc9843f0f732facfd8bc012d0",
+    "paper/tables.tex": "3807b44d95b40038c9711c4d068f376277bae051c6246415b8fdc37f3b6e949f"
+  }
+}

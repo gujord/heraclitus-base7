@@ -1,0 +1,23 @@
+{
+  "title": "The base-seven Heraclitus transform: manuscript and reproducible proof package",
+  "version": "1.1.0",
+  "upload_type": "software",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Gujord, Roger",
+      "orcid": "0009-0006-5227-980X"
+    }
+  ],
+  "description": "<p>Version 1.1.0 containing the proposed computer-assisted base-seven coverage proof and the completed exact original-rule rational-epsilon 3/8 equality contract. Includes the manuscript, separate certificate checker and generator, all Lean proof sources and a portable fresh-build workflow. Independent human review remains outstanding. No real-analysis library limsup API theorem or novelty claim is asserted.</p><p>MIT for code; CC BY 4.0 for prose and data, by component in LICENSE.</p>",
+  "license": "mit",
+  "access_right": "open",
+  "keywords": [
+    "Heraclitus transform",
+    "greedy integer walks",
+    "computer-assisted proof",
+    "Lean",
+    "powers of seven"
+  ],
+  "notes": "Version 1.1.0 is released on GitHub. No Zenodo upload or new DOI assignment is recorded. DOI 10.5281/zenodo.23912682 belongs to historical version 1.0.0 only."
+}

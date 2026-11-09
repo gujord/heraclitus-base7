@@ -1,4 +1,6 @@
 {
+  "doi_preparer_sha256": "7a5d300a2cf021f1a5ccb05eef215b12a4bc6f78b4f59657c5d754a3ff069d6f",
+  "doi_update": "evidence/doi-1.1.0/update.json",
   "editorial_promotion": "evidence/publication-1.1.0/promotion.json",
   "exporter_sha256": {
     "release/export_public.py": "341f56b72eb786c1e8cdd7cf898e8dee8e0bf608b1531d550aa5b598446f6e76",
@@ -24,13 +26,13 @@
       "source": ".gitignore"
     },
     ".zenodo.json": {
-      "bytes": 1141,
-      "sha256": "1f7dd2f7bda93725989bfb1c43ac2aa5cfd482ab97dcccbefdaca5f7a79c1f96",
+      "bytes": 1239,
+      "sha256": "3324147a52e3c80e54c979fd48faf05e09854ca8895217dbac291b2eb9e6065c",
       "source": "release/v1.1.0/public/.zenodo.json"
     },
     "CITATION.cff": {
-      "bytes": 1046,
-      "sha256": "d3ebce5691d042c9c3044e80f7ada8570915a915789dff15a151229af0f2d89e",
+      "bytes": 1077,
+      "sha256": "c40d349b46b0eba5fc61fd7ba579e68d0b3ab9d8f6737e8044073170c367887d",
       "source": "release/v1.1.0/public/CITATION.cff"
     },
     "LICENSE": {
@@ -49,8 +51,8 @@
       "source": "LICENSES/MIT.txt"
     },
     "README.md": {
-      "bytes": 2554,
-      "sha256": "a3b1e820296fc57c86135958bb28866e04c7a4021e221dccf01788ff830db384",
+      "bytes": 2763,
+      "sha256": "81933554789a671b9a57c3fe782bbaa5dc527c37d13abc2cad312242005042c1",
       "source": "release/v1.1.0/public/README.md"
     },
     "certificates/ladder-machine.json": {
@@ -104,8 +106,8 @@
       "source": "release/public/docs/novelty-search-2026-11-03.txt"
     },
     "docs/provenance.md": {
-      "bytes": 2164,
-      "sha256": "954aa23f424b76c9d0576594f10c1c520872551e6fd6b30d54366e708e40d3e8",
+      "bytes": 2762,
+      "sha256": "07b2b2ad5a2d371fe61afd64b61f0f2c533c634ad4b4cdd6aa690446d45b5e60",
       "source": "release/v1.1.0/public/docs/provenance.md"
     },
     "docs/reference-review-2026-11-03.md": {
@@ -114,8 +116,8 @@
       "source": "release/public/docs/reference-review-2026-11-03.md"
     },
     "docs/release-1.1.0.md": {
-      "bytes": 1425,
-      "sha256": "b767b4b7dddebf48b46aff9a9bd723bd872dce86eb6433269c388097f40a8834",
+      "bytes": 1729,
+      "sha256": "92b1d073d4ad9d84672ea4c9df9115cc81aebb818a5361fda8bae12bab47fb09",
       "source": "release/v1.1.0/public/docs/release-1.1.0.md"
     },
     "docs/reproducibility.md": {
@@ -1369,23 +1371,23 @@
       "source": "formal/lean-toolchain"
     },
     "paper/base-seven-heraclitus.pdf": {
-      "bytes": 424730,
-      "sha256": "9851683b92ec3e87c62e57abb26fdd34e189b6ae658d0bf841734fc98a87a964",
+      "bytes": 424826,
+      "sha256": "cbcb6108ed544617a57768f2c864029556fae0a70c69dd186eabad87fb0dc17c",
       "source": "paper/base-seven-heraclitus.pdf"
     },
     "paper/base-seven-heraclitus.tex": {
-      "bytes": 55191,
-      "sha256": "6ffcb9611422b8637910b37eb618b98f7402b435a96554598659ef7a7a8a15e4",
+      "bytes": 55485,
+      "sha256": "3c2825dab199f374d579c59511ea33b6e4dce0c88a02f842515f7c85b8dcb591",
       "source": "paper/base-seven-heraclitus.tex"
     },
     "paper/base-seven-heraclitus.txt": {
-      "bytes": 61310,
-      "sha256": "6dacb1c6020d4584be20f4f053bef6bb1bd16b2036ac8173e0f81c5f7537c574",
+      "bytes": 61566,
+      "sha256": "42a1afed10fec9d21a1ff1ce42fbe697814c4e248a81d53c362c809954c037e1",
       "source": "paper/base-seven-heraclitus.txt"
     },
     "paper/references.bib": {
       "bytes": 2230,
-      "sha256": "e1d741e95fb388487749ab530aa9b9c6bbf043ca430f23cee93f2b7c84dcb361",
+      "sha256": "51a19b833f3db223cd52c49bc76d43148b51659cc9843f0f732facfd8bc012d0",
       "source": "paper/references.bib"
     },
     "paper/tables.tex": {
@@ -2068,19 +2070,24 @@
       "sha256": "6ef272e6b90b1c259349de1ca77d26a4107d4d5fb29f877ac194cca5c6e19229",
       "source": "scripts/build_paper.py"
     },
+    "scripts/check_doi_update.py": {
+      "bytes": 4478,
+      "sha256": "6741b01c395234d8c39aba3e608ffa4dd06bc8f51ed977bc53ca425e8946b86c",
+      "source": "release/v1.1.0/public/scripts/check_doi_update.py"
+    },
     "scripts/check_integrity.py": {
       "bytes": 1280,
       "sha256": "9981012f3ab76a8f93dcde59447fe9d515fcce5fba799f02db0d60dea5a06e2e",
       "source": "scripts/check_integrity.py"
     },
     "scripts/check_publication.py": {
-      "bytes": 3806,
-      "sha256": "d7f50eb7d360df4c0e7499b747a81f337e995e6144da23a99c6b3e4287a93467",
+      "bytes": 3902,
+      "sha256": "7060b431cfbdb272a66b881be75029fd15998ab46d6456dc9d62e228790bd169",
       "source": "release/v1.1.0/public/scripts/check_publication.py"
     },
     "scripts/check_release.py": {
-      "bytes": 5241,
-      "sha256": "119f8998701ebbf210926a63e312aa86da76f5d4aaebf8c46b671dd75b64ecba",
+      "bytes": 5413,
+      "sha256": "4dc70a2ae03af6781ab7c32cf452467c7cd3481a27acbcdb497281f4ae5f8de2",
       "source": "release/v1.1.0/public/scripts/check_release.py"
     },
     "scripts/export_lean_certificate.py": {
@@ -2200,10 +2207,10 @@
     }
   },
   "omissions": "Presentation and all its materials; private archives, working files, agent instructions, Git history and prior compiled project objects.",
-  "publication_status_at_export": "final 1.1.0 package prepared for authorized GitHub publication",
+  "publication_status_at_export": "DOI-corrected 1.1.0 package prepared locally for Zenodo upload",
   "schema_version": 1,
   "scope": "Exact selected working-tree bytes, including uncommitted proof inputs. No private Git history or working-tree listing is exported. Historical DOI identifies 1.0.0 only.",
   "verification_evidence_included": true,
   "version": "1.1.0",
-  "version_doi": null
+  "version_doi": "10.5281/zenodo.24086002"
 }
