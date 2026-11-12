@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <defs>
+    <radialGradient id="badge" cx="0" cy="0" r="1" gradientTransform="translate(75 43) rotate(57) scale(226)">
+      <stop stop-color="#ff4268"/>
+      <stop offset=".48" stop-color="#ff0033"/>
+      <stop offset="1" stop-color="#c90029"/>
+    </radialGradient>
+    <linearGradient id="rim" x1="47" y1="27" x2="211" y2="231" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb5c4" stop-opacity=".9"/>
+      <stop offset=".4" stop-color="#ff456a" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#970020" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="face" x1="102" y1="64" x2="154" y2="199" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset=".6" stop-color="#fff9fa"/>
+      <stop offset="1" stop-color="#ffd5df"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="179" y1="78" x2="115" y2="205" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffb3c4"/>
+      <stop offset=".4" stop-color="#e97b95"/>
+      <stop offset="1" stop-color="#b72c4f"/>
+    </linearGradient>
+    <linearGradient id="river" x1="23" y1="184" x2="231" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset=".38" stop-color="#ffffff" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".08"/>
+    </linearGradient>
+    <filter id="shadow" x="-40%" y="-30%" width="180%" height="190%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    <clipPath id="heptagon"><polygon points="128,6 223.38,51.94 246.94,155.15 180.93,237.91 75.07,237.91 9.06,155.15 32.62,51.94"/></clipPath>
+  </defs>
+  <polygon points="128,6 223.38,51.94 246.94,155.15 180.93,237.91 75.07,237.91 9.06,155.15 32.62,51.94" fill="#9b0022" transform="translate(0 5)"/>
+  <polygon points="128,6 223.38,51.94 246.94,155.15 180.93,237.91 75.07,237.91 9.06,155.15 32.62,51.94" fill="url(#badge)" stroke="url(#rim)" stroke-width="1.5" stroke-linejoin="round"/>
+  <polygon points="128,18 214,59.42 235.24,152.48 175.73,227.11 80.27,227.11 20.76,152.48 42,59.42" stroke="#ffffff" stroke-opacity=".13"/>
+  <g clip-path="url(#heptagon)" stroke="url(#river)">
+    <path d="M-5 171C51 117 106 225 169 170S236 75 274 96"/>
+    <path d="M-5 184C51 130 106 238 169 183S236 88 274 109"/>
+    <path d="M-5 197C51 143 106 251 169 196S236 101 274 122"/>
+  </g>
+  <path d="M73 65H186V92L126 196H87L145 97H73Z" fill="#6a001b" opacity=".5" filter="url(#shadow)" transform="translate(3 11)"/>
+  <path d="M73 65H186V92L126 196H87L145 97H73Z" fill="url(#edge)" transform="translate(5 6)"/>
+  <path d="M73 65H186V92L126 196H87L145 97H73Z" fill="url(#face)"/>
+  <path d="M74 66H185M74 66V96H145M185 92L125 195H89" stroke="#ffffff" stroke-opacity=".8" stroke-width="1.2" stroke-linejoin="round"/>
+  <path d="M145 97L87 196" stroke="#ffffff" stroke-opacity=".7"/>
+</svg>

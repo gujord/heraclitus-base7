@@ -1,0 +1,312 @@
+/* The check window, "Virtual Python Studio". It is the frame's, so it follows light and dark with the frame.
+   Laid out the way a code editor is: a bar of actions, the files at the left as a tree, the open files as tabs
+   in the middle beside an overview, under them a read-only terminal with what the programs wrote, and a line of
+   status at the foot. On a narrow screen the parts follow one another. */
+body.checks-open { overflow: hidden; }
+.checks { --syn-key: #0451a5; --syn-s: #a31515; --syn-n: #098658; --syn-l: #0000ff; --syn-k: #af00db; --syn-f: #795e26; --syn-c: #008000; --syn-d: #795e26;
+  --syn-e: #cd3131; --syn-ok: #1a7f37; --syn-w: #9a6700; --st-changed: #8a5a00; --st-new: #1a7f37; --st-deleted: #c62828; --bar: #0b5cad; --bar-ink: #fff; }
+:root[data-theme="dark"] .checks, .checks .checks-log { --syn-key: #9cdcfe; --syn-s: #ce9178; --syn-n: #b5cea8; --syn-l: #569cd6; --syn-k: #c586c0; --syn-f: #dcdcaa; --syn-c: #6a9955; --syn-d: #dcdcaa;
+  --syn-e: #f48771; --syn-ok: #89d185; --syn-w: #e2c08d; }
+:root[data-theme="dark"] .checks { --st-changed: #e2c08d; --st-new: #81b88b; --st-deleted: #f48771; --bar: #0a4f96; }
+.syn-key { color: var(--syn-key); } .syn-s { color: var(--syn-s); } .syn-n { color: var(--syn-n); } .syn-l { color: var(--syn-l); } .syn-k { color: var(--syn-k); }
+.syn-f { color: var(--syn-f); } .syn-c { color: var(--syn-c); font-style: italic; } .syn-d { color: var(--syn-d); } .syn-e { color: var(--syn-e); font-weight: 600; }
+.syn-ok { color: var(--syn-ok); } .syn-w { color: var(--syn-w); }
+
+.checks-box { background: var(--page); color: var(--ink); max-width: 1480px; }
+.checks .paper-head { align-items: center; }
+#checks-app { font-size: 15px; }
+.checks-mark { flex: none; width: 28px; height: 28px; margin-right: -4px; }
+.checks-release { margin-left: 10px; padding: 1px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 12.5px; font-weight: 400; white-space: nowrap; }
+.checks code, .checks-name, .checks-ln, .checks-src, .checks-edit, .checks-paint, .checks-log, .checks-doc-what b, .checks-alter small, .checks-naming input, .checks-menu kbd {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+.checks code, .checks-name, .checks-doc-what b { font-size: .93em; }
+.checks code { background: var(--soft); border-radius: 4px; padding: 1px 5px; white-space: nowrap; }
+.checks h3 { margin: 0 0 8px; font-size: 15px; font-weight: 600; }
+
+/* the bar */
+/* as high empty as with Stop in it (a pill of 36, the padding, the line), so nothing below moves when a run starts */
+.checks-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; box-sizing: border-box; min-height: 51px; padding: 7px 14px; border-bottom: 1px solid var(--line); background: var(--raised); }
+.checks-bar .pill:disabled, .checks .pill:disabled { opacity: .4; cursor: default; }
+#checks-status { flex: 1; min-width: 14ch; color: var(--muted); font-size: 14px; }
+#checks-status.warn, .checks .warn { color: var(--accent); }
+.checks-changed { padding: 4px 11px; border: 1px solid var(--note-edge); border-radius: 999px; background: var(--note); color: var(--note-ink); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.checks-changed[hidden] { display: none; }
+/* Reset to the release: under the Explorer's head, there only while the copy is changed; drawn as a button, the note's colours are the note's.
+   The bar has one of its own, shown in its place on a narrow window, where the Explorer lies far down. */
+.checks-reset { display: flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; width: calc(100% - 24px); height: 30px; margin: 2px 12px 8px; padding: 0 10px; border: 1px solid var(--stack1); border-radius: 8px; background: var(--page); color: var(--ink); font-size: 13px; font-weight: 600; cursor: pointer; }
+.checks-reset .checks-back { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.checks-reset:hover { background: var(--hover); }
+.checks-reset[hidden], .checks-reset-bar { display: none; }
+.checks-cannot { margin: 12px 14px 0; padding: 12px 14px; border: 1px solid var(--note-edge); background: var(--note); color: var(--note-ink); border-radius: 10px; line-height: 1.5; }
+.checks-cannot code { background: none; padding: 0; white-space: normal; }
+
+/* the parts */
+.checks-work { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(170px, 32%);
+  grid-template-areas: "side centre" "side out"; }
+.checks-side { grid-area: side; min-height: 0; overflow-y: auto; padding: 0 0 14px; border-right: 1px solid var(--line); background: var(--field); font-size: 13px; }
+.checks-centre { grid-area: centre; min-height: 0; min-width: 0; display: flex; flex-direction: column; }
+.checks-out { grid-area: out; min-height: 0; min-width: 0; display: flex; flex-direction: column; border-top: 1px solid var(--line); }
+
+/* the files, as an editor's explorer */
+.checks-side-head { display: flex; align-items: center; gap: 2px; padding: 8px 8px 6px 14px; }
+.checks-side-head h3 { flex: 1; margin: 0; font-size: 11px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.checks-icon, .checks-row-more { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 22px; padding: 0; border: 0; border-radius: 5px; background: none; color: var(--muted); cursor: pointer; }
+.checks-icon:hover, .checks-row-more:hover, .checks-icon[aria-expanded="true"] { background: var(--hover); color: var(--ink); }
+.checks-icon:disabled { opacity: .35; cursor: default; }
+.checks-icon svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.checks-icon svg circle, .checks-row-more svg circle { fill: currentColor; stroke: none; }
+.checks-row-more svg { width: 16px; height: 16px; }
+.checks-section > summary { display: flex; align-items: center; gap: 4px; min-height: 24px; padding: 0 8px 0 6px; border-top: 1px solid var(--line); cursor: pointer; list-style: none;
+  font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink); user-select: none; }
+.checks-section > summary::-webkit-details-marker, .checks-folder > summary::-webkit-details-marker { display: none; }
+.checks-section > summary::before, .checks-folder > summary::before { content: ""; flex: none; width: 5px; height: 5px; margin: 0 5px 0 3px; border: solid var(--muted); border-width: 0 1.5px 1.5px 0; transform: rotate(-45deg); }
+.checks-section[open] > summary::before, .checks-folder[open] > summary::before { transform: rotate(45deg) translate(-1px, -1px); }
+.checks-section > summary > span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.checks-section[hidden] { display: none; }
+.checks-play { width: 14px; height: 14px; fill: currentColor; stroke: none; }
+.checks-icon .checks-play { width: 15px; height: 15px; fill: currentColor; stroke: none; }
+.pill .checks-play { margin: 0 6px 0 -3px; vertical-align: -2px; }
+/* the steps at the side: what each came to, and a button to run it */
+.checks-runs { padding: 2px 0 6px; }
+.checks-st { flex: none; width: 16px; height: 16px; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; }
+.checks-st::before { content: ""; width: 7px; height: 7px; border: 1.5px solid var(--faint); border-radius: 50%; }
+li[data-state="running"] .checks-st::before { width: 9px; height: 9px; border-color: var(--blue); border-right-color: transparent; animation: checks-turn .8s linear infinite; }
+li[data-state="ok"] .checks-st::before { content: "\2713"; border: 0; width: auto; height: auto; color: var(--teal-ink); }
+li[data-state="fail"] .checks-st::before { content: "\2715"; border: 0; width: auto; height: auto; color: var(--accent); }
+li[data-state="part"] .checks-st::before { content: "\2713"; border: 0; width: auto; height: auto; color: var(--st-changed); }
+.checks-runs li[data-state="ok"] .checks-badge::before { content: none; }
+span.checks-file { cursor: default; }
+.checks-row-run { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 20px; margin-left: 2px; padding: 0; border: 0; border-radius: 5px; background: none; color: var(--teal-ink); cursor: pointer; }
+.checks-tree .checks-row-run { display: none; }
+.checks-row-run:hover { background: var(--hover); }
+.checks-row-run:disabled { color: var(--faint); cursor: default; }
+.checks-tree li:hover .checks-row-run, .checks-tree li:focus-within .checks-row-run { display: inline-flex; }
+.checks-row-run:focus-visible { outline: 1px solid var(--blue); outline-offset: -1px; }
+.checks-version { text-transform: none; letter-spacing: 0; }
+.checks-tree { padding: 2px 0 6px; }
+.checks-folder > summary { display: flex; align-items: center; height: 22px; padding: 0 8px 0 10px; cursor: pointer; list-style: none; user-select: none; }
+.checks-folder > summary b { font-weight: 400; }
+.checks-folder > summary:hover, .checks-files li:hover { background: var(--hover); }
+.checks-files { list-style: none; margin: 0; padding: 0; }
+.checks-files li { position: relative; display: flex; align-items: center; height: 22px; padding: 0 6px 0 16px; }
+.checks-folder .checks-files li { padding-left: 30px; }
+.checks-files li.checks-naming { height: auto; flex-direction: column; align-items: stretch; gap: 2px; padding-top: 2px; padding-bottom: 4px; }
+.checks-files li.checks-naming:hover { background: none; }
+.checks-naming input { box-sizing: border-box; width: 100%; height: 22px; padding: 0 5px; border: 1px solid var(--blue); border-radius: 2px; background: var(--page); color: var(--ink); font-size: 12.5px; outline: none; }
+.checks-naming small { color: var(--muted); font-size: 11.5px; line-height: 1.35; }
+.checks-naming small.warn { color: var(--accent); }
+.checks-file { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; height: 22px; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.checks-fn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.checks-ft { flex: none; width: 16px; text-align: center; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 10px; font-weight: 700; color: var(--muted); }
+.checks-ft[data-kind="json"], .checks-ft[data-kind="jsonl"] { color: #b8860b; }
+.checks-ft[data-kind="python"] { color: #3572a5; }
+:root[data-theme="dark"] .checks-ft[data-kind="json"], :root[data-theme="dark"] .checks-ft[data-kind="jsonl"] { color: #e8c063; }
+:root[data-theme="dark"] .checks-ft[data-kind="python"] { color: #6ea8dc; }
+.checks-badge { flex: none; min-width: 14px; margin-left: 6px; text-align: center; font-size: 12px; font-weight: 600; }
+.checks-files li[data-open="true"] { background: var(--now); }
+.checks-files li[data-open="true"]::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--blue); }
+.checks-files li[data-state="ok"] .checks-badge::before, .checks-legend i[data-state="ok"]::before { content: "\2713"; color: var(--teal-ink); font-style: normal; font-weight: 600; }
+.checks-files li[data-state="fail"] .checks-fn, .checks-files li[data-state="fail"] .checks-badge { color: var(--accent); font-weight: 700; }
+.checks-files li[data-state="changed"] .checks-fn, .checks-files li[data-state="changed"] .checks-badge, .checks-legend b[data-state="changed"] { color: var(--st-changed); }
+.checks-files li[data-state="new"] .checks-fn, .checks-files li[data-state="new"] .checks-badge, .checks-legend b[data-state="new"] { color: var(--st-new); }
+.checks-files li[data-state="deleted"] .checks-fn { color: var(--st-deleted); text-decoration: line-through; }
+.checks-files li[data-state="deleted"] .checks-badge, .checks-legend b[data-state="deleted"] { color: var(--st-deleted); }
+.checks-files .checks-row-more { flex: none; display: none; margin-left: 2px; }
+.checks-files li:hover .checks-row-more, .checks-files li:focus-within .checks-row-more { display: inline-flex; }
+.checks-file:focus-visible, .checks-row-more:focus-visible, .checks-icon:focus-visible, .checks-section > summary:focus-visible, .checks-folder > summary:focus-visible { outline: 1px solid var(--blue); outline-offset: -1px; }
+.checks-legend { display: flex; flex-wrap: wrap; gap: 2px 12px; margin: 10px 14px 0; padding-top: 8px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11.5px; line-height: 1.45; }
+.checks-legend b { font-weight: 700; }
+button.checks-name { border: 0; background: none; padding: 0; color: var(--blue-ink); cursor: pointer; }
+button.checks-name:hover { text-decoration: underline; }
+
+/* a menu of actions */
+.checks-menu { position: fixed; z-index: 5; min-width: 220px; padding: 4px; border: 1px solid var(--edge); border-radius: 6px; background: var(--raised); box-shadow: 0 6px 22px rgba(0, 0, 0, .28); }
+.checks-menu-item { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 100%; padding: 4px 10px; border: 0; border-radius: 4px; background: none; color: var(--ink); font-size: 13px; text-align: left; cursor: pointer; }
+.checks-menu-item:hover:not(:disabled), .checks-menu-item:focus-visible { background: var(--blue); color: #fff; outline: none; }
+.checks-menu-item:disabled { color: var(--faint); cursor: default; }
+.checks-menu kbd { font-size: 11px; opacity: .75; }
+
+/* the middle: the tabs, and under them Overview or one open file */
+.checks-tabs { display: flex; align-items: stretch; overflow-x: auto; background: var(--field); border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.checks-tabs::-webkit-scrollbar { display: none; }
+.checks-tab { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 12px; border: 0; background: none; color: var(--muted); font-size: 13px; white-space: nowrap; cursor: pointer; }
+#checks-tab-over, .checks-tab-doc { flex: none; border-right: 1px solid var(--line); border-top: 2px solid transparent; }
+.checks-tab-doc { display: inline-flex; align-items: center; }
+.checks-tab-doc .checks-tab { padding-right: 4px; }
+#checks-tab-over[aria-selected="true"], .checks-tab-doc[data-active="true"] { background: var(--page); border-top-color: var(--blue); }
+#checks-tab-over[aria-selected="true"], .checks-tab-doc[data-active="true"] .checks-tab { color: var(--ink); }
+.checks-tab-mark { font-style: normal; font-size: 12px; font-weight: 600; }
+.checks-tab-doc[data-state="changed"] .checks-tab { color: var(--st-changed); }
+.checks-tab-doc[data-state="new"] .checks-tab { color: var(--st-new); }
+.checks-tab-doc[data-state="deleted"] .checks-tab { color: var(--st-deleted); }
+.checks-tab-doc[data-state="deleted"] .checks-tab-name { text-decoration: line-through; }
+.checks-tab-x { width: 20px; height: 20px; margin-right: 6px; padding: 0; border: 0; border-radius: 4px; background: none; color: var(--muted); font-size: 16px; line-height: 1; cursor: pointer; visibility: hidden; }
+.checks-tab-doc:hover .checks-tab-x, .checks-tab-doc[data-active="true"] .checks-tab-x, .checks-tab-x:focus-visible { visibility: visible; }
+.checks-tab-x:hover { background: var(--hover); color: var(--ink); }
+.checks-tab:focus-visible, .checks-tab-x:focus-visible { outline: 1px solid var(--blue); outline-offset: -2px; }
+
+/* Overview. One column. Where there is room, two: the result's line and the steps at the left, and at the right
+   the changes to try. No paragraph stands here: what a step or a change is, is in its title. */
+.checks-over { flex: 1; min-height: 0; overflow-y: auto; padding: 18px 22px 26px; display: flex; flex-direction: column; }
+.checks-over > * { flex: none; }
+@media (min-width: 1320px) {
+  .checks-over { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(320px, 1fr); column-gap: 22px; align-content: start; grid-template-rows: repeat(3, max-content); grid-auto-rows: max-content; }
+  .checks-over > * { grid-column: 1; }
+  .checks-over > .checks-try { grid-column: 2; grid-row: 1 / span 3; align-self: start; }
+}
+.checks-over[hidden], .checks-doc[hidden] { display: none; }
+
+/* the head of the steps: Run all, in the colour of the way in on a scene about the checker, and with its rings */
+.checks-go { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 14px; border: 1px solid var(--line); border-bottom: 0; border-radius: 12px 12px 0 0; background: var(--raised); }
+.pill.checks-all { display: inline-flex; align-items: center; gap: 8px; background: var(--blue); border-color: transparent; color: #fff; font-weight: 600; white-space: nowrap; }
+:root[data-theme="dark"] .pill.checks-all { background: #3ea6ff; color: #0f0f0f; }
+.pill.checks-all:hover { background: var(--blue); filter: brightness(1.1); }
+:root[data-theme="dark"] .pill.checks-all:hover { background: #3ea6ff; }
+.pill.checks-all { justify-content: center; }
+/* while a run goes it is Stop: not the blue of a way in */
+.pill.checks-all.stop, :root[data-theme="dark"] .pill.checks-all.stop { background: var(--soft); color: var(--ink); }
+.pill.checks-all.stop:hover, :root[data-theme="dark"] .pill.checks-all.stop:hover { background: var(--hover); filter: none; }
+.pill.checks-all.arrive { animation: checks-ring 1.3s ease-out .5s 2; }
+@media (prefers-reduced-motion: reduce) { .pill.checks-all.arrive { animation: none; } }
+.checks-steps { list-style: none; margin: 0 0 18px; padding: 0; border: 1px solid var(--line); border-radius: 0 0 12px 12px; overflow: hidden; }
+.checks-step { display: grid; grid-template-columns: 14px minmax(0, 1fr) auto auto; gap: 12px; align-items: center; padding: 6px 14px; border-top: 1px solid var(--line); }
+.checks-step:first-child { border-top: 0; }
+.checks-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--faint); box-sizing: border-box; }
+.checks-step[data-state="running"] { background: var(--blue-wash); }
+.checks-step[data-state="running"] .checks-dot { border-color: var(--blue); border-right-color: transparent; animation: checks-turn .8s linear infinite; }
+.checks-step[data-state="ok"] .checks-dot { border-color: var(--teal-ink); background: var(--teal-ink); }
+.checks-step[data-state="part"] .checks-dot { border-color: var(--note-ink); background: linear-gradient(90deg, var(--note-ink) 50%, transparent 50%); }
+.checks-step[data-state="fail"] .checks-dot { border-color: var(--accent); background: var(--accent); }
+@keyframes checks-turn { to { transform: rotate(360deg); } }
+.checks-step-what { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.checks-name { align-self: flex-start; font-weight: 600; text-align: left; overflow-wrap: anywhere; }
+b.checks-name { font-family: inherit; font-size: inherit; }
+.checks-said { border: 0; background: none; padding: 2px 0; color: var(--muted); font-size: 13px; white-space: nowrap; text-align: right; }
+.checks-said:not(:disabled) { color: var(--ink); cursor: pointer; text-decoration: underline; text-decoration-color: var(--faint); text-underline-offset: 3px; }
+.checks-step[data-state="fail"] .checks-said { color: var(--accent); font-weight: 600; }
+.checks-one { grid-column: 4; padding: 3px 12px; font-size: 13px; }
+
+.checks-result { margin: 0 0 18px; padding: 14px 16px; border: 1px solid var(--line); border-left: 4px solid var(--teal-ink); border-radius: 10px; }
+.checks-result[data-state="fail"] { border-left-color: var(--accent); }
+.checks-result[data-state="changed"] { border-left-color: var(--note-ink); background: var(--note); color: var(--note-ink); }
+.checks-result[data-state="changed"] code { background: none; padding: 0; }
+.checks-result[data-state="one"] { border-left-color: var(--blue); }
+.checks-result h3:last-child { margin-bottom: 0; }
+.checks-result ul { margin: 0; padding-left: 18px; line-height: 1.5; }
+.checks-result li + li { margin-top: 4px; }
+.checks-result li { overflow-wrap: anywhere; }
+.checks-try { padding: 14px 16px 10px; border: 1px solid var(--line); border-radius: 10px; }
+.checks-alter { list-style: none; margin: 10px 0 8px; padding: 0; }
+.checks-alter li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 8px; border-top: 1px solid var(--line); }
+.checks-alter li[data-on="true"] { background: var(--note); color: var(--note-ink); border-radius: 8px; }
+.checks-alter-what { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.checks-alter small { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.checks-alter li[data-on="true"] small { color: inherit; }
+.checks-alter-do { white-space: nowrap; }
+
+/* one open file */
+.checks-doc { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.checks-doc-head { display: flex; align-items: flex-start; gap: 10px; padding: 7px 14px; border-bottom: 1px solid var(--line); }
+.checks-doc-head .pill { padding: 4px 12px; font-size: 13px; white-space: nowrap; }
+.checks-doc-head .pill[hidden], .checks-seg[hidden] { display: none; }
+.checks-doc-what { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.checks-doc-what small { color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; }
+.checks-seg { display: inline-flex; flex: none; border: 1px solid var(--edge); border-radius: 999px; overflow: hidden; }
+.checks-seg button { padding: 4px 11px; border: 0; background: none; color: var(--muted); font-size: 12.5px; white-space: nowrap; cursor: pointer; }
+.checks-seg button[aria-pressed="true"] { background: var(--ink); color: var(--page); }
+.checks-seg button:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.checks-doc-body { flex: 1; min-height: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); background: var(--page); }
+.checks-doc-body[data-mode="read"] { overflow: auto; align-content: start; }
+.checks-doc-body[data-mode="edit"] { overflow: hidden; grid-template-rows: minmax(0, 1fr); }
+.checks-doc-body[data-view="formatted"] { grid-template-columns: minmax(0, 1fr); }
+.checks-doc-body[data-view="formatted"] .checks-ln { display: none; }     /* laid-out lines are not the file's lines: no numbers */
+.checks-ln, .checks-src, .checks-edit, .checks-paint { margin: 0; font-size: 12.5px; line-height: 1.5; tab-size: 4; letter-spacing: 0; }
+.checks-ln { min-height: 0; padding: 10px 12px 10px 16px; text-align: right; color: var(--faint); user-select: none; background: var(--page); }
+.checks-doc-body[data-mode="read"] .checks-ln { position: sticky; left: 0; z-index: 1; }
+.checks-doc-body[data-mode="edit"] .checks-ln { overflow: hidden; padding-bottom: 80px; }
+.checks-read[hidden], .checks-edit-wrap[hidden] { display: none; }
+.checks-src { padding: 10px 16px 10px 4px; white-space: pre; outline: none; }
+.checks-doc-body[data-view="formatted"] .checks-src { padding-left: 16px; }
+#checks-doc-more { margin: 4px 16px 16px; }
+#checks-doc-more[hidden] { display: none; }
+/* to change a file: a plain text field, and behind it the same text in colours */
+.checks-edit-wrap { position: relative; min-height: 0; min-width: 0; }
+.checks-edit, .checks-paint { position: absolute; inset: 0; box-sizing: border-box; padding: 10px 16px 10px 4px; border: 0; white-space: pre; overflow-wrap: normal; }
+.checks-paint { overflow: hidden; padding-right: 40px; padding-bottom: 40px; pointer-events: none; color: var(--ink); }
+.checks-edit { display: block; width: 100%; height: 100%; border-radius: 0; resize: none; overflow: auto; background: transparent; color: transparent; caret-color: var(--ink); outline: none; z-index: 1; }
+.checks-edit::selection { background: rgba(6, 95, 212, .28); color: transparent; }
+.checks-log:focus-visible { outline: 1px solid var(--blue); outline-offset: -1px; }
+
+/* the terminal: read-only, and always dark */
+.checks-out { position: relative; background: #0c0c0c; color: #d4d4d4; }
+.checks-split { position: absolute; left: 0; right: 0; top: -4px; height: 7px; z-index: 2; cursor: row-resize; touch-action: none; }
+.checks-split:hover, .checks-split:focus-visible, .checks-split[data-drag] { background: var(--blue); outline: none; }
+.checks-out-head .checks-icon { margin-left: auto; align-self: center; }
+.checks-out-head { display: flex; align-items: baseline; gap: 14px; padding: 6px 14px 5px; background: var(--field); border-bottom: 1px solid var(--line); }
+.checks-out-head h3 { margin: 0; padding-bottom: 3px; border-bottom: 1px solid var(--ink); font-size: 11px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); }
+.checks-out-head small { color: var(--muted); font-size: 12px; line-height: 1.4; }
+.checks-out-head small b { color: var(--ink); font-weight: 700; }
+.checks-log { flex: 1; min-height: 0; overflow: auto; padding: 8px 14px 12px; font-size: 12.5px; line-height: 1.45; cursor: text; }
+.checks-line { white-space: pre-wrap; overflow-wrap: anywhere; min-height: 1.45em; }      /* long lines wrap, as in a terminal */
+.checks-line.run { margin-top: 10px; color: #8a8a8a; }
+.checks-line.run:first-child { margin-top: 0; }
+.checks-line.note { color: #8a8a8a; }
+.checks-line.cmd { margin-top: 6px; }
+.term-who { color: #7ee787; font-weight: 600; } .term-dir { color: #79b8ff; font-weight: 600; } .term-changed { color: #e2c08d; }
+.term-prompt { user-select: none; }
+.term-cmd { color: #fff; font-weight: 600; }
+.checks-line.end { color: #7ee787; }
+.checks-line.end.fail { color: #f48771; font-weight: 600; }
+.term-last { margin-top: 6px; }
+.term-cursor { display: inline-block; width: 1ch; background: #d4d4d4; }      /* a block cursor, and still: it does not blink */
+@media (prefers-reduced-motion: reduce) { .checks-step[data-state="running"] .checks-dot { animation: none; } }
+
+/* the foot: whose files these are, the run, the open file */
+.checks-foot { display: flex; align-items: center; gap: 16px; min-height: 22px; padding: 0 12px; background: var(--bar); color: var(--bar-ink); font-size: 12px; white-space: nowrap; overflow: hidden; }
+.checks-foot span:empty { display: none; }
+.checks-foot-gap { flex: 1; display: block !important; }
+.checks[data-changed]:not([data-changed="0"]) .checks-foot { background: #8a5a00; }
+.checks[data-state="failed"] .checks-foot { background: #a1260d; }
+
+/* the ways in */
+/* the button on a scene about the checker: in colour, and it arrives with a short movement, so that it is seen */
+.checks-link { white-space: nowrap; }
+.pill.checks-link { background: var(--blue); border-color: transparent; color: #fff; font-weight: 600; }
+:root[data-theme="dark"] .pill.checks-link { background: #3ea6ff; color: #0f0f0f; }
+.pill.checks-link:hover { filter: brightness(1.1); }
+.pill.checks-link.arrive { animation: checks-arrive .45s ease-out both, checks-ring 1.3s ease-out .4s 2; }
+@keyframes checks-arrive { from { opacity: 0; transform: translateY(6px) scale(.92); } to { opacity: 1; transform: none; } }
+@keyframes checks-ring { from { box-shadow: 0 0 0 0 rgba(62, 166, 255, .6); } to { box-shadow: 0 0 0 12px rgba(62, 166, 255, 0); } }
+@media (prefers-reduced-motion: reduce) { .pill.checks-link.arrive { animation: none; } }
+.checks-link[hidden] { display: none; }
+.checks-link svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; stroke-linecap: round; }
+.guide-item .guide-ic svg path { stroke-linejoin: round; stroke-linecap: round; }
+
+@media (max-width: 860px) {
+  .checks .paper-head { flex-wrap: nowrap; }
+  .checks .paper-what { order: 0; flex: 1; flex-basis: auto; }
+  .checks-work { display: flex; flex-direction: column; overflow-y: auto; }
+  .checks-centre { order: 1; flex: none; }
+  .checks-out { order: 2; flex: none; height: 45vh; }
+  .checks-side { order: 3; flex: none; overflow: visible; border-right: 0; border-top: 1px solid var(--line); }
+  .checks-over { flex: none; overflow: visible; padding: 16px 16px 20px; }
+  .checks-doc { flex: none; }
+  .checks-doc-body { height: 60vh; flex: none; }
+  .checks-doc-head { flex-wrap: wrap; }
+  .checks-step { grid-template-columns: 14px minmax(0, 1fr) auto; }
+  .checks-said { grid-column: 2; text-align: left; white-space: normal; }
+  .checks-one { grid-column: 3; grid-row: 1; }
+  .checks-alter li { grid-template-columns: minmax(0, 1fr); }
+  .checks-alter-do { justify-self: start; }
+  .checks-out-head { flex-direction: column; gap: 2px; }
+  .checks-files .checks-row-more, .checks-tree .checks-row-run { display: inline-flex; }
+  .checks-split { display: none; }
+  .checks-foot { flex-wrap: wrap; white-space: normal; gap: 2px 14px; padding: 3px 12px; }
+  /* the status leaves room for Stop beside it, whether Stop is there or not, and the bar is as high with one line of status as with two */
+  .checks-bar { min-height: 57px; }
+  #checks-status { flex: 0 1 calc(100% - 80px); }
+  #checks-stop { order: 1; }
+  .checks-changed { order: 2; white-space: normal; border-radius: 14px; }
+  .checks-side .checks-reset { display: none; }
+  .checks-reset-bar:not([hidden]) { display: flex; order: 3; width: auto; height: 30px; margin: 0 0 0 auto; border-radius: 15px; }
+}

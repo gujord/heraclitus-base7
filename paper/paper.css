@@ -1,0 +1,10 @@
+/* The one passage the player asked for: full yellow on its lines, mixed into the page as a marker
+   pen does so that the text under it stays black, and a thin frame around it, drawn in a layer of
+   its own over the page. The view's own tint on all the reviewed passages is never shown
+   here: with a passage asked for, exactly one place stands out, and the whole manuscript opens with
+   nothing marked. Places are in per cent of the page, so they follow every size. */
+.proof-layer { position: absolute; inset: 0; pointer-events: none; }
+.proof-mark { position: absolute; background: #ffe433; mix-blend-mode: multiply; border-radius: 2px; }
+.proof-frame { position: absolute; border: 1.5px solid #b58215; border-radius: 4px; }
+.pdf-cue-layer { visibility: hidden !important; }
+@media print { .proof-layer { display: none !important; } }

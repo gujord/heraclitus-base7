@@ -1,0 +1,66 @@
+/* Transcript navigation and the chapter/source overview. All assets are local. */
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+button:focus-visible, a:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.side { min-width: 0; scroll-margin-top: 72px; }
+.info { min-width: 0; }
+.outline-pill { display: inline-flex; align-items: center; justify-content: center; min-height: 36px; padding: 6px 16px; border: 1px solid var(--edge); border-radius: 20px; background: transparent; color: var(--ink); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.outline-pill:hover { background: var(--hover); }
+.more-section { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line2); }
+.more-section h2 { font-size: 17px; margin: 0 0 8px; line-height: 1.35; }
+.more-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.more-heading h2 { margin: 0; }
+.chapter-carousel { display: flex; align-items: center; gap: 6px; }
+.chapter-cards { display: flex; flex: 1; min-width: 0; gap: 14px; overflow-x: auto; padding: 4px 3px 12px; scroll-snap-type: x proximity; scrollbar-width: thin; }
+.chapter-card { display: flex; flex: 0 0 184px; flex-direction: column; align-items: flex-start; gap: 4px; border: 0; border-radius: 6px; background: transparent; padding: 0; text-align: left; scroll-snap-align: start; }
+.chapter-card img { width: 100%; aspect-ratio: 16/9; object-fit: contain; background: var(--paper); border-radius: 7px; border: 1px solid var(--edge); }
+.chapter-card.now img { outline: 2px solid var(--blue); outline-offset: 1px; }
+.chapter-card:hover img { border-color: var(--blue); }
+.chapter-card small { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.chapter-card.now small { color: var(--blue); font-weight: 600; }
+.chapter-card b { font-size: 14px; line-height: 1.35; }
+.carousel-arrow { flex: 0 0 32px; height: 32px; border: 1px solid var(--edge); border-radius: 50%; background: var(--raised); font-size: 24px; line-height: 1; }
+.carousel-arrow:disabled { opacity: .3; cursor: default; }
+.more-section > .outline-pill { margin-top: 5px; color: var(--blue); }
+.project-byline { display: flex; gap: 12px; align-items: center; }
+.project-byline h2 { margin: 0 0 2px; }
+.project-byline p { color: var(--muted); font-size: 13px; }
+.author-initials { display: grid; place-items: center; flex: 0 0 42px; height: 42px; border-radius: 50%; color: #fff; background: #2f6f73; font-weight: 700; }
+.source-links { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 20px; }
+.transcript-search { display: flex; gap: 9px; align-items: center; margin: 12px; padding: 5px 9px; border: 1px solid var(--edge); border-radius: 8px; }
+.transcript-search:focus-within { outline: 2px solid var(--blue); outline-offset: 1px; }
+.transcript-search svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--muted); stroke-width: 1.8; }
+.transcript-search input { flex: 1; min-width: 0; width: 100%; border: 0; background: transparent; color: var(--ink); padding: 5px 0; font: inherit; }
+.transcript-search input:focus-visible { outline: none; }
+.transcript-search input::-webkit-search-cancel-button { display: none; }
+.transcript-search button { flex: none; border: 0; background: transparent; font-size: 22px; padding: 0 4px; min-height: 30px; }
+#transcript-heading { padding-top: 0; border-bottom: 0; }
+.transcript-follow { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 12px 10px; border-bottom: 1px solid var(--line); }
+.transcript-follow > span { color: var(--muted); font-size: 12px; }
+.transcript-follow .outline-pill { min-height: 30px; padding: 4px 9px; font-size: 12px; white-space: nowrap; }
+.transcript-follow .outline-pill[aria-pressed="true"] { background: var(--blue-wash); color: var(--blue-ink); border-color: var(--blue-edge); }
+.shots, .transcript-results { max-height: min(70vh, 680px); overscroll-behavior: contain; overflow: auto; }
+.shots li { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; cursor: text; }
+.shots li p { font-size: 15px; line-height: 1.5; }
+.shots li .ts { border: 0; color: var(--blue); background: var(--blue-soft); font-size: 12px; line-height: 1.6; padding: 1px 5px; cursor: pointer; }
+.shots li.now { background: var(--now-row); box-shadow: inset 3px 0 var(--blue); }
+.shots li.now .ts { background: var(--blue-soft2); color: var(--blue-ink); }
+.shots li.question.now .ts { background: var(--blue-soft2); }
+.search-status { margin: 0; padding: 0 16px 12px; color: var(--muted); font-size: 13px; }
+.search-chapter { padding: 12px 16px 4px; margin: 0; color: var(--muted); font-size: 12px; font-weight: 600; }
+.search-scene { padding: 4px 16px; margin: 0; font-size: 14px; font-weight: 600; }
+.search-hit { display: flex; gap: 10px; align-items: flex-start; width: 100%; padding: 9px 16px; border: 0; background: transparent; text-align: left; line-height: 1.5; }
+.search-hit:hover { background: var(--soft); }
+.search-hit.now { background: var(--blue-wash); box-shadow: inset 3px 0 var(--blue); }
+.search-hit time { flex: none; color: var(--blue); background: var(--blue-soft); border-radius: 4px; padding: 0 4px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.search-hit mark { background: var(--mark); color: inherit; border-radius: 2px; }
+.playlist .chapter-heading { display: flex; flex-direction: column; gap: 2px; text-transform: none; letter-spacing: 0; font-size: 14px; color: var(--ink); margin-top: 14px; }
+.chapter-heading small { font-size: 12px; font-weight: 400; color: var(--muted); }
+@media (max-width: 600px) {
+  .chapter-card { flex-basis: 158px; }
+  .carousel-arrow { display: none; }
+  .transcript-search input { font-size: 16px; }
+  .project-byline { align-items: flex-start; }
+  .source-links { gap: 6px; }
+  .source-links .outline-pill { padding: 6px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .chapter-cards { scroll-behavior: auto; } }

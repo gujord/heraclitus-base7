@@ -1,0 +1,4 @@
+/* Provider marks are local, decorative, and accompanied by their existing text labels. */
+.has-resource-icon { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.resource-icon { display: block; flex: 0 0 20px; width: 20px; height: 20px; object-fit: contain; }
+html[data-theme="dark"] .resource-icon-github { filter: invert(1); }

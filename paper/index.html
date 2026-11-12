@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Roger Gujord"><link rel="icon" href="data:,">
+<title>Manuscript · Base-seven Heraclitus</title>
+<!-- The manuscript view of presentation/, unchanged: manuscript.js, manuscript.css, the embedded PDF,
+     the reviewed passage map and PDF.js. paper.js and paper.css add the focus on one passage and the
+     messages to the player; extra-regions.js holds reviewed passages added for the player, if any. The presenter's parts of presentation/ are not here. -->
+<link rel="stylesheet" href="manuscript.css"><link rel="stylesheet" href="vendor/pdfjs/text-layer.css"><link rel="stylesheet" href="paper.css">
+<script defer src="vendor/pdfjs/pdf.js"></script><script defer src="vendor/pdfjs/worker-data.js"></script>
+<script defer src="manuscript-data.js"></script><script defer src="manuscript-notes.js"></script>
+<script defer src="extra-regions.js"></script><script defer src="paper.js"></script><script defer src="manuscript.js"></script>
+</head>
+<body class="manuscript-page">
+<button id="pdf-search-toggle" class="pdf-search-toggle" aria-label="Search document" title="Search document" aria-expanded="false" aria-controls="pdf-search-panel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg></button>
+<form id="pdf-search-panel" class="pdf-search-panel" role="search" hidden>
+<label class="sr-only" for="pdf-search">Find text in document</label><input id="pdf-search" type="search" placeholder="Find in document" autocomplete="off">
+<button id="pdf-find" type="submit" aria-label="Next match" title="Next match">↓</button><button id="pdf-search-close" type="button" aria-label="Close search" title="Close search">×</button>
+<output id="pdf-search-status" aria-live="polite"></output>
+</form>
+<p id="pdf-status" role="status">Loading document…</p>
+<main id="pdf-pages" aria-label="Manuscript"></main>
+<noscript><p><a href="reference/paper/base-seven-heraclitus.pdf">Open PDF</a>.</p></noscript>
+</body></html>

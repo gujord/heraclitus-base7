@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A transfer with a start-up and a real repair · Heraclitus base seven</title>
+<!-- WEB_METADATA_START -->
+<link rel="icon" href="icons/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" href="icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="seven-mark.svg" type="image/svg+xml" sizes="any">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="canonical" href="https://gujord.github.io/heraclitus-base7/watch-4.8.html">
+<meta name="application-name" content="Heraclitus base seven">
+<meta name="theme-color" content="#ff0033">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Heraclitus">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="description" content="The scene illustrates the general transient, first affected phase and repair construction. Its numerical word is a certificate example, not an expanded word printed in this passage.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Heraclitus base seven">
+<meta property="og:locale" content="en_GB">
+<meta property="og:title" content="A transfer with a start-up and a real repair · Heraclitus base seven">
+<meta property="og:description" content="The scene illustrates the general transient, first affected phase and repair construction. Its numerical word is a certificate example, not an expanded word printed in this passage.">
+<meta property="og:url" content="https://gujord.github.io/heraclitus-base7/watch-4.8.html">
+<meta property="og:image" content="https://gujord.github.io/heraclitus-base7/social/4.8.png">
+<meta property="og:image:secure_url" content="https://gujord.github.io/heraclitus-base7/social/4.8.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Final figure of scene 4.8: A transfer with a start-up and a real repair.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A transfer with a start-up and a real repair · Heraclitus base seven">
+<meta name="twitter:description" content="The scene illustrates the general transient, first affected phase and repair construction. Its numerical word is a certificate example, not an expanded word printed in this passage.">
+<meta name="twitter:image" content="https://gujord.github.io/heraclitus-base7/social/4.8.png">
+<meta name="twitter:image:alt" content="Final figure of scene 4.8: A transfer with a start-up and a real repair.">
+<meta name="proof-scene" content="4.8">
+<!-- WEB_METADATA_END -->
+<link rel="stylesheet" href="player.css">
+<link rel="stylesheet" href="navigation.css">
+<link rel="stylesheet" href="link-icons.css">
+<link rel="stylesheet" href="checks.css">
+<script>
+(function () {   // light or dark for the frame, set before anything is drawn: the reader's choice, else the device's
+  var t; try { t = (JSON.parse(localStorage.getItem("proof-player") || "{}") || {}).theme; } catch (e) { /* none */ }
+  if (t !== "dark" && t !== "light") t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+})();
+</script>
+</head>
+<body>
+<div id="loadbar" class="loadbar"></div>
+<header class="top">
+  <button id="guide-button" class="top-button plain" type="button" title="Menu" aria-label="Menu" aria-expanded="false" aria-controls="guide"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+  <a id="home-link" class="mark" href="#home" title="Start page"><span class="logo" aria-hidden="true"><img src="seven-mark.svg" alt="" width="30" height="30"></span><span class="brand">Heraclitus <span>base seven</span></span></a>
+  <div class="top-note">A proposed computer-assisted proof of coverage</div>
+  <span class="grow"></span>
+  <button id="help" class="top-button" type="button" title="Help and keyboard shortcuts (?)" aria-label="Help and keyboard shortcuts" aria-haspopup="dialog">?</button>
+</header>
+<nav id="guide" class="guide" aria-label="Menu" hidden>
+  <div class="guide-top">
+    <button id="guide-close" class="top-button plain" type="button" aria-label="Close the menu"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button>
+    <span class="logo" aria-hidden="true"><img src="seven-mark.svg" alt="" width="30" height="30"></span><span class="brand">Heraclitus <span>base seven</span></span>
+  </div>
+  <div id="guide-main" class="guide-group"></div>
+  <div class="guide-group"><a id="guide-last" class="guide-item" href="#"><span class="guide-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span><b id="guide-last-head"></b><small id="guide-last-sub"></small></span></a></div>
+  <div class="guide-group"><h3>The chain of the proof</h3><div id="guide-chain"></div></div>
+  <div class="guide-group"><h3>Parts</h3><div id="guide-parts"></div></div>
+  <div class="guide-group">
+    <button id="guide-manuscript" class="guide-item" type="button"><span class="guide-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg></span><span>Manuscript</span></button>
+    <button id="guide-pwa" class="guide-item" type="button" hidden><span class="guide-ic" aria-hidden="true">↓</span><span>App &amp; offline<small id="guide-pwa-status">Install and use offline</small></span></button>
+    <button id="guide-theme" class="guide-item" type="button" aria-expanded="false" aria-controls="guide-themes"><span class="guide-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 14.2A8 8 0 0 1 9.8 4.5a8 8 0 1 0 9.7 9.7z"/></svg></span><span>Appearance<small id="guide-theme-now">Device theme</small></span></button>
+    <div id="guide-themes" class="guide-choices" role="radiogroup" aria-label="Appearance" hidden>
+      <button class="guide-choice" type="button" role="radio" aria-checked="true" data-choice="device">Use device theme</button>
+      <button class="guide-choice" type="button" role="radio" aria-checked="false" data-choice="dark">Dark theme</button>
+      <button class="guide-choice" type="button" role="radio" aria-checked="false" data-choice="light">Light theme</button>
+      <p class="guide-note">Changes the page around the figures. The figures and the manuscript keep their own colours.</p>
+    </div>
+    <button id="guide-help" class="guide-item" type="button"><span class="guide-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.4 2.3c-.7.4-1 .9-1 1.7M12 16.6v.2"/></svg></span><span>Help</span></button>
+    <button id="guide-about" class="guide-item" type="button"><span class="guide-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.2"/></svg></span><span>About</span></button>
+  </div>
+</nav>
+<div id="guide-scrim" class="guide-scrim" hidden></div>
+<main id="start-page" class="home" hidden>
+  <div class="channel">
+    <div id="banner" class="banner">
+      <svg id="banner-art" class="banner-art" aria-hidden="true"></svg>
+      <div class="banner-title">The coverage proof <span>in five links</span></div>
+      <nav id="banner-chain" class="banner-chain" aria-label="The chain of the proof"></nav>
+      <div class="banner-share"><div id="banner-bar" class="banner-bar" aria-hidden="true"></div><div class="banner-note"><span><span id="banner-time"></span> <span id="banner-most">Most of the work is in the second link.</span></span><span id="banner-art-note" class="banner-art-note"></span></div></div>
+    </div>
+    <div class="channel-head">
+      <span class="channel-avatar" aria-hidden="true"><img src="seven-mark.svg" alt="" width="120" height="120"></span>
+      <div class="channel-tx">
+        <h1 id="channel-name">The base-seven Heraclitus transform</h1>
+        <p class="channel-facts"><b>Roger Gujord</b> · <span id="channel-facts"></span></p>
+        <button id="channel-about" class="channel-about" type="button" aria-haspopup="dialog"><span>A proposed computer-assisted proof of coverage. The voice is generated. Every figure at the end of a shot is a checked still.</span> <b>…more</b></button>
+        <div class="channel-actions">
+          <a id="channel-play" class="pill dark" href="#"></a>
+          <button id="channel-manuscript" class="pill" type="button">Manuscript</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="home-tabs" class="tabs" role="tablist" aria-label="The start page">
+    <button id="home-tab-home" class="tab on" type="button" role="tab" aria-selected="true" aria-controls="home-panel-home">Home</button>
+    <button id="home-tab-scenes" class="tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-scenes" tabindex="-1">Scenes</button>
+    <button id="home-tab-playlists" class="tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-playlists" tabindex="-1">Playlists</button>
+    <button id="home-tab-search" class="tab" type="button" role="tab" aria-selected="false" aria-controls="home-panel-search" tabindex="-1" aria-label="Search" title="Search"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></button>
+  </div>
+  <div id="home-panel-home" role="tabpanel" aria-labelledby="home-tab-home">
+    <section id="home-first" class="home-section">
+      <div class="home-head"><h2 id="home-first-head"></h2></div>
+      <a id="home-first-card" class="first-card" href="#">
+        <span class="card-th"><img id="home-first-img" alt=""><em id="home-first-time"></em><u id="home-first-bar"></u></span>
+        <span class="first-tx"><b id="home-first-title"></b><small id="home-first-sub"></small><span id="home-first-go" class="pill dark"></span></span>
+      </a>
+    </section>
+    <div id="home-shelves"></div>
+  </div>
+  <div id="home-panel-scenes" role="tabpanel" aria-labelledby="home-tab-scenes" hidden>
+    <nav id="home-chain" class="home-chain" aria-label="The proof, link by link"></nav>
+    <p id="home-what" class="home-what"></p>
+    <div id="home-parts"></div>
+  </div>
+  <div id="home-panel-playlists" role="tabpanel" aria-labelledby="home-tab-playlists" hidden>
+    <section class="home-section"><div class="home-head"><h2>The chain of the proof</h2><small id="playlist-chain-what"></small></div><div id="playlist-chain" class="cards"></div></section>
+    <section class="home-section"><div class="home-head"><h2>Parts</h2><small id="playlist-parts-what"></small></div><div id="playlist-parts" class="cards"></div></section>
+  </div>
+  <div id="home-panel-search" role="tabpanel" aria-labelledby="home-tab-search" hidden>
+    <form id="home-search-form" class="transcript-search home-search" role="search">
+      <label for="home-search" class="visually-hidden">Search the words of all scenes</label>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg>
+      <input id="home-search" type="search" placeholder="Search all scenes" autocomplete="off" spellcheck="false">
+      <button id="home-search-clear" type="button" aria-label="Clear search" hidden>×</button>
+    </form>
+    <p id="home-search-status" class="home-what" role="status"></p>
+    <div id="home-search-results" class="results"></div>
+  </div>
+</main>
+<main id="watch" class="watch" hidden>
+  <div class="player-wrap">
+    <div id="player" class="player fresh">
+      <div id="figure" class="figure">
+        <div id="stage" class="stage">
+          <div class="layer a"></div><div class="layer b"></div><div class="layer c"></div>
+          <img id="poster" class="poster" alt="">
+        </div>
+      </div>
+      <div id="caption" class="caption" hidden><span></span></div>
+      <button id="bigplay" class="bigplay" type="button" aria-label="play"></button>
+      <div id="bezel" class="bezel"></div>
+      <div id="spinner" class="spinner" hidden></div>
+      <div id="upnext" class="upnext" hidden>
+        <div class="upnext-head">Up next</div>
+        <button id="upnext-go" class="upnext-go" type="button" title="play now">
+          <span class="th"><img alt=""><svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle class="ring-bg" cx="24" cy="24" r="20"/><circle id="ring" class="ring-fg" cx="24" cy="24" r="20"/><path d="M19.5 16l12 8-12 8z" fill="#fff"/></svg></span>
+          <span class="tx"><b id="upnext-title"></b><small id="upnext-sub"></small></span>
+        </button>
+        <button id="upnext-cancel" class="upnext-cancel" type="button">Cancel</button>
+      </div>
+      <div id="menu" class="menu" hidden>
+        <div id="menu-main">
+          <button id="menu-auto" class="menu-row" type="button"><span>Autoplay</span><em id="menu-auto-v"></em></button>
+          <button id="menu-cc" class="menu-row" type="button"><span>Captions</span><em id="menu-cc-v"></em></button>
+          <button id="menu-speed" class="menu-row" type="button"><span>Playback speed</span><em id="menu-speed-v"></em></button>
+        </div>
+        <div id="menu-speeds" hidden>
+          <button id="menu-back" class="menu-head" type="button">‹ Playback speed</button>
+          <div id="speeds"></div>
+        </div>
+      </div>
+      <div class="chrome">
+        <div id="tip" class="tip"><div id="tip-thumb" class="tip-thumb"></div><div id="tip-label" class="tip-label"></div><div id="tip-text" class="tip-text"></div></div>
+        <div id="bar" class="bar" role="slider" aria-label="time" tabindex="-1">
+          <div id="segments" class="segments"></div>
+          <div id="knob" class="knob"></div>
+        </div>
+        <div class="row">
+          <button id="prev-scene" class="ic" type="button" title="previous scene (shift+P)"></button>
+          <button id="play" class="ic" type="button" title="play (k)"></button>
+          <button id="next-scene" class="ic" type="button" title="next scene (shift+N)"></button>
+          <div class="vol">
+            <button id="mute" class="ic" type="button" title="mute (m)"></button>
+            <input id="volume" type="range" min="0" max="1" step="0.05" value="1" aria-label="volume">
+          </div>
+          <span id="time" class="time"></span>
+          <button id="chapter" class="chapter" type="button" title="the shots of this scene"></button>
+          <span class="grow"></span>
+          <button id="prev" class="ic" type="button" title="previous shot (←)"></button>
+          <button id="next" class="ic" type="button" title="next shot (→)"></button>
+          <button id="autoplay" class="switch on" type="button" title="autoplay the next scene"><i></i></button>
+          <button id="cc" class="ic" type="button" title="captions (c)"></button>
+          <button id="gear" class="ic" type="button" title="settings"></button>
+          <button id="theater" class="ic" type="button" title="theater mode (t)"></button>
+          <button id="enlarge" class="ic" type="button" title="full screen (f)"></button>
+        </div>
+      </div>
+      <audio id="audio" preload="auto"></audio>
+    </div>
+  </div>
+  <section class="info">
+    <div id="back" class="back" hidden>
+      <button id="back-go" class="pill dark" type="button">‹ Back to explanation</button>
+      <span id="back-text"></span>
+      <button id="back-close" class="back-close" type="button" aria-label="stay here" title="stay here">×</button>
+    </div>
+    <h1 id="title"></h1>
+    <div class="owner">
+      <span id="avatar" class="avatar"></span>
+      <div class="who"><b id="part"></b><small id="where"></small></div>
+      <span class="grow"></span>
+      <button id="share" class="pill share-button" type="button"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14.5 5.5 20.5 11l-6 5.5V13c-4.6 0-8 1.3-10 4.5.6-5 3.6-8.6 10-9V5.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Share</button>
+    </div>
+    <div class="paper-links"><span id="paper-links-head">View in manuscript</span><span id="paper-links" class="paper-links-row"></span></div>
+    <section id="reading" class="reading" aria-labelledby="reading-head" hidden>
+      <div class="reading-top">
+        <h2 id="reading-head">The argument here</h2>
+        <span class="grow"></span>
+        <button id="reading-toggle" class="outline-pill" type="button" aria-controls="reading-body"></button>
+      </div>
+      <div id="reading-body">
+        <h3 id="reading-title"></h3>
+        <p id="reading-what" class="reading-what">An explanation of the argument. The claim and the proposed proof are the manuscript and the release.</p>
+        <div id="reading-rows"></div>
+      </div>
+    </section>
+    <div id="desc" class="desc">
+      <p id="meta" class="meta"></p>
+      <p id="about" class="about"></p>
+      <div id="description-more" class="more">
+        <div id="about-more" class="about-more"></div>
+        <section class="more-section" aria-labelledby="chapters-heading">
+          <div class="more-heading"><h2 id="chapters-heading">Chapters</h2><button id="chapters-all" class="outline-pill" type="button">View all</button></div>
+          <div class="chapter-carousel">
+            <button id="chapters-prev" class="carousel-arrow" type="button" aria-label="Previous chapters">‹</button>
+            <div id="chapter-cards" class="chapter-cards" aria-label="Chapters"></div>
+            <button id="chapters-next" class="carousel-arrow" type="button" aria-label="More chapters">›</button>
+          </div>
+        </section>
+        <section class="more-section" aria-labelledby="more-transcript-heading">
+          <h2 id="more-transcript-heading">Transcript</h2>
+          <p>Read, search and navigate the explanation.</p>
+          <button id="show-transcript" class="outline-pill" type="button">Show transcript</button>
+        </section>
+        <section class="more-section project-source" aria-labelledby="project-author">
+          <div class="project-byline"><span class="author-initials" aria-hidden="true">RG</span><div><h2 id="project-author">Roger Gujord</h2><p>The base-seven Heraclitus transform · Manuscript and reproducible proof package · 1.1.0</p></div></div>
+          <nav class="source-links" aria-label="Project and sources">
+            <button id="more-manuscript" class="outline-pill" type="button">Manuscript</button>
+            <a class="outline-pill" href="https://github.com/gujord/heraclitus-base7" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="outline-pill" href="https://github.com/gujord/heraclitus-base7/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer">Release 1.1.0<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="outline-pill" href="https://doi.org/10.5281/zenodo.24086002" target="_blank" rel="noopener noreferrer">Zenodo · DOI<span class="visually-hidden"> (opens in a new tab)</span></a>
+            <a class="outline-pill" href="https://oeis.org/A398761" target="_blank" rel="noopener noreferrer">OEIS A398761<span class="visually-hidden"> (opens in a new tab)</span></a>
+          </nav>
+        </section>
+      </div>
+      <button id="desc-more" class="desc-more" type="button" aria-expanded="false" aria-controls="description-more">…more</button>
+    </div>
+  </section>
+  <aside id="navigation-panel" class="side" aria-label="Presentation navigation">
+    <div class="chips" role="tablist" aria-label="Browse the explanation">
+      <button id="tab-scenes" class="chip on" type="button" role="tab" aria-selected="true" aria-controls="panel-scenes">Chapters</button>
+      <button id="tab-transcript" class="chip" type="button" role="tab" aria-selected="false" aria-controls="panel-transcript" tabindex="-1">Transcript</button>
+    </div>
+    <div id="panel-transcript" class="panel" role="tabpanel" aria-labelledby="tab-transcript" hidden>
+      <form id="transcript-search-form" class="transcript-search" role="search">
+        <label for="transcript-search" class="visually-hidden">Search all scenes in the explanation</label>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6.5"/><path d="m15 15 6 6"/></svg>
+        <input id="transcript-search" type="search" placeholder="Search all scenes" autocomplete="off" spellcheck="false">
+        <button id="transcript-clear" type="button" aria-label="Clear search" hidden>×</button>
+      </form>
+      <div id="transcript-heading" class="panel-head"><b id="transcript-title"></b><small id="transcript-sub"></small></div>
+      <div id="transcript-follow-row" class="transcript-follow"><span id="transcript-follow-status">Following playback</span><button id="transcript-follow" class="outline-pill" type="button" aria-pressed="true">Follow playback</button></div>
+      <p id="transcript-search-status" class="search-status" role="status" hidden></p>
+      <div id="transcript-results" class="transcript-results" hidden></div>
+      <ol id="shots" class="shots" tabindex="0" aria-label="Transcript of the current scene"></ol>
+    </div>
+    <div id="panel-scenes" class="panel" role="tabpanel" aria-labelledby="tab-scenes">
+      <div class="panel-head"><b>The coverage proof</b><small id="playlist-sub"></small></div>
+      <div id="playlist" class="playlist"></div>
+    </div>
+  </aside>
+</main>
+<aside id="term" class="term-card" role="dialog" aria-labelledby="term-name" hidden>
+  <button id="term-close" type="button" aria-label="close">×</button>
+  <small class="term-kind">Definition</small>
+  <b id="term-name"></b>
+  <p id="term-text"></p>
+  <a id="term-scene" href="#"></a>
+  <small id="term-note" class="term-note">Playback is paused. Space or k plays on.</small>
+</aside>
+<div id="pwa-box" class="share" role="dialog" aria-modal="true" aria-labelledby="pwa-head" hidden>
+  <div class="share-card">
+    <div class="share-top"><h2 id="pwa-head">App &amp; offline</h2><button id="pwa-close" type="button" aria-label="Close app options">×</button></div>
+    <p id="pwa-installed" hidden>This presentation is running as an installed app.</p>
+    <p id="pwa-install-help">Use your browser’s <b>Install app</b> or <b>Add to Home Screen</b> action. In Safari on Mac: File → Add to Dock. On iPhone or iPad: Share → Add to Home Screen.</p>
+    <button id="pwa-install" class="pill dark" type="button" hidden>Install app</button>
+    <button id="pwa-update" class="pill" type="button" hidden>Update and reload</button>
+    <p id="pwa-size">Save all scenes, narration and the manuscript on this device for use without a connection.</p>
+    <button id="pwa-save" class="pill dark" type="button" disabled>Save for offline use</button>
+    <progress id="pwa-progress" max="1" value="0" aria-label="Offline files saved" hidden></progress>
+    <p id="pwa-status" class="share-note" role="status" aria-live="polite">Preparing offline support…</p>
+  </div>
+</div>
+<div id="share-box" class="share" role="dialog" aria-modal="true" aria-labelledby="share-head" hidden>
+  <div class="share-card">
+    <div class="share-top"><h2 id="share-head">Share</h2><button id="share-close" type="button" aria-label="close">×</button></div>
+    <div id="share-preview" class="share-preview" hidden><img id="share-image" alt="" width="1200" height="630"><div><b id="share-title"></b><p id="share-description"></p></div></div>
+    <div class="share-row"><input id="share-url" type="text" readonly aria-label="The address of this scene"><button id="share-copy" class="pill dark" type="button">Copy</button></div>
+    <label class="share-at"><input id="share-start" type="checkbox"><span id="share-start-text"></span></label>
+    <button id="share-native" class="pill" type="button" hidden>Share…</button>
+    <p id="share-status" class="share-note" role="status"></p>
+    <p id="share-note" class="share-note" hidden>This address opens the player in this folder, on this computer. It can be sent to others once the player is on the web.</p>
+  </div>
+</div>
+<div id="about-box" class="share help" role="dialog" aria-modal="true" aria-labelledby="about-head" hidden>
+  <div class="share-card help-card about-card">
+    <div class="share-top"><h2 id="about-head">About</h2><button id="about-close" type="button" aria-label="close">×</button></div>
+    <div class="help-body">
+      <p><b>The base-seven Heraclitus transform</b><br>Roger Gujord · Manuscript and reproducible proof package · 1.1.0</p>
+      <p>A proposed computer-assisted proof of coverage, explained scene by scene. The voice is generated. Every figure at the end of a shot is a checked still.</p>
+      <p>What was checked and what was not: <a id="about-status" href="#"></a></p>
+      <h3>Links</h3>
+      <nav class="source-links" aria-label="Project and sources">
+        <button id="about-manuscript" class="outline-pill" type="button">Manuscript</button>
+        <a class="outline-pill" href="https://github.com/gujord/heraclitus-base7" target="_blank" rel="noopener noreferrer">GitHub<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a class="outline-pill" href="https://github.com/gujord/heraclitus-base7/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer">Release 1.1.0<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a class="outline-pill" href="https://doi.org/10.5281/zenodo.24086002" target="_blank" rel="noopener noreferrer">Zenodo · DOI<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a class="outline-pill" href="https://oeis.org/A398761" target="_blank" rel="noopener noreferrer">OEIS A398761<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </nav>
+      <p id="about-licence"><b>Licence.</b> Text, figures and the narration script: CC BY 4.0. The player’s code: MIT. The release’s files keep the release’s licences. Pyodide, Python and PDF.js keep theirs, and the marks of GitHub, OEIS and Zenodo remain their owners’. The generated voice recordings are not covered by these licences.</p>
+      <h3>Details</h3>
+      <dl id="about-details" class="help-keys"></dl>
+    </div>
+  </div>
+</div>
+<div id="help-box" class="share help" role="dialog" aria-modal="true" aria-labelledby="help-head" hidden>
+  <div class="share-card help-card">
+    <div class="share-top"><h2 id="help-head">Help</h2><button id="help-close" type="button" aria-label="close">×</button></div>
+    <div class="help-body">
+      <h3>Keyboard shortcuts</h3>
+      <dl id="help-keys" class="help-keys">
+        <dt><kbd>Space</kbd> <kbd>k</kbd></dt><dd>Play or pause</dd>
+        <dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>One shot back or forward, stopping on its checked still</dd>
+        <dt><kbd>j</kbd> <kbd>l</kbd></dt><dd>Ten seconds back or forward</dd>
+        <dt><kbd>Shift</kbd>+<kbd>N</kbd> <kbd>Shift</kbd>+<kbd>P</kbd></dt><dd>Next or previous scene</dd>
+        <dt><kbd>0</kbd> … <kbd>9</kbd></dt><dd>Jump to a tenth of the scene</dd>
+        <dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>The beginning or the end of the scene</dd>
+        <dt><kbd>&lt;</kbd> <kbd>&gt;</kbd></dt><dd>Slower or faster</dd>
+        <dt><kbd>m</kbd></dt><dd>Mute</dd>
+        <dt><kbd>c</kbd></dt><dd>Captions</dd>
+        <dt><kbd>t</kbd></dt><dd>Theater mode</dd>
+        <dt><kbd>f</kbd></dt><dd>Full screen</dd>
+        <dt><kbd>?</kbd></dt><dd>This help</dd>
+        <dt><kbd>Esc</kbd></dt><dd>Close a window or a definition; cancel Up next</dd>
+      </dl>
+      <h3>The player</h3>
+      <p><b>The figures and the voice.</b> 79 scenes. The voice is generated. Every figure at the end of a shot is a checked still.
+        The picture at any moment depends only on the time in the scene, so pausing, seeking and stepping show the same figure.</p>
+      <p><b>Between scenes.</b> When a scene ends, its last figure stays for two seconds and a card names the next scene.
+        Cancel, space or a click on the figure stops there; the switch in the bar turns autoplay off.</p>
+      <p><b>The description.</b> Under each scene: the passages of the paper it rests on, with what each passage supports, the words the scene defines,
+        and the words it uses that were defined earlier. Where the script states them, also what the viewer can do after the scene and the earlier scenes it rests on.</p>
+      <p><b>The manuscript.</b> View in manuscript opens the paper itself in a window over the player, at the passage a button names,
+        with that passage marked. Playback pauses. The X at the right, or Esc, returns to the same scene and time, still paused.
+        The marked places belong to one PDF, known by its SHA-256 fingerprint; if the PDF in the folder is another one, nothing is marked.</p>
+      <p><b>Check it yourself.</b> On a scene about the checker, beside Share, and on the start page and in the menu. It opens Virtual Python Studio,
+        a window in which your browser runs the checker of the public release, on your machine. It is laid out like a code editor: the files at the left,
+        the open files in the middle, and under them a read-only terminal with the commands and what the programs wrote.
+        The files there are a working copy, in that tab only. A file can be changed, deleted, renamed or made new, to see the checker refuse a changed
+        certificate or to run a program of your own; a run of a changed copy is told as that, and Reset to the release puts every file back.
+        A run there is not the package&rsquo;s own command, <code>python3 scripts/verify.py</code>: that command starts every step as a process of
+        its own, and a browser has no processes. Here the steps share one Python, and the tests that start a second Python get a second Python
+        interpreter in the page; the terminal lists each such start. Making the certificates again and building the Lean proof are done with the package.
+        Playback pauses; the X at the right, or Esc, returns.</p>
+      <p><b>Looking up a word.</b> A click on an underlined word pauses and shows its definition. From there the scene
+        that defines it can be opened; Back to explanation then returns to the scene and time that were left, also after several lookups in a row.</p>
+      <p><b>The argument here.</b> Nine scenes have a short text under the title that can be read without the voice: what is claimed,
+        what is assumed, why it follows and what it is used for. Under each paragraph are the passages of the paper it rests on; they open the manuscript there.
+        The scenes are marked in the list of chapters.</p>
+      <p><b>The start page.</b> The logo opens it. Its top is the chain of five links that scene 1.6 draws; a link shows the scenes that explain it.
+        Home has a row for each part, Scenes has every scene in the order of the proof, Playlists has the links and the parts as lists,
+        and the magnifying glass searches the words of all scenes. The line under a scene's title names the link the scene belongs to.
+        This shows where a scene belongs, not every dependence between results.</p>
+      <p><b>The menu.</b> The three lines at the top left open it: the tabs of the start page, where you left off, each link of the chain,
+        each part, the manuscript, Help and About. On a wide start page it stands beside the page; elsewhere it comes over the page.
+        Appearance, in the menu, sets the page light or dark, or lets it follow your device; the figures and the manuscript look the same in both.</p>
+      <p><b>Share.</b> Shows the address of the scene, from its beginning or from the time shown, to copy. The address names the scene and a shot,
+        for example #7.2/5, or a time, #7.2@15.4.</p>
+    </div>
+  </div>
+</div>
+<div id="paper" class="paper" role="dialog" aria-modal="true" aria-labelledby="paper-title" hidden>
+  <div class="paper-box">
+    <div class="paper-head">
+      <div class="paper-what"><b id="paper-title"></b><span id="paper-context"></span><small id="paper-sub"></small></div>
+      <a id="paper-original" class="pill" href="paper/reference/paper/base-seven-heraclitus.pdf" target="_blank" rel="noopener">Open original PDF</a>
+      <button id="paper-close" class="window-close" type="button" aria-label="Close" title="Close (Esc)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div id="paper-body" class="paper-body"></div>
+  </div>
+</div>
+<script src="player.js"></script>
+<script src="scenes/catalogue.js"></script>
+<script src="navigation.js"></script>
+<script src="web-share.js"></script>
+<script src="pwa.js"></script>
+<script src="link-icons.js"></script>
+<script src="checks/syntax.js"></script>
+<script src="checks.js"></script>
+<script src="checks/files.js"></script>
+<script>PROOF.start();PROOF.linkIcons.init();</script>
+</body>
+</html>
